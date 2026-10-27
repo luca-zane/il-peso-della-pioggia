@@ -16,5 +16,13 @@
     "modelli linguistici",
     "apprendimento automatico",
     "divulgazione"
+  ],
+  "version": "1.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/luca-zane/il-peso-della-pioggia",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    }
   ]
 }

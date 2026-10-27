@@ -29,4 +29,17 @@ for _ in range(2):
     r = subprocess.run(['lualatex', '-interaction=nonstopmode', '-halt-on-error', 'libro.tex'], capture_output=True, text=True)
     if r.returncode:
         print(r.stdout[-4000:]); sys.exit(1)
-print('ok')
+# copertina davanti, titolo e autore nei metadati: il file che si scarica
+nome = 'il-peso-della-pioggia-bozza.pdf' if bozza else 'il-peso-della-pioggia.pdf'
+try:
+    import pikepdf
+    with pikepdf.open('copertina/copertina.pdf') as cop, pikepdf.open('libro.pdf') as lib:
+        out = pikepdf.new()
+        out.pages.extend(cop.pages); out.pages.extend(lib.pages)
+        out.docinfo['/Title'] = 'Il peso della pioggia'
+        out.docinfo['/Author'] = 'Luca Zane'
+        out.docinfo['/Subject'] = "L'intelligenza artificiale dal neurone ai modelli che ragionano"
+        out.save(nome)
+except ImportError:
+    subprocess.run(['pdfunite', 'copertina/copertina.pdf', 'libro.pdf', nome], check=True)
+print('ok:', nome)

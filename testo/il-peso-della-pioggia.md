@@ -10,13 +10,15 @@ Oct 16, 2026 · @Luca
 
 *L'intelligenza artificiale dal neurone ai modelli che ragionano. Un dialogo tra un allievo e il suo Maestro.*
 
-di Luca Zane · versione 0.99 · ottobre 2026
+di Luca Zane · versione 1.0 · ottobre 2026
 
 *Prima diceria di banchina.* «Con l'intelligenza artificiale un libro così si scrive in un minuto.» In un minuto si ottiene un testo ordinato, scorrevole, e uguale a mille altri. Questo è nato in un altro modo: da un lungo dialogo tra l'autore e Claude, un modello di intelligenza artificiale di Anthropic. Le domande dell'allievo l'autore se le è fatte davvero, ma non davanti a un prompt vuoto: ci è arrivato dopo anni di studio e di lavoro. La previsione delle maree, la Vendée, otto modelli riuniti a giudicare un progetto, il mare al posto dell'ufficio vengono dalla sua vita. E per riconoscere una spiegazione giusta bisogna averla già capita; per accorgersi di un numero sbagliato bisogna saper rifare il conto; per decidere che cosa tenere e che cosa buttare bisogna sapere dove si vuole arrivare. Ci sono volute centinaia di domande e risposte, bozze scartate, lezioni riscritte da capo, numeri rifatti e fatti verificati uno per uno. La rotta, le scelte e la revisione finale sono dell'autore; la stesura è cresciuta in due, una pagina alla volta. Come in una regata in doppio: il timone lo tiene uno alla volta, ma la barca la portano in due. Vale per qualsiasi lavoro fatto con l'intelligenza artificiale: lo strumento non toglie il lavoro, lo sposta. E chi firma risponde del risultato.
 
 *Perché in A4.* Questo libro è gratuito e si scarica: lo leggerete su uno schermo, o lo stamperete a casa o in ufficio. Per questo è impaginato in A4, il formato che tutti hanno, e non in quello di un libro da libreria: si stampa senza riduzioni, e le tabelle e i disegni hanno lo spazio per essere letti. Il resto è rimasto da libro: il carattere, i margini, il ritmo delle pagine.
 
 © 2026 Luca Zane. Quest'opera è distribuita con licenza Creative Commons Attribuzione – Non commerciale – Non opere derivate 4.0 Internazionale (CC BY-NC-ND 4.0), il cui testo è consultabile all'indirizzo https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it. Puoi copiarla e diffonderla gratuitamente, con qualsiasi mezzo e in qualsiasi formato, citando l'autore. Non puoi venderla, né usarla a fini commerciali, né distribuirne versioni modificate. Traduzioni, adattamenti e altri usi sono possibili solo con il permesso scritto dell'autore. Il codice degli esercizi, pubblicato insieme al libro, è distribuito con licenza MIT.
+
+Ultima versione, errata e codice degli esercizi: pioggia.lucazane.com. DOI: 10.5281/zenodo.23697734.
 
 I nomi di aziende, prodotti e modelli appartengono ai rispettivi titolari e sono usati solo per descrivere; le persone sono nominate per rendere omaggio al loro lavoro, e le citazioni in apertura delle lezioni appartengono ai loro autori. Il libro ha scopo divulgativo e didattico e non sostituisce una consulenza professionale. Fatti e numeri sono stati verificati alla data di questa versione: le Cronache del 2026 raccontano l'anno così come lo si conosceva allora. Copertina, disegni e grafici sono originali, realizzati per questo libro. Errori e segnalazioni sono benvenuti.
 
@@ -2283,7 +2285,7 @@ h_t = \tanh(W_h\, h_{t-1} + W_x\, x_t + b)
 
 **Maestro:** Quindi sì, è una via di mezzo. Non è il cassetto della plancia, perché sta dentro il modello. Non è scolpire tutto lo scafo, perché tocca solo le schede. È uno schedario costruito nello scafo, con le schede sostituibili. Ma tienilo per quello che è oggi: ricerca giovane, con risultati dichiarati dagli autori. In azienda, per ora, la carta sul tavolo resta la strada sicura. Se tra qualche anno lo schedario di bordo diventerà normale, ricordati che sotto c'è sempre la stessa idea di questa lezione: una tabella di posti, in cui si va a cercare.
 
-> **Cronaca del 2026 · Le schede degli n-grammi** A gennaio un gruppo di ricerca ha presentato Engram, una memoria a schede di n-grammi affiancata ai normali strati del modello, con risultati migliori di un modello equivalente senza schede, soprattutto sui compiti di conoscenza. A ottobre un altro lavoro, EngramEdit, ha mostrato come correggere fatti modificando solo quelle schede, con il resto del modello fermo. In entrambi i casi i risultati sono dichiarati dagli autori, e l'uso in prodotti reali è ancora da vedere.
+> **Cronaca del 2026 · Le schede degli n-grammi** A gennaio un gruppo di ricerca ha presentato Engram, una memoria a schede di n-grammi affiancata ai normali strati del modello, con risultati migliori di un modello equivalente senza schede: sui compiti di conoscenza e, a sorpresa, ancora di più su ragionamento e codice. A ottobre un altro lavoro, EngramEdit, ha mostrato come correggere fatti modificando solo quelle schede, con il resto del modello fermo. In entrambi i casi i risultati sono dichiarati dagli autori, e l'uso in prodotti reali è ancora da vedere.
 
 **Mokusō.** *I modi si insegnano, i fatti si mettono sul tavolo. Il sapere che ti servirà domani: lo insegneresti al modello, o glielo metteresti davanti?*
 
@@ -2926,7 +2928,7 @@ Il primo termine è il giudice: più punti, meglio è. Il secondo è la cima. La
 
 **Maestro:** Ecco il dettaglio che il capitano doveva leggere. Non la burrasca: la cima sfilacciata da giorni, che nessuno aveva cambiato. Per un modello, scrivere è anche pensare: gli hai tolto lo spazio per rileggere la segnalazione e chiedersi che cosa contava, e il risparmio l'hai pagato proprio lì. E guarda dove stanno i tuoi token. Le istruzioni per farlo parlare a grugniti le spedisci a ogni segnalazione. Le segnalazioni, che sono quasi tutta la pagina, le paghi comunque. Hai tagliato il pezzo più piccolo, e il più prezioso. Si risparmia meglio su ciò che mandi che su ciò che ricevi, e mai sul pensiero.
 
-> **Cronaca del 2026 · Il risparmio dei token** Quest'anno ha avuto grande successo un insieme di istruzioni per far rispondere i modelli in stile telegrafico, quasi a grugniti, con la promessa di tagliare due terzi dei token. Una prova indipendente di aprile, su compiti tecnici strutturati, ha misurato tra il 9 e il 21% di token d'uscita in meno, senza perdita di precisione, e ha trovato che sei righe di istruzioni ("sii conciso, rispondi in JSON") rendevano quanto il prompt completo.
+> **Cronaca del 2026 · Il risparmio dei token** Quest'anno ha avuto grande successo un insieme di istruzioni per far rispondere i modelli in stile telegrafico, quasi a grugniti, con la promessa di tagliare due terzi dei token. Una prova indipendente di aprile, su compiti tecnici strutturati, ha misurato tra il 9 e il 21% di token d'uscita in meno, senza perdita di precisione, e ha trovato che una versione ridotta a sei righe rendeva quanto il prompt completo, a volte di più.
 
 **Allievo:** Un'ultima idea. Le istruzioni le scrivo in inglese: all'archivio ho visto che l'inglese costa meno token.
 
@@ -3781,7 +3783,7 @@ Ogni guardiano ha i suoi buchi, in posti diversi. Una richiesta qualunque ne inc
 
 **Maestro:** Ed è il dilemma più difficile. La capacità che trova una falla è la stessa che serve a sfruttarla. Una vedetta severa ferma più malintenzionati, ma anche più difensori in buona fede: è la soglia della lezione 2, con il suo prezzo da una parte e dall'altra. Per questo il lavoro di difesa passa spesso dalla capitaneria: chi dimostra di difendere riceve un permesso più largo, e i modelli più capaci vanno prima a chi difende.
 
-> **Cronaca del 2026 · Due facce della stessa capacità** A giugno un laboratorio ha rilasciato due versioni dello stesso modello: una per tutti, con vedette severe sui temi a rischio, e una senza quelle vedette, riservata a poche organizzazioni impegnate nella difesa informatica. Pochi giorni dopo alcuni ricercatori hanno mostrato un modo per aggirare le vedette della versione pubblica; il governo statunitense ha imposto controlli sulle esportazioni, e l'accesso è stato sospeso per tutti. Il laboratorio ha addestrato una vedetta nuova, i controlli sono stati revocati a fine giugno, e il modello è tornato disponibile a luglio. A ottobre, ricercatori che lavoravano per la difesa hanno usato modelli di questo tipo per trovare due falle nascoste da dieci anni in PHP, il linguaggio su cui gira gran parte dei siti web. Molti siti, in tutto il mondo, si sono spenti per precauzione in attesa di aggiornarsi.
+> **Cronaca del 2026 · Due facce della stessa capacità** A giugno un laboratorio ha rilasciato due versioni dello stesso modello: una per tutti, con vedette severe sui temi a rischio, e una senza quelle vedette, riservata a poche organizzazioni impegnate nella difesa informatica. Pochi giorni dopo alcuni ricercatori hanno mostrato un modo per aggirare le vedette della versione pubblica; il governo statunitense ha imposto controlli sulle esportazioni, e l'accesso è stato sospeso per tutti. Il laboratorio ha addestrato una vedetta nuova, i controlli sono stati revocati a fine giugno, e il modello è tornato disponibile a luglio. A ottobre, ricercatori che lavoravano per la difesa hanno usato modelli di questo tipo per trovare due falle nascoste da più di dieci anni in PHP, il linguaggio su cui gira gran parte dei siti web. Molti siti, in tutto il mondo, si sono spenti per precauzione in attesa di aggiornarsi.
 
 **Mokusō.** *Quale guardiano dei tuoi sistemi stai dando per scontato, perché tanto ce ne sono altri?*
 
@@ -4373,12 +4375,12 @@ A questi va aggiunta la memoria della KV cache, che cresce con la lunghezza del 
 
 ## Colofone
 
-*Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.99, ottobre 2026. Di Luca Zane.
+*Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 1.0, ottobre 2026. Di Luca Zane.
 
 Testo: licenza CC BY-NC-ND 4.0. Codice degli esercizi: licenza MIT.
 
-Ultima versione, errata e codice degli esercizi: \[indirizzo del repository, alla pubblicazione\].
+Ultima versione, errata e codice degli esercizi: pioggia.lucazane.com.
 
-Per citarlo: Luca Zane, *Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.99, 2026.
+Per citarlo: Luca Zane, *Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 1.0, 2026. DOI: 10.5281/zenodo.23697734.
 
 Buon vento.
