@@ -408,7 +408,7 @@ $$ \mathbf{w} \cdot \mathbf{x} = \mathbf{w}^\top \mathbf{x} = (2{,}0)(0{,}8) + (
 
 **Maestro:** Sì, e non confonderli. Il prodotto elemento per elemento (Hadamard, simbolo ⊙) moltiplica a coppie ma **non somma**: restituisce un vettore, (1,6; −1,5; 0,1). Lo ritroverai nei cancelli che decidono che cosa lasciar passare: quelli delle reti ricorrenti, alla lezione 6, e quello di un'attivazione moderna, alla lezione 8. Il prodotto vettoriale della fisica qui non si usa. Nel neurone c'è solo il prodotto scalare.
 
-**Allievo:** *Tira fuori il telefono: un titolo annuncia un nuovo modello «da 70 miliardi di parametri».* Quando leggo numeri così, cosa sto leggendo davvero?
+**Allievo:** *Raccoglie dalla panca un giornale dimenticato da qualcuno: un titolo annuncia un nuovo modello «da 70 miliardi di parametri».* Quando leggo numeri così, cosa sto leggendo davvero?
 
 **Maestro:** Il conteggio di tutti i pesi e i bias. A 16 bit, nei formati bf16 o fp16, ogni parametro occupa 2 byte: 70 miliardi di parametri sono circa 140 GB solo per caricare il modello in memoria. Prima di sognare un modello, conta quanta memoria ti serve per tenerlo in mano.
 
