@@ -713,11 +713,11 @@ y = \sigma\big(1{,}5\,h_1 - 2{,}0\,h_2 - 0{,}5\big)
 
 **Maestro:** Dopo l'allenamento si possono anche togliere, con cautela: si chiama **pruning** (potatura). È una delle tecniche per rendere un modello più leggero, parente della quantizzazione che studierai alla lezione 11. Ma si pota solo dopo aver visto chi è cresciuto. Prima, tutti i fili devono esserci.
 
-*Un grido arriva dal pontile. Il maestrale ha strappato dal fondo l'ancora di una barca a vela, e la barca scade sottovento, di traverso, verso la fila di quelle ormeggiate. A bordo non c'è nessuno. Gli allievi escono di corsa, a piedi nudi, e l'allievo con loro, senza sapere bene che cosa farà.*
+*Un grido arriva dal pontile. Il maestrale ha strappato dal fondo l'ancora di una barca a vela, che scade sottovento, di traverso, verso la fila di quelle ormeggiate. A bordo non c'è nessuno. Gli allievi escono di corsa, a piedi nudi, e l'allievo con loro, senza sapere bene che cosa farà.*
 
-*Nessuno dà ordini. Uno corre in fondo al pontile e lancia una cima; due la prendono al volo e le danno volta su una bitta, puntando i piedi. L'allievo si ritrova steso sulle tavole bagnate accanto a un ragazzo che non conosce, le mani aperte contro lo scafo, a spingere perché la fiancata non sbatta su quella vicina. La cima si tende, scricchiola, tiene. Qualcuno arriva con un parabordo, il cuscino di gomma che si mette tra una barca e l'altra, e lo infila al posto delle loro mani; dall'altra parte qualcun altro ha già legato la poppa. In un paio di minuti la barca è ferma, legata di prua e di poppa, e dondola come se niente fosse.*
+*Nessuno dà ordini. Uno corre in fondo al pontile e, mentre la barca gli scivola accanto, salta a bordo e lancia a terra una cima; due la prendono al volo e le danno volta su una bitta, puntando i piedi. L'allievo si ritrova steso sulle tavole bagnate accanto a un ragazzo che non conosce, le mani aperte contro lo scafo, a spingere perché la fiancata non sbatta su quella vicina. La cima si tende, scricchiola, tiene. Qualcuno arriva con un parabordo, il cuscino di gomma che si mette tra una barca e l'altra, e lo infila al posto delle loro mani; dall'altra parte qualcun altro ha già legato la poppa. In un paio di minuti la barca è ferma, legata di prua e di poppa, e dondola come se niente fosse.*
 
-*Il proprietario arriva di corsa dal paese quando è già tutto finito, senza fiato, con la giacca aperta. Guarda la sua barca, guarda i ragazzi scalzi sul pontile, e riesce a dire soltanto grazie, tre volte.*
+*Il proprietario accorre dal paese quando è già tutto finito, senza fiato, con la giacca aperta. Guarda la sua barca, guarda i ragazzi scalzi sul pontile, e riesce a dire soltanto grazie, tre volte.*
 
 *Rientrano nel dojo lasciando impronte bagnate sul tatami. L'allievo ha ancora le palme rosse, e il cuore che batte.*
 
@@ -1763,7 +1763,7 @@ print(colpe(w, x, 0.0))           # non sono andato: circa [0.44 0.55 0.55]
 
 *Giù al molo, davanti al cantiere, un carpentiere passa la mano lungo una tavola appena piallata. Si ferma su un nodo del legno, lo segna con il gesso e mette la tavola da parte, senza esitare. L'allievo lo guarda a lungo.*
 
-**Allievo:** Maestro, torno con i piedi in azienda. Se volessi riconoscere i difetti dei nostri pezzi, avrei al massimo qualche centinaio di foto, non un milione. E non ho giorni di schede grafiche. Dovrei allenare tutto da capo?
+**Allievo:** Maestro, quel carpentiere vede un nodo in un attimo. Se volessi insegnare a una rete a riconoscere i difetti di un pezzo, avrei al massimo qualche centinaio di foto, non un milione. E non ho giorni di schede grafiche. Dovrei allenare tutto da capo?
 
 *Dalla finestra si vede un velista appena arrivato in porto: sale per la prima volta su una barca a noleggio, prova la randa, cerca i comandi, e dopo dieci minuti esce dal porto senza esitazioni.*
 
@@ -3496,7 +3496,7 @@ Due avvertenze. Molti modelli recenti guardano l'intera pagina solo in pochi str
 
 > *La rana nel pozzo non conosce l'oceano.* — proverbio giapponese
 
-*Quel mattino il Maestro non apre il dojo. Porta l'allievo lungo il porto, di bottega in bottega: un laboratorio di restauro, la stanza radio, l'ufficio del capitano di porto. «Chi conosce una sola scuola crede che esista solo quella.»*
+*Passano alcune settimane. Un mattino il Maestro non apre il dojo. Porta l'allievo lungo il porto, di bottega in bottega: un laboratorio di restauro, la stanza radio, l'ufficio del capitano di porto. «Chi conosce una sola scuola crede che esista solo quella.»*
 
 *Prima di partire, il Maestro traccia sulla sabbia la mappa delle scuole che incontreranno lungo il porto, e di qualcuna che vedranno solo da lontano.*
 
@@ -3647,7 +3647,7 @@ Il quaderno e il foglietto si contano così. Il modello da 70 miliardi della lez
 **Kata per casa.**
 
 1. Scegli la scuola giusta per ciascun problema: prevedere quali clienti disdiranno, da una tabella; trovare difetti in foto di pezzi meccanici; scovare frodi in una rete di transazioni tra conti; generare immagini di prodotti; leggere documenti scansionati e rispondere a domande.
-2. Spiega a un collega, senza formule, perché un modello a diffusione parte dal rumore per generare un'immagine.
+2. Spiega a un amico, senza formule, perché un modello a diffusione parte dal rumore per generare un'immagine.
 
 **Allievo:** Non tutto è un LLM. Davanti a una tabella proverò prima un albero; davanti a un'immagine, una lente; davanti a un bollettino lunghissimo, un foglietto con qualche quaderno. Da oggi non sarà più l'hype a scegliere al posto mio.
 
@@ -4317,7 +4317,7 @@ Alla fine "rete", la parola più frequente, è un token solo; "reti" è ret · i
 
 ### Lezione 10 · Il post-training
 
-**Esercizio 1.** Una ricompensa tipica: "punteggio alto se il cliente dà 5 stelle", oppure "se la risposta contiene le parole chiave della domanda", oppure "se un altro modello la giudica utile". Modi per barare: con le stelle, promettere rimborsi che l'azienda non darà; con le parole chiave, ripeterle senza rispondere davvero; con il giudice automatico, scrivere risposte lunghe, gentili e sicure di sé, che i giudici tendono a premiare. Ogni ricompensa misura un sintomo dell'utilità, non l'utilità stessa, e un ottimizzatore abbastanza forte trova la distanza tra le due. Per questo le ricompense si combinano, si controllano a campione con persone e si sorvegliano nel tempo.
+**Esercizio 1.** Una ricompensa tipica: "punteggio alto se il cliente dà 5 stelle", oppure "se la risposta contiene le parole chiave della domanda", oppure "se un altro modello la giudica utile". Modi per barare: con le stelle, promettere rimborsi che non arriveranno mai; con le parole chiave, ripeterle senza rispondere davvero; con il giudice automatico, scrivere risposte lunghe, gentili e sicure di sé, che i giudici tendono a premiare. Ogni ricompensa misura un sintomo dell'utilità, non l'utilità stessa, e un ottimizzatore abbastanza forte trova la distanza tra le due. Per questo le ricompense si combinano, si controllano a campione con persone e si sorvegliano nel tempo.
 
 **Esercizio 2.** Conviene rispondere quando il guadagno atteso supera lo zero dell'astensione: p × 1 + (1 − p) × (−2) > 0, cioè p > 2/3, circa **67%**. Con un errore che vale −3: p > 3/4, **75%**. In generale, se l'errore costa k punti, rispondi solo se p > k / (1 + k). È la soglia della lezione 2: più un errore costa, più sicurezza serve prima di parlare. Un esame con k = 0, dove sbagliare non costa nulla, rende conveniente rispondere sempre: è così che si insegna a un modello a tirare a indovinare.
 
