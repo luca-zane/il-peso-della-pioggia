@@ -10,7 +10,7 @@ Oct 16, 2026 · @Luca
 
 *L'intelligenza artificiale dal neurone ai modelli che ragionano. Un dialogo tra un allievo e il suo Maestro.*
 
-di Luca Zane · versione 0.96 · ottobre 2026
+di Luca Zane · versione 0.99 · ottobre 2026
 
 *Prima diceria di banchina.* «Con l'intelligenza artificiale un libro così si scrive in un minuto.» In un minuto si ottiene un testo ordinato, scorrevole, e uguale a mille altri. Questo è nato in un altro modo: da un lungo dialogo tra l'autore e Claude, un modello di intelligenza artificiale di Anthropic. Le domande dell'allievo l'autore se le è fatte davvero, ma non davanti a un prompt vuoto: ci è arrivato dopo anni di studio e di lavoro. La previsione delle maree, la Vendée, il mare al posto dell'ufficio vengono dalla sua vita. E per riconoscere una spiegazione giusta bisogna averla già capita; per accorgersi di un numero sbagliato bisogna saper rifare il conto; per decidere che cosa tenere e che cosa buttare bisogna sapere dove si vuole arrivare. Ci sono volute centinaia di domande e risposte, bozze scartate, lezioni riscritte da capo, numeri rifatti e fatti verificati uno per uno. La rotta, le scelte e la revisione finale sono dell'autore; la stesura è cresciuta in due, una pagina alla volta. Come in una regata in doppio: il timone lo tiene uno alla volta, ma la barca la portano in due. Vale per qualsiasi lavoro fatto con l'intelligenza artificiale: lo strumento non toglie il lavoro, lo sposta. E chi firma risponde del risultato.
 
@@ -4373,12 +4373,12 @@ A questi va aggiunta la memoria della KV cache, che cresce con la lunghezza del 
 
 ## Colofone
 
-*Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.96, ottobre 2026. Di Luca Zane.
+*Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.99, ottobre 2026. Di Luca Zane.
 
 Testo: licenza CC BY-NC-ND 4.0. Codice degli esercizi: licenza MIT.
 
 Ultima versione, errata e codice degli esercizi: \[indirizzo del repository, alla pubblicazione\].
 
-Per citarlo: Luca Zane, *Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.96, 2026.
+Per citarlo: Luca Zane, *Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.99, 2026.
 
 Buon vento.

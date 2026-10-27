@@ -21,8 +21,8 @@ open('body-front.tex', 'w').write(body[:cut])
 open('body-main.tex', 'w').write(body[cut:])
 with open('versione.tex', 'w') as f:
     if bozza:
-        f.write('\\newcommand{\\notabozza}{{\\sffamily\\fontsize{6.5}{8}\\selectfont\\color{grigio}Bozza 0.96 per i primi lettori · non diffondere}}\n')
-        f.write('\\newcommand{\\BOZZA}{BOZZA 0.96 PER I PRIMI LETTORI · NON DIFFONDERE}\n')
+        f.write('\\newcommand{\\notabozza}{{\\sffamily\\fontsize{6.5}{8}\\selectfont\\color{grigio}Bozza 0.99 per i primi lettori · non diffondere}}\n')
+        f.write('\\newcommand{\\BOZZA}{BOZZA 0.99 PER I PRIMI LETTORI · NON DIFFONDERE}\n')
     else:
         f.write('\\newcommand{\\notabozza}{}\n\\newcommand{\\BOZZA}{}\n')
 for _ in range(2):
