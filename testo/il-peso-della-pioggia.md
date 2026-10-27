@@ -85,7 +85,7 @@ Buon vento. Si comincia dalla cintura bianca.
 
 **Maestro:** Io sarò il tuo *sensei*, il tuo maestro. Nel karate le cinture colorate segnano i gradi dell'allievo, i *kyu*; la cintura nera apre i gradi del maestro, i *dan*. Le lezioni le terremo dove servono: qui nel dojo, sulla spiaggia, e in barca quando il mare lo permette. Il mare è un maestro severo quanto me: non perdona chi crede di aver capito tutto.
 
-**Maestro:** Ogni lezione segue lo stesso rito. Prima ti spiego. Poi tu domandi, e domandi senza vergogna. Alla fine ti consegno una frase da portare fuori dal dojo: **la lezione per il mondo**, cioè ciò che serve quando costruirai prodotti veri. Se un giorno ti sentirai di nuovo all'inizio, rileggi solo quelle frasi.
+**Maestro:** Ogni lezione segue lo stesso rito. Prima ti spiego. Poi tu domandi, e domandi senza vergogna. Alla fine ti consegno una frase da portare fuori dal dojo: **la lezione per il mondo**, cioè ciò che serve là fuori, dove questi modelli si usano davvero. Se un giorno ti sentirai di nuovo all'inizio, rileggi solo quelle frasi.
 
 **Maestro:** E alla fine di ogni lezione ti lascerò un **kata per casa**: pochi esercizi da fare con carta, matita e, a volte, un computer. Le soluzioni sono in fondo al rotolo, spiegate passo per passo. Guardale solo dopo aver provato: un kata osservato non è un kata eseguito.
 
