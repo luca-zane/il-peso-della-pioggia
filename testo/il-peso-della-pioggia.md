@@ -479,7 +479,7 @@ $$ \text{errore} = -\big[\, y \ln p + (1 - y) \ln(1 - p) \,\big] $$
 
 **Maestro:** E quasi sempre, in produzione, li usi insieme. Il modello stima la probabilità di frode; una regola blocca sopra una soglia, un'altra impedisce per legge certe decisioni automatiche, un'altra ancora manda i casi dubbi a una persona. Il modello dà l'istinto, le regole danno la disciplina.
 
-**Mokusō.** *Nel tuo lavoro, dove serve un kata, una regola scritta che non sbaglia, e dove un kumite, un istinto allenato sui casi?*
+**Mokusō.** *Nella tua giornata, dove ti serve un kata, una regola scritta che non sbaglia, e dove un kumite, un istinto allenato sui casi?*
 
 *Il Maestro porge all'allievo una tazza di tè.*
 
@@ -785,7 +785,7 @@ $$ W_2(W_1\mathbf{x}) = (W_2 W_1)\,\mathbf{x} \quad\Rightarrow\quad \text{cento 
 
 **Maestro:** La non linearità è ciò che permette a ogni strato di aggiungere qualcosa di nuovo invece di ripetere il precedente. È il tai sabaki dentro la rete: sotto una soglia taccio, sopra agisco. Con questo semplice interruttore, ripetuto milioni di volte, una rete può piegare lo spazio quante volte serve, fino a separare un gatto da un cane, o una frase giusta da una sbagliata.
 
-**Mokusō.** *Senza la piega, cento strati valgono uno. Dove, nel tuo lavoro, una risposta proporzionale non basta, e serve cambiare direzione?*
+**Mokusō.** *Senza la piega, cento strati valgono uno. Quando, nella tua vita, aggiungere un po' di più non è bastato, e hai dovuto cambiare direzione?*
 
 ### Quarta seduta · Lo scafo e le vele
 
@@ -894,7 +894,7 @@ $$ p^{*} = \frac{C_{\text{falso allarme}}}{C_{\text{falso allarme}} + C_{\text{c
 
 **Maestro:** Ricorda: se mostri percentuali agli utenti, o le usi per decidere con una soglia, prima controlla che siano calibrate. Un 85% che vale 60% è peggio di nessun numero.
 
-**Mokusō.** *Il modello dice 85%. Chi, nel tuo lavoro, decide che 85% vuol dire sì? E sa quanto costa sbagliare?*
+**Mokusō.** *Il modello dice 85%. E tu, da quale percentuale in su dici sì? L'hai mai scelta pensando a quanto costa sbagliare?*
 
 ### Sesta seduta · Le bandiere e la katana
 
@@ -940,7 +940,7 @@ $$ p^{*} = \frac{C_{\text{falso allarme}}}{C_{\text{falso allarme}} + C_{\text{c
 
 *È sera. Il Maestro accende la lanterna del pontile.*
 
-**Mokusō.** *Per il prossimo lavoro che hai in mente: ti serve il coltello da marinaio, o una katana da forgiare?*
+**Mokusō.** *Per la prossima cosa che vuoi fare: ti serve il coltello da marinaio, o una katana da forgiare?*
 
 **Maestro:** Prima che ti annodi la cintura, ripeti il kata di oggi:
 
@@ -1085,7 +1085,7 @@ $$ \text{correzione} \;\propto\; (\text{ricompensa} - \text{ricompensa abituale}
 
 **Maestro:** E porta questa domanda in ogni progetto: chi mi dirà la risposta giusta, quando, e a che prezzo? Senza risposta non puoi né allenare né sapere se il modello funziona. In azienda il collo di bottiglia, spesso, non è l'algoritmo: sono le etichette.
 
-**Mokusō.** *Chi ti dice com'è andata davvero? Pensa a un tuo progetto: qual è la sua etichetta, e chi la scrive?*
+**Mokusō.** *Chi ti dice com'è andata davvero? Pensa a una cosa che stai imparando: chi ti dice se la fai giusta, e quando lo scopri?*
 
 ### Terza seduta · L'errore che risale
 
@@ -1218,7 +1218,7 @@ $$ 6 \times 7 \cdot 10^{10} \times 1{,}5 \cdot 10^{13} \approx 6 \cdot 10^{24} \
 
 **Maestro:** No. Si comincia piano, con un riscaldamento (warmup), poi si scende gradualmente, a coseno o in linea retta. Anche il kata più forte comincia con lo stretching.
 
-**Mokusō.** *Un modello ottimizza la misura che gli dai, non quello che avevi in mente. Con quale misura giudichi il tuo lavoro, e che cosa le sfugge?*
+**Mokusō.** *Un modello ottimizza la misura che gli dai, non quello che avevi in mente. Con quale misura giudichi te stesso, e che cosa le sfugge?*
 
 **Dicerie di banchina.** *Al bar del porto qualcuno racconta che "il computer impara da solo, giorno e notte, mentre lo usi".*
 
@@ -1231,7 +1231,7 @@ $$ 6 \times 7 \cdot 10^{10} \times 1{,}5 \cdot 10^{13} \approx 6 \cdot 10^{24} \
 **Kata per casa.** *Il Maestro lascia sulla barra del timone un foglietto legato con una cima.*
 
 1. Correggi a mano il neurone della serata, pesi (2,0; −1,5; 0,1), bias −0,5, su una serata con energia piena, niente pioggia e nessun compagno, in cui sei andato (y = 1). Usa un learning rate η = 0,5. Poi rifai il passaggio in avanti.
-2. Scegli un processo della tua azienda e scrivi chi fornirebbe la verità, quando e a che prezzo.
+2. Pensa a qualcosa che vorresti prevedere: il tempo di domani, il risultato di una partita, quanto ci metterai a tornare a casa. Scrivi chi ti direbbe la verità, quando e a che prezzo.
 
 **Allievo:** Ho visto l'errore risalire filo per filo. Allenare un modello non è un colpo di genio: sono mille piccole correzioni. E senza qualcuno che dica la verità, non c'è niente da correggere.
 
@@ -1764,7 +1764,7 @@ print(colpe(w, x, 0.0))           # non sono andato: circa [0.44 0.55 0.55]
 - **"Per riconoscere i difetti servono milioni di foto."** Con il transfer learning bastano spesso poche centinaia: le lenti dei bordi e delle trame le ha già imparate qualcun altro.
 - **"Se sul test fa il 100%, in fabbrica funzionerà."** Se tutte le foto dei pezzi difettosi sono state scattate sotto la stessa lampada, forse ha imparato la lampada. Provala nelle condizioni vere.
 
-**La lezione per il mondo:** per un problema di visione specifico e ben delimitato (difetti su una linea di produzione, documenti di un tipo noto), un modello piccolo addestrato sui tuoi dati può battere un grande modello generalista in costo, latenza e precisione.
+**La lezione per il mondo:** per un problema di visione specifico e ben delimitato (i pesci nel cesto di un pescatore, le crepe in uno scafo, un tipo di documento sempre uguale), un modello piccolo addestrato sui tuoi dati può battere un grande modello generalista in costo, latenza e precisione.
 
 **Kata per casa.**
 
@@ -2097,7 +2097,7 @@ $$ \cos(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mat
 
 **Maestro:** Sulla nostra piccola mappa, confrontando tutto con "barca": nave 0,99, quasi gemelle. Pesce 0: in comune il mare, opposti tra oggetto e vivo, e le due cose si annullano. Trattore −0,12: in comune l'essere un oggetto, opposti tra terra e mare. Gatto −1: opposto su tutto.
 
-**Mokusō.** *Se il significato è un posto sulla mappa, quali parole del tuo lavoro stanno troppo vicine, e confondono chi le legge?*
+**Mokusō.** *Se il significato è un posto sulla mappa, quali due parole, per te, stanno così vicine che rischi di confonderle?*
 
 ### Seconda seduta · Tre barche e un archivio
 
@@ -2223,12 +2223,12 @@ $$ \cos(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mat
 - **"Basta un database vettoriale e la RAG è fatta."** La parte difficile è altrove: tagliare bene i documenti, tenerli aggiornati, rispettare i permessi. È lì che inciampano molti progetti.
 - **"La RAG è morta."** È morta una ricetta, non l'idea. Trovare i pezzi giusti, metterli sulla pagina, far scrivere il modello: lo fa anche chi cerca per parole chiave, chi segue i collegamenti tra le note, chi lascia che sia il modello ad aprire i file e a decidere che cosa gli serve. Cambia il bibliotecario, non il mestiere. E né le finestre di contesto enormi né i "secondi cervelli" tolgono i problemi di sempre: il costo di mettere tutto sulla pagina, le versioni superate, i permessi.
 
-**La lezione per il mondo:** gli embedding sono spesso il componente AI più economico e redditizio di un sistema enterprise: ricerca, deduplicazione, clustering, raccomandazione, classificazione con pochi esempi. Non serve un LLM per tutto.
+**La lezione per il mondo:** gli embedding sono spesso lo strumento più semplice ed economico per mettere ordine nelle cose: trovare ciò che si somiglia, scovare i doppioni, raggruppare, consigliare, classificare con pochi esempi. Non serve un LLM per tutto.
 
 **Kata per casa.**
 
 1. Calcola la similarità coseno tra (1; 0) e (1; 1), tra (1; 0) e (0; 1), tra (1; 0) e (−1; 0).
-2. Scegli dieci prodotti o servizi della tua azienda e disponili su un foglio in modo che quelli simili stiano vicini. Hai appena disegnato un embedding a due dimensioni: quali criteri hai usato senza accorgertene?
+2. Scegli dieci cose che conosci bene, i piatti della tua cucina, le barche di un porto, i libri del tuo scaffale, e disponile su un foglio in modo che quelle simili stiano vicine. Hai appena disegnato un embedding a due dimensioni: quali criteri hai usato senza accorgertene?
 
 **Allievo:** Gli ormeggi del porto. Il significato diventa un posto sulla mappa, la somiglianza una vicinanza. Credo che nei miei progetti userò gli embedding molto prima di un LLM.
 
@@ -2328,7 +2328,7 @@ $$ \text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{Q K^\top}{\sqrt{d_k}}
 
 [Figura: Transformer decoder-only · un blocco ripetuto N volte]
 
-**Mokusō.** *Ogni testa guarda una cosa diversa, e nessuna vede tutto. Nel tuo gruppo di lavoro, chi guarda che cosa? E che cosa non guarda nessuno?*
+**Mokusō.** *Ogni testa guarda una cosa diversa, e nessuna vede tutto. Tra le persone che hai intorno, chi guarda che cosa? E che cosa non guarda nessuno?*
 
 ### Terza seduta · Tre scuole e un torneo
 
@@ -2600,7 +2600,7 @@ Ma non tutte le teste sono così leggibili. Molte fanno cose miste, difficili da
 - **"Certe capacità compaiono all'improvviso, oltre una certa taglia."** Spesso il gradino lo fa la misura. Se conti giusta una somma solo quando tutte le cifre sono giuste, vedi un salto; se conti le cifre giuste, vedi una salita regolare. È il tameshiwari: la tavoletta si spezza di colpo, ma la forza è cresciuta piano. Prima di credere a un "improvvisamente", chiedi come è stato misurato.
 - **"I dati sintetici sono infiniti e gratis."** Infiniti sì. Ma senza un verificatore, la carta ricopiata perde gli scogli.
 
-**La lezione per il mondo:** la conoscenza dentro i pesi è un archivio chiuso a una data, fitto sulle cose frequenti e sottile su quelle rare, e non dice da dove viene. Per i fatti della tua azienda, per quelli recenti o da verificare, metti le fonti sulla pagina, con la RAG o con gli strumenti, invece di fidarti della memoria del modello. E quando leggi che un modello è "più grande", chiedi anche quanto ha letto.
+**La lezione per il mondo:** la conoscenza dentro i pesi è un archivio chiuso a una data, fitto sulle cose frequenti e sottile su quelle rare, e non dice da dove viene. Per i fatti che ti stanno a cuore, per quelli recenti o da verificare, metti le fonti sulla pagina, con la RAG o con gli strumenti, invece di fidarti della memoria del modello. E quando leggi che un modello è "più grande", chiedi anche quanto ha letto.
 
 **Per chi vuole i conti.** *Si può saltare: sono i numeri che stanno dietro il racconto.*
 
@@ -2625,7 +2625,7 @@ Prendi i numeri assoluti con le pinze: dipendono dai dati e dal tokenizer di que
 **Kata per casa.**
 
 1. Costruisci a mano un piccolo vocabolario BPE sul testo "rete rete rete rete reti reti reti remi remi". Parti dalle lettere, senza contare gli spazi (le fusioni non scavalcano le parole), fai tre fusioni, e conta quanti token servono prima e dopo.
-2. Chiedi a un modello un fatto della tua azienda o un evento recente. Dividi ciò che risponde in tre: verificato, falso, non verificabile con le fonti che hai.
+2. Chiedi a un modello un fatto che conosci bene e che pochi sanno, la storia del tuo paese o di una barca, oppure un evento recente. Dividi ciò che risponde in tre: verificato, falso, non verificabile con le fonti che hai.
 
 **Allievo:** Ho inventato il taglio delle parole, e ho scoperto che fa pagare di più la mia lingua. Ho prolungato la curva, e ho perso il duello. Ho copiato un formato che nessuno mi aveva insegnato, e anche un errore che nessuno voleva insegnarmi. Un modello è un allievo che ha letto tutto l'archivio indovinando la riga dopo: dovrò sapere quando fidarmi della sua memoria, e quando mettergli in mano il giornale di oggi.
 
@@ -3285,7 +3285,7 @@ Il pensiero si conta come qualsiasi altro testo scritto. A venti token al second
 **Kata per casa.**
 
 1. Cinque tentativi allo stesso problema danno 42, 42, 41, 42, 40. Quale risposta scegli con il voto, e quanto ti fidi? Cambierebbe qualcosa se i cinque tentativi venissero da cinque modelli diversi?
-2. Elenca cinque attività del tuo lavoro e assegna a ciascuna una strada: risposta diretta, ragionamento lungo, più tentativi e un voto, più tentativi e un giudice. Per ognuna scrivi in una riga perché.
+2. Elenca cinque domande che fai, o che vorresti fare, a un modello e assegna a ciascuna una strada: risposta diretta, ragionamento lungo, più tentativi e un voto, più tentativi e un giudice. Per ognuna scrivi in una riga perché.
 
 **Allievo:** Pensare prima di colpire aiuta, ma non insegna ciò che non sai. Darò al modello il margine dove serve, e solo lì. Non conterò le voci quando vengono dalla stessa scuola. E leggerò il suo giornale di bordo come si legge quello di un altro comandante: con rispetto, e senza scambiarlo per la rotta.
 
@@ -3476,7 +3476,7 @@ Due avvertenze. Molti modelli recenti guardano l'intera pagina solo in pochi str
 
 **Maestro:** Ricordi la sera nel tuo cantiere? Testa o gambe. Questa è una scuola con molte gambe.
 
-**Mokusō.** *La restauratrice toglie e non aggiunge, e la nave compare perché lei sa com'è fatta una nave. Che cosa, nel tuo lavoro, sai fare solo perché hai visto mille esempi puliti?*
+**Mokusō.** *La restauratrice toglie e non aggiunge, e la nave compare perché lei sa com'è fatta una nave. Che cosa sai fare solo perché hai visto mille esempi fatti bene?*
 
 ### Seconda seduta · Il foglietto e il quaderno
 
@@ -3544,7 +3544,7 @@ Due avvertenze. Molti modelli recenti guardano l'intera pagina solo in pochi str
 - **"Se la disegna, vuol dire che la capisce."** Ripulisce verso una frase. Per anni ha sbagliato proprio le cose che si contano, le dita di una mano, le lettere di un'insegna: guardava la forma d'insieme, non il numero.
 - **"Il Transformer è finito: arrivano i modelli a stato."** Arrivano accanto, non al posto. I più riusciti sono ibridi: il foglietto per risparmiare, il quaderno per ricordare.
 
-**La lezione per il mondo:** scegli la scuola dal tipo di dato, non dall'hype. Per le tabelle aziendali, come abbandoni, punteggi di rischio e previsioni di domanda, i modelli ad albero battono ancora spesso le reti neurali, costano poco e si lasciano spiegare. Per riconoscere immagini c'è la lente della lezione 5; per crearle, la diffusione, con attenzione ai diritti e ai marchi. Per testi lunghissimi a basso costo, guarda gli ibridi. E il modello di linguaggio, quando serve, spesso fa il regista che chiama le altre scuole.
+**La lezione per il mondo:** scegli la scuola dal tipo di dato, non dall'hype. Per i dati in tabella, come il registro del capitano di porto, i modelli ad albero battono ancora spesso le reti neurali, costano poco e si lasciano spiegare. Per riconoscere immagini c'è la lente della lezione 5; per crearle, la diffusione, con attenzione ai diritti e ai marchi. Per testi lunghissimi a basso costo, guarda gli ibridi. E il modello di linguaggio, quando serve, spesso fa il regista che chiama le altre scuole.
 
 **Per chi vuole i conti.** *Si può saltare: sono i numeri che stanno dietro il racconto.*
 
@@ -3604,7 +3604,7 @@ Il quaderno e il foglietto si contano così. Il modello da 70 miliardi della lez
 3. **Controlla in automatico tutto ciò che puoi**: il formato, che le citazioni esistano davvero, che i numeri tornino. Per il resto, un modello giudice con i criteri scritti; ma anche i giudici hanno le loro preferenze, per le risposte lunghe e per il proprio stile, quindi una persona ne controlla un campione.
 4. **Rimisura tutto a ogni modifica**, e fai crescere la raccolta: una correzione che sistema un caso ne rompe spesso un altro, e ogni errore trovato sul campo diventa un caso nuovo. Ma tieni in disparte una piccola verifica finale, che non guardi mentre lavori, come le serate nascoste della lezione 4: a forza di aggiustare la pagina sui casi che conosci, anche un prompt impara a memoria le prove.
 
-**Mokusō.** *Per chi lavori davvero, quando costruisci qualcosa: per chi ti paga, o per chi lo userà?*
+**Mokusō.** *Quando costruisci qualcosa, per chi lo fai davvero: per chi te lo chiede, o per chi lo userà?*
 
 ### Seconda seduta · Il pilota automatico
 
@@ -3703,10 +3703,10 @@ Ogni guardiano ha i suoi buchi, in posti diversi. Una richiesta qualunque ne inc
 
 Gli errori di un agente si contano così. Se ogni passo riesce con probabilità p, indipendentemente dagli altri, n passi riescono tutti con probabilità pⁿ. Con p = 0,95 e n = 20: 0,95²⁰ ≈ 0,36. Con p = 0,99: 0,82. Con p = 0,9: 0,12. Il rimedio è accorciare la catena, o fermare l'errore prima che si propaghi: un compito di cinque passi al 95% riesce più di tre volte su quattro, perché 0,95⁵ ≈ 0,77.
 
-**L'ultimo kata per casa.** *Questa volta il foglietto non ha soluzioni: le troverai sul campo.*
+**L'ultimo kata per casa.** *Questa volta il foglietto non ha soluzioni: le troverai per mare.*
 
-1. Scegli un caso d'uso reale, del tuo lavoro o della tua città, e fagli le domande con cui l'allievo entra in porto, compresa la quinta. Poi scrivi chi, sul campo, potrebbe smentire le tue risposte.
-2. Costruisci un test set di 20 esempi reali con la risposta attesa. Prova due prompt diversi e misura quale va meglio.
+1. Pensa a un modello che ti piacerebbe vedere all'opera, per te, per la tua città, per il tuo porto, e fagli le domande con cui l'allievo entra in porto, compresa la quinta. Poi scrivi chi potrebbe smentire le tue risposte.
+2. Raccogli venti domande di cui conosci già la risposta giusta: è il tuo test set. Prova due modi diversi di chiedere, e misura quale va meglio.
 
 *La barca entra nell'avamporto, lo specchio d'acqua riparato che precede le banchine. Il Maestro si siede in pozzetto, lo spazio incassato da cui si governa la barca, e lascia fare.*
 
@@ -3916,7 +3916,7 @@ Gli errori di un agente si contano così. Se ogni passo riesce con probabilità 
 2. **Fare**: "Neural Networks: Zero to Hero" di Andrej Karpathy. Costruisci da zero un motore di autodiff e poi un piccolo GPT. È il kata che ti impedirà di ripartire da capo, perché ciò che hai costruito con le mani non si dimentica.
 3. **Leggere il testo sacro**: "Attention Is All You Need" (Vaswani et al., 2017), dopo aver scritto il codice, accanto a "The Illustrated Transformer" di Jay Alammar.
 4. **Studiare i maestri**: "Understanding Deep Learning" di Simon Prince (2023), rigoroso ma leggibile; per gli LLM, "Build a Large Language Model (From Scratch)" di Sebastian Raschka.
-5. **Combattere sul serio**: prendi un caso reale del tuo lavoro, della tua città, della tua prossima uscita in mare, costruisci un test set di 50 esempi, confronta prompt, RAG, un modello piccolo e uno grande. Le differenze che misuri tu valgono più di qualsiasi benchmark.
+5. **Combattere sul serio**: prendi una domanda che ti sta a cuore, sul tuo mare, sulla tua città, su ciò che fai ogni giorno, costruisci un test set di 50 esempi, confronta prompt, RAG, un modello piccolo e uno grande. Le differenze che misuri tu valgono più di qualsiasi benchmark.
 
 **Allievo:** E prima di cominciare un progetto?
 
@@ -4097,7 +4097,7 @@ Dividere per T > 1 avvicina i logit tra loro, e le probabilità si appiattiscono
 
 La lezione nascosta: i fili con input zero non si correggono. Quella sera non pioveva e il compagno non c'era, quindi l'esempio non dice nulla su quanto contino. Per questo servono serate varie.
 
-**Esercizio 2.** Non c'è una soluzione unica. Una buona risposta ha tre righe: chi fornisce la verità (il tempo, un esperto, i dati stessi, un verificatore), quando arriva (subito, dopo giorni, dopo mesi) e quanto costa ogni etichetta. Se nella tua risposta la verità non arriva mai, hai trovato il primo ostacolo del progetto.
+**Esercizio 2.** Non c'è una soluzione unica. Una buona risposta ha tre righe: chi fornisce la verità (il tempo, un esperto, i dati stessi, un verificatore), quando arriva (subito, dopo giorni, dopo mesi) e quanto costa ogni etichetta. Se nella tua risposta la verità non arriva mai, hai trovato il primo ostacolo: senza verità non c'è niente da cui imparare.
 
 ### Lezione 4 · Generalizzare e restare stabili
 
@@ -4189,7 +4189,7 @@ Poi controlla che la citazione esista davvero nel contratto.
 - (1; 0) e (0; 1): prodotto scalare 0. cos = **0**: perpendicolari.
 - (1; 0) e (−1; 0): prodotto scalare −1; lunghezze 1 e 1. cos = **−1**: direzioni opposte.
 
-**Esercizio 2.** Non c'è una disposizione giusta. Guarda però quali criteri hai usato: prezzo, tipo di cliente, frequenza d'acquisto, settore. Ogni criterio è una direzione del tuo spazio. Un modello di embedding fa lo stesso, ma con centinaia o migliaia di direzioni, scelte da lui leggendo i dati invece che decise da te. Ed è il motivo per cui due prodotti che tu considereresti diversi possono risultargli vicini: magari compaiono spesso negli stessi ordini.
+**Esercizio 2.** Non c'è una disposizione giusta. Guarda però quali criteri hai usato: il sapore, la stagione, la grandezza, il ricordo che ti lasciano. Ogni criterio è una direzione del tuo spazio. Un modello di embedding fa lo stesso, ma con centinaia o migliaia di direzioni, scelte da lui leggendo i dati invece che decise da te. Ed è il motivo per cui due cose che tu considereresti diverse possono risultargli vicine: magari compaiono spesso nelle stesse frasi.
 
 ### Lezione 8 · Attention e Transformer
 
@@ -4246,7 +4246,7 @@ A questi va aggiunta la memoria della KV cache, che cresce con la lunghezza del 
 
 **Esercizio 1.** 42 compare 3 volte, 41 e 40 una volta ciascuno: con il voto scegli **42**. Tre su cinque è un segnale discreto, non una certezza: con cinque risposte concordi potresti fidarti molto di più; con cinque risposte tutte diverse il modello ti sta dicendo che non sa. Se i tentativi venissero da cinque modelli diversi l'accordo potrebbe valere di più, se i loro errori sono davvero diversi: va misurato, non dato per scontato. Ma anche modelli diversi hanno letto archivi simili: l'indipendenza non è mai piena.
 
-**Esercizio 2.** Non c'è una soluzione unica; ecco una guida per verificare le tue scelte. **Risposta diretta** per compiti brevi, frequenti e a basso rischio: classificare un ticket, riformulare un testo. **Ragionamento lungo** per compiti con più passaggi logici e un errore costoso: analizzare un contratto, pianificare una migrazione. **Più tentativi e un voto** dove la risposta è breve e si può contare, un numero o una categoria, e la risposta giusta è già la più frequente. **Più tentativi e un giudice** dove esiste una verifica: codice con i test, conti che si possono rifare. Se una tua attività chiede dati che il modello non ha, o azioni su un sistema, è un lavoro per un agente: rileggi la lezione 14.
+**Esercizio 2.** Non c'è una soluzione unica; ecco una guida per verificare le tue scelte. **Risposta diretta** per compiti brevi, frequenti e a basso rischio: tradurre una frase, riassumere un articolo. **Ragionamento lungo** per compiti con più passaggi logici e un errore costoso: capire un contratto d'affitto, preparare una traversata. **Più tentativi e un voto** dove la risposta è breve e si può contare, un numero o una categoria, e la risposta giusta è già la più frequente. **Più tentativi e un giudice** dove esiste una verifica: codice con i test, conti che si possono rifare. Se una tua domanda chiede dati che il modello non ha, o azioni su un sistema, è un lavoro per un agente: rileggi la lezione 14.
 
 ### Intermezzo · Il cantiere di casa
 
@@ -4270,7 +4270,7 @@ A questi va aggiunta la memoria della KV cache, che cresce con la lunghezza del 
 
 ### Lezione 14 · Dal dojo al mare
 
-*Qui il Maestro non ha scritto soluzioni. Ha scritto solo una frase: «Il tuo test set è la tua soluzione. Torna quando ce l'hai.»*
+*Qui il Maestro non ha scritto soluzioni. In fondo al foglio c'è un piccolo disegno a matita, una barca che esce dal porto, e sotto una riga sola: «Queste le scrivi tu. Quando le avrai, vieni a raccontarmele: il tè sarà caldo.»*
 
 ## Colofone
 
