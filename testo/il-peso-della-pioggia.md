@@ -713,6 +713,18 @@ y = \sigma\big(1{,}5\,h_1 - 2{,}0\,h_2 - 0{,}5\big)
 
 **Maestro:** Dopo l'allenamento si possono anche togliere, con cautela: si chiama **pruning** (potatura). È una delle tecniche per rendere un modello più leggero, parente della quantizzazione che studierai alla lezione 11. Ma si pota solo dopo aver visto chi è cresciuto. Prima, tutti i fili devono esserci.
 
+*Un grido arriva dal pontile. Il maestrale ha strappato dal fondo l'ancora di una barca a vela, e la barca scade sottovento, di traverso, verso la fila di quelle ormeggiate. A bordo non c'è nessuno. Gli allievi escono di corsa, a piedi nudi, e l'allievo con loro, senza sapere bene che cosa farà.*
+
+*Nessuno dà ordini. Uno corre in fondo al pontile e lancia una cima; due la prendono al volo e le danno volta su una bitta, puntando i piedi. L'allievo si ritrova steso sulle tavole bagnate accanto a un ragazzo che non conosce, le mani aperte contro lo scafo, a spingere perché la fiancata non sbatta su quella vicina. La cima si tende, scricchiola, tiene. Qualcuno arriva con un parabordo, il cuscino di gomma che si mette tra una barca e l'altra, e lo infila al posto delle loro mani; dall'altra parte qualcun altro ha già legato la poppa. In un paio di minuti la barca è ferma, legata di prua e di poppa, e dondola come se niente fosse.*
+
+*Il proprietario arriva di corsa dal paese quando è già tutto finito, senza fiato, con la giacca aperta. Guarda la sua barca, guarda i ragazzi scalzi sul pontile, e riesce a dire soltanto grazie, tre volte.*
+
+*Rientrano nel dojo lasciando impronte bagnate sul tatami. L'allievo ha ancora le palme rosse, e il cuore che batte.*
+
+**Allievo:** Nessuno ha dato un ordine. Eppure ognuno sapeva che cosa fare.
+
+**Maestro:** Ognuno ha guardato la barca da dove stava. Chi era in fondo al pontile ha visto la cima, chi era steso sulle tavole ha visto la fiancata. Nessuno l'ha vista tutta. Ma la barca è ferma.
+
 **Mokusō.** *L'importanza non c'è all'inizio: viene fuori dopo. Che cosa, nel tuo mestiere, hai imparato a considerare importante solo sbagliando?*
 
 ### Terza seduta · La forma della rete
@@ -973,6 +985,8 @@ p^{*} = \frac{C_{\text{falso allarme}}}{C_{\text{falso allarme}} + C_{\text{caso
 **Maestro:** E i maestri veri li usano insieme. Il modello legge l'email e ne estrae i fatti in colonne; l'albero, allenato sul tuo storico, decide. Oppure si parte con il coltello da marinaio per avere subito un prodotto, si raccolgono le etichette che produce e che le persone correggono, e quando il compito è stabile e i dati abbondano si forgia la katana. La regola resta quella della lezione: scegli lo strumento più semplice che basta.
 
 *È sera. Il Maestro accende la lanterna del pontile.*
+
+*Sulla soglia del dojo qualcuno ha lasciato un secchio di triglie, ancora lucide, e un sacchetto di limoni con le foglie. Nessun biglietto. Il Maestro si china, ne prende una per la coda e la guarda contro la luce della lanterna, come al mercato. Poi sorride. «Stasera si mangia tutti insieme.»*
 
 **Mokusō.** *Per la prossima cosa che vuoi fare: ti serve il coltello da marinaio, o una katana da forgiare?*
 
@@ -1814,6 +1828,16 @@ print(colpe(w, x, 0.0))           # non sono andato: circa [0.44 0.55 0.55]
 2. Fai il max pooling 2×2 di questa mappa 4×4, scritta riga per riga dall'alto: (1; 0; 2; 3), (4; 6; 6; 8), (3; 1; 1; 0), (1; 2; 2; 4). Che dimensione ha il risultato? Che cosa si è perso, e che cosa è rimasto?
 
 **Allievo:** Una piccola lente, sempre la stessa, passata su tutta la carta. Non avrei mai detto che la forza stesse proprio nel non cambiare i pesi da un punto all'altro.
+
+*La sera l'allievo torna al cantiere. Sotto la tettoia c'è odore di resina e di vernice, e la luce entra bassa, piena di polvere di legno. Il carpentiere spazza i trucioli in un mucchio ordinato; sul banco ci sono ancora le tavole messe da parte nel pomeriggio, ognuna con il suo segno di gesso. «Come fa a vederli così in fretta, i nodi?»*
+
+*Il carpentiere non smette di spazzare. «Non guardo il nodo. Guardo il filo del legno. Dove cambia strada, lì c'è qualcosa.» Appoggia la scopa al banco, prende una tavola e gliela mette in mano. «Passaci la mano. A occhi chiusi.»*
+
+*L'allievo chiude gli occhi e fa scorrere il palmo sul legno. Liscio, liscio, liscio. Poi, sotto le dita, la venatura gira intorno a qualcosa, come l'acqua intorno a uno scoglio.*
+
+*«L'hai sentito.» Il carpentiere gli prende la tavola e ne mostra un'altra, con un nodo scuro, un cerchio quasi nero. «Questo è morto. Sembra fermo, ma il legno intorno non lo tiene più: un giorno, con il mare, si stacca e ti lascia un buco nello scafo. Quello di prima è vivo, cresciuto insieme alla tavola. Da fuori si somigliano.» Segna anche questa con il gesso, e la mette con le altre.*
+
+*«Quarant'anni che ci passo la mano», dice, e riprende la scopa. «All'inizio sentivo solo il legno. Torna quando vuoi: il cantiere apre all'alba.»*
 
 ## Lezione 6 · RNN, LSTM, GRU: la memoria del tempo (cintura arancione)
 
@@ -2945,7 +2969,7 @@ Il primo termine è il giudice: più punti, meglio è. Il secondo è la cima. La
 
 ### Prima seduta · Il banco e il carrello
 
-*Il Maestro conduce l'allievo al cantiere navale, in fondo alla darsena, il bacino più interno e riparato del porto. Sotto la tettoia un carpentiere lavora a un banco; in fondo, un magazzino pieno di tavole, chiodi e attrezzi. Tra i due fa la spola un garzone con un carrello.*
+*Il Maestro conduce l'allievo al cantiere navale, in fondo alla darsena, il bacino più interno e riparato del porto. Sotto la tettoia lavora a un banco il carpentiere dei nodi, che alza la testa e saluta l'allievo con un cenno; in fondo, un magazzino pieno di tavole, chiodi e attrezzi. Tra i due fa la spola un garzone con un carrello.*
 
 **Maestro:** Ecco un modello al lavoro. Alla lezione 3 nel cantiere si costruiva la barca: era l'allenamento. Oggi la barca è varata, e qui si lavora per chi la usa, una risposta dopo l'altra; ma le leggi del cantiere sono le stesse. Il banco è la scheda grafica: lì si fanno i conti, velocissimi. Il magazzino è la memoria, dove stanno i pesi. Il carrello è la banda: quanti byte al secondo riesce a portare dal magazzino al banco. Ricorda queste tre parti: quasi tutto ciò che vedremo oggi serve a far lavorare meglio questo cantiere.
 
@@ -3462,6 +3486,12 @@ Due avvertenze. Molti modelli recenti guardano l'intera pagina solo in pochi str
 
 **Allievo:** Ho portato il Maestro nel mio cantiere per mostrargli quanto è piccolo. Ci ha trovato le stesse leggi di quello grande. Prima di scaricare un modello, adesso mi chiedo con quale pagina, e se mi servono più testa o più gambe.
 
+*Quando il Maestro se n'è andato, l'allievo resta nell'officina con la luce spenta. Il computer ronza ancora piano sotto la finestra; lo spegne. Poi prende le forbici dal cassetto e si mette davanti al geranio.*
+
+*Taglia i rami lunghi, quelli che portano solo foglie gialle; lascia quelli che hanno ancora un fiore, e quelli con le gemme. Ci mette più del previsto: prima di ogni taglio gira il vaso e guarda dove il ramo è cresciuto davvero, e dove ha solo preso spazio. Le dita gli restano verdi, con quell'odore aspro delle foglie di geranio che non va via neanche lavandosi.*
+
+*Alla fine sul davanzale resta una pianta piccola, quasi spoglia. Gli sembra di averle tolto troppo. Raccoglie i rami tagliati per buttarli; uno, con una gemma in cima, lo mette in un bicchiere d'acqua, senza sapere bene perché.*
+
 ## Lezione 13 · Le altre scuole (verso la cintura nera)
 
 > *La rana nel pozzo non conosce l'oceano.* — proverbio giapponese
@@ -3590,6 +3620,14 @@ Due avvertenze. Molti modelli recenti guardano l'intera pagina solo in pochi str
 
 **Maestro:** Allora sono un grafo: punti collegati da linee. Guarda quel peschereccio laggiù. Preso da solo è in regola: licenza, registro, pescato dichiarato. Ma ogni notte si affianca alle stesse tre barche, e quelle si affiancano ad altre due che il porto conosce bene. Il sospetto non sta in nessuna barca: sta nelle linee. Le banche hanno lo stesso problema. Il conto A manda cento euro a B, che li manda a C, che li rimanda ad A: guardati uno per uno sono pagamenti normali, è il giro che parla. Le **reti sui grafi** lavorano così: ogni punto chiede ai vicini che cosa sanno, mescola le risposte con quello che sa lui, e dopo due o tre giri conosce il suo tratto di mare, i vicini e i vicini dei vicini. Si usano per le frodi, per le molecole, dove gli atomi sono i punti e i legami le linee, e per i trasporti.
 
+*Tornano lungo il molo che il sole è già basso. Nei pescherecci si accendono le prime luci, e i gabbiani si sono messi in fila sul muretto, tutti con il becco al vento. Al pontile il Maestro si ferma accanto alla sua barca e si china sulla cima di prua: la gassa, l'anello di cima che si infila sulla bitta, si è allentata, e va rifatta per la notte.*
+
+*Le mani fanno il gesto di sempre, quello di cinquant'anni: l'asola, il giro, il ritorno. Ma le dita, fredde, non stringono, e la cima gli scivola via. Ci riprova, più piano. Scivola di nuovo. Il Maestro resta un momento fermo, chino, con la cima in mano, a guardarla come si guarda un vecchio amico che non ti riconosce.*
+
+*L'allievo esita. Poi si inginocchia accanto a lui e gli prende la cima dalle mani, senza fretta. Fa la gassa come il Maestro gli aveva insegnato il giorno della nebbia: l'asola, il giro, il ritorno. La passa sulla bitta. Il Maestro dà uno strattone per provarla. Tiene.*
+
+*Si rialzano. Il Maestro si infila le mani nelle tasche della cerata e guarda il mare oltre l'imboccatura, dove l'acqua comincia a farsi scura. Nessuno dei due dice niente, e per il resto della strada camminano un po' più vicini.*
+
 **Mokusō.** *Non tutto è un LLM. Quale tuo problema stai trattando come un chiodo, solo perché hai in mano un martello nuovo?*
 
 **Dicerie di banchina.** *Sul molo, una bancarella vende stampe «dipinte dall'intelligenza artificiale». Il venditore ha una risposta per tutto.*
@@ -3620,6 +3658,8 @@ Il quaderno e il foglietto si contano così. Il modello da 70 miliardi della lez
 ## Lezione 14 · Dal dojo al mare: costruire per chi naviga (cintura nera)
 
 > *Quando esci dal cancello di casa, pensa che milioni di avversari ti stiano aspettando.* — Gichin Funakoshi, dai venti precetti del karate
+
+*Uscendo di casa, prima dell'alba, l'allievo passa davanti alla finestra dell'officina. Sul geranio potato sono spuntate due foglie nuove, piccole, di un verde chiaro. Nel bicchiere, accanto, il ramo ha messo una radice bianca, sottile come un filo.*
 
 *All'alba il Maestro aspetta l'allievo al pontile. La barca è pronta, le vele ancora legate al boma, le cime a terra. «L'ultima lezione non si tiene nel dojo», dice. «E oggi il timone lo tieni tu.»*
 
@@ -3917,9 +3957,11 @@ Gli errori di un agente si contano così. Se ogni passo riesce con probabilità 
 | Scotta | la cima che regola la vela; lascare vuol dire allentarla | lezione 2, temperatura |
 | Cantiere | dove la barca si costruisce e si modifica, a terra; il mare è dove la si usa | lezione 2, allenamento e uso; lezione 7, fine-tuning |
 | Bandiere di segnalazione | bandiere di un codice comune: ognuna dice un messaggio intero, senza parole | lezione 2, modelli decisionali |
+| Parabordo | il cuscino di gomma che si mette tra una barca e l'altra, o tra la barca e il molo | lezione 2 |
 | Scandaglio | un piombo legato a una cima segnata a nodi, per misurare il fondale | lezione 3, discesa del gradiente |
 | Giornale di bordo | il quaderno dove si annotano rotta, vento, vele e manovre | lezione 3, backpropagation; intermezzo della veglia |
 | Bitta | la colonnina di ferro, sul molo o a bordo, a cui si legano le cime | lezione 3, lezione 14 |
+| Gassa | l'anello fatto con la cima, che si infila sulla bitta e non scorre | lezione 13 |
 | Deviazione | l'errore della bussola causato dal ferro vicino: l'ago resta fermo e sicuro, ma sbagliato | lezione 4, dati distorti |
 | Bozzello e paranco | la carrucola di bordo, e la combinazione di carrucole che moltiplica la forza | lezione 4, gradiente che svanisce o esplode |
 | Battagliola | la ringhiera che corre intorno al ponte della barca | lezione 4 |
@@ -3931,6 +3973,7 @@ Gli errori di un agente si contano così. Se ogni passo riesce con probabilità 
 | Alla fonda | ferma all'ancora, fuori dalle banchine | intermezzo della veglia, lezione 14 |
 | Ormeggio | il posto assegnato a una barca in porto | lezione 7, embedding |
 | Naufragatori | chi un tempo accendeva luci false sugli scogli per attirare le navi | lezione 5, esempi costruiti per ingannare |
+| Nodo vivo e nodo morto | nel legno: il nodo cresciuto con la tavola tiene; quello morto un giorno si stacca e lascia un buco | lezione 5 |
 | Mercato del porto | la lista, i cartelli dei banchi, la merce | lezione 8, query, key e value |
 | Capitaneria di porto | l'autorità marittima del porto; nel suo archivio, i giornali di bordo di un secolo | lezione 9, pretraining |
 | Vasca navale | il lungo canale dove si trainano modellini di scafo per prevedere come andrà la nave vera | lezione 9, scaling laws |
