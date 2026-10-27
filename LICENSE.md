@@ -9,11 +9,7 @@ Il testo del libro, le figure e la copertina sono distribuiti con licenza **Crea
 - Sintesi in italiano: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it
 - Testo legale completo: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.it
 
-In breve, puoi copiare e ridistribuire il libro con qualsiasi mezzo e in qualsiasi formato, alle condizioni seguenti:
-
-- **Attribuzione.** Devi citare l'autore e il titolo, indicare la licenza e fornire un collegamento a essa.
-- **Non commerciale.** Non puoi usare il materiale per scopi commerciali.
-- **Non opere derivate.** Se modifichi o trasformi il materiale, o ci costruisci sopra, non puoi distribuire il materiale così modificato.
+Dal libro: «Puoi copiarla e diffonderla gratuitamente, con qualsiasi mezzo e in qualsiasi formato, citando l'autore. Non puoi venderla, né usarla a fini commerciali, né distribuirne versioni modificate. Traduzioni, adattamenti e altri usi sono possibili solo con il permesso scritto dell'autore.»
 
 ## Codice
 

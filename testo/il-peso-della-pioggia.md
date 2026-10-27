@@ -4105,15 +4105,15 @@ La lezione nascosta: i fili con input zero non si correggono. Quella sera non pi
 
 ### Intermezzo · L'attrezzeria
 
-**Esercizio 1.** I numeri esatti dipendono dai pesi iniziali, che PyTorch estrae a caso a ogni esecuzione. Provando la rete 3 → 2 → 1 delle righe PyTorch con cinque partenze diverse, l'andamento tipico è questo:
+**Esercizio 1.** Con il seme 0, come chiede il kata, la rete parte dal 45%. I numeri esatti dipendono dai pesi iniziali: con altri semi cambiano, e possono variare un poco anche tra versioni diverse di PyTorch. Ecco che cosa succede con il seme 0 e, per confronto, su cento partenze diverse:
 
-| Learning rate | Probabilità di andare dopo 100 passi (la verità è 0) |
-| --- | --- |
-| 0,01 | scende poco: dal 35–65% iniziale a circa il 20–45% |
-| 0,1 | scende molto: tra l'1% e il 10% |
-| 1 | va quasi a zero: circa l'1% o meno |
+| Learning rate | Con il seme 0, dopo 100 passi | Su cento partenze diverse (la verità è 0) |
+| --- | --- | --- |
+| 0,01 | 35% | scende poco: da 24–74% all'inizio a 11–53% |
+| 0,1 | 10% | scende molto: tra meno dell'1% e l'11%, in metà delle partenze sotto il 3% |
+| 1 | 1% | va quasi a zero: l'1% o meno |
 
-In questo esercizio un passo più lungo arriva prima, perché c'è una sola serata e la strada verso l'errore minimo è semplice. Con molti dati e una rete grande, invece, un learning rate troppo alto fa oscillare la loss o la fa esplodere: è la barca che sbanda da una parte all'altra. Una curiosità: ogni tanto, con una partenza sfortunata, entrambi i neuroni nascosti finiscono spenti dalla ReLU: da lì in poi la colpa non risale più ai fili nascosti, che restano fermi, e si muove solo il bias d'uscita. La probabilità scende lo stesso, ma la rete ha smesso di guardare la serata. Se ti capita, hai visto dal vivo un neurone "morto".
+In questo esercizio un passo più lungo arriva prima, perché c'è una sola serata e la strada verso l'errore minimo è semplice. Con molti dati e una rete grande, invece, un learning rate troppo alto fa oscillare la loss o la fa esplodere: è la barca che sbanda da una parte all'altra. Una curiosità: più spesso di quanto si creda, in quasi metà delle partenze, entrambi i neuroni nascosti finiscono spenti dalla ReLU: da lì in poi la colpa non risale più ai fili nascosti, che restano fermi, e si muove solo il bias d'uscita. La probabilità scende lo stesso, ma la rete ha smesso di guardare la serata. Se ti capita, hai visto dal vivo un neurone "morto".
 
 **Esercizio 2.** Con pesi (2,0; −1,5; 0,1; −0,5) e input (0,8; 1; 1; 1):
 
@@ -4272,12 +4272,12 @@ A questi va aggiunta la memoria della KV cache, che cresce con la lunghezza del 
 
 ## Colofone
 
-*Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.95, ottobre 2026. Di Luca Zane.
+*Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.96, ottobre 2026. Di Luca Zane.
 
 Testo: licenza CC BY-NC-ND 4.0. Codice degli esercizi: licenza MIT.
 
 Ultima versione, errata e codice degli esercizi: \[indirizzo del repository, alla pubblicazione\].
 
-Per citarlo: Luca Zane, *Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.95, 2026.
+Per citarlo: Luca Zane, *Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 0.96, 2026.
 
 Buon vento.

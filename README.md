@@ -1,14 +1,15 @@
 # Il peso della pioggia
 
-**L'intelligenza artificiale dal neurone ai modelli che ragionano**
-
-*Un dialogo tra un allievo e il suo Maestro, tra un dojo di karate e un piccolo porto.*
+*L'intelligenza artificiale dal neurone ai modelli che ragionano. Un dialogo tra un allievo e il suo Maestro.*
 
 **[Scarica il PDF](https://github.com/luca-zane/il-peso-della-pioggia/releases/latest/download/il-peso-della-pioggia.pdf)**
 
-Un allievo bussa alla porta di un dojo affacciato sul mare. In quattordici lezioni, tra il tatami, la barca e le banchine, il Maestro lo accompagna dal singolo neurone fino ai modelli che ragionano: come impara una rete, perché sbaglia con sicurezza, come nasce e si educa un grande modello di linguaggio, quanto costa farlo lavorare, e come si costruisce qualcosa di utile per chi lo userà.
-
-Il libro è pensato per chi ha una base tecnica o scientifica e vuole capire davvero come funzionano questi sistemi, senza perdersi. I conti più impegnativi stanno in riquadri che si possono saltare.
+> Il libro è un dialogo tra un allievo e un Maestro, in un dojo di karate affacciato sul mare. […]
+> Soprattutto teorie consolidate: il neurone, l'allenamento, le reti che guardano e che leggono, gli embedding, i Transformer, i modelli di linguaggio e il modo in cui vengono educati e serviti. Sono le idee che non cambiano ogni sei mesi, e sono quelle che servono per capire le nuove.
+>
+> Il dojo è aperto a tutti: etichette e titoli di studio restano fuori, come le scarpe sulla soglia.
+>
+> — dalla *Prefazione*
 
 ## Leggerlo
 
@@ -44,8 +45,8 @@ Se trovi un errore di fatto, un conto che non torna o un refuso, apri una segnal
 
 ## Licenze
 
-- **Il testo, le figure e la copertina** sono distribuiti con licenza [Creative Commons Attribuzione – Non commerciale – Non opere derivate 4.0 Internazionale](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it) (CC BY-NC-ND 4.0). Puoi leggerlo, stamparlo e condividerlo liberamente, citando l'autore, senza usi commerciali e senza modificarlo.
-- **Il codice** (gli script di costruzione e i notebook) è distribuito con licenza MIT: puoi copiarlo, modificarlo e usarlo nei tuoi progetti. Vedi `LICENSE-CODE`.
+- **Il testo, le figure e la copertina** sono distribuiti con licenza [Creative Commons Attribuzione – Non commerciale – Non opere derivate 4.0 Internazionale](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it) (CC BY-NC-ND 4.0). Puoi copiarla e diffonderla gratuitamente, con qualsiasi mezzo e in qualsiasi formato, citando l'autore. Non puoi venderla, né usarla a fini commerciali, né distribuirne versioni modificate. Traduzioni, adattamenti e altri usi sono possibili solo con il permesso scritto dell'autore.
+- **Il codice degli esercizi**, e gli script che costruiscono il PDF, sono distribuiti con licenza MIT. Vedi `LICENSE-CODE`.
 - **I caratteri** EB Garamond sono distribuiti con la SIL Open Font License.
 
 ## Citare il libro
