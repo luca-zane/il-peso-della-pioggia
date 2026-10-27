@@ -1705,7 +1705,7 @@ print(colpe(w, x, 0.0))           # non sono andato: circa [0.44 0.55 0.55]
 
 ### Terza seduta · Dal dojo all'officina
 
-*Mentre gli altri si allenano, l'allievo scorre sul telefono le foto dei pezzi che escono dalla linea della sua azienda, e si fa pensieroso.*
+*Giù al molo, davanti al cantiere, un carpentiere passa la mano lungo una tavola appena piallata. Si ferma su un nodo del legno, lo segna con il gesso e mette la tavola da parte, senza esitare. L'allievo lo guarda a lungo.*
 
 **Allievo:** Maestro, torno con i piedi in azienda. Se volessi riconoscere i difetti dei nostri pezzi, avrei al massimo qualche centinaio di foto, non un milione. E non ho giorni di schede grafiche. Dovrei allenare tutto da capo?
 
