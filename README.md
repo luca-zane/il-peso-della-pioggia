@@ -1,6 +1,7 @@
 # Il peso della pioggia
 
-*L'intelligenza artificiale dal neurone ai modelli che ragionano. Un dialogo tra un allievo e il suo Maestro.*
+*L'intelligenza artificiale dal neurone ai modelli che ragionano*  
+*Un dialogo tra un allievo e il suo Maestro*
 
 **[Scarica il libro in PDF](https://github.com/luca-zane/il-peso-della-pioggia/releases/latest/download/il-peso-della-pioggia.pdf)**: gratuito, in italiano, sempre all'ultima versione.
 
@@ -90,6 +91,10 @@ Se trovi un errore di fatto, un conto che non torna o un refuso, apri una segnal
 
 ## Citare il libro
 
-Luca Zane, *Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 1.0, 2026. DOI: [10.5281/zenodo.23697734](https://doi.org/10.5281/zenodo.23697734). Vedi anche `CITATION.cff`.
+Luca Zane, *Il peso della pioggia.*  
+*L'intelligenza artificiale dal neurone ai modelli che ragionano*,  
+versione 1.0, 2026. DOI: [10.5281/zenodo.23697734](https://doi.org/10.5281/zenodo.23697734).
+
+Vedi anche `CITATION.cff`.
 
 © 2026 Luca Zane

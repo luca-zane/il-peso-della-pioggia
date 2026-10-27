@@ -4375,12 +4375,18 @@ A questi va aggiunta la memoria della KV cache, che cresce con la lunghezza del 
 
 ## Colofone
 
-*Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 1.0, ottobre 2026. Di Luca Zane.
+*Il peso della pioggia*\
+*L'intelligenza artificiale dal neurone ai modelli che ragionano*\
+Versione 1.0, ottobre 2026\
+Di Luca Zane
 
 Testo: licenza CC BY-NC-ND 4.0. Codice degli esercizi: licenza MIT.
 
 Ultima versione, errata e codice degli esercizi: pioggia.lucazane.com.
 
-Per citarlo: Luca Zane, *Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 1.0, 2026. DOI: 10.5281/zenodo.23697734.
+Per citarlo:\
+Luca Zane, *Il peso della pioggia.*\
+*L'intelligenza artificiale dal neurone ai modelli che ragionano*,\
+versione 1.0, 2026. DOI: 10.5281/zenodo.23697734.
 
 Buon vento.
