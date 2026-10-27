@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Se usi o citi questo libro, citalo così."
+title: "Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano"
+authors:
+  - family-names: Zane
+    given-names: Luca
+license: CC-BY-NC-ND-4.0
+url: "https://pioggia.lucazane.com"
+keywords:
+  - intelligenza artificiale
+  - reti neurali
+  - modelli linguistici
+  - divulgazione
+preferred-citation:
+  type: book
+  title: "Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano"
+  authors:
+    - family-names: Zane
+      given-names: Luca
+  year: 2026
+  languages:
+    - it

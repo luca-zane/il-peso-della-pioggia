@@ -1,0 +1,9 @@
+costruzione/*.aux
+costruzione/*.log
+costruzione/*.out
+costruzione/*.toc
+costruzione/body*.tex
+costruzione/versione.tex
+costruzione/libro.pdf
+__pycache__/
+.ipynb_checkpoints/

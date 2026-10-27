@@ -1,0 +1,200 @@
+% Il peso della pioggia — impaginazione (LuaLaTeX)
+\documentclass[12pt,oneside,openany]{memoir}
+
+% ---------- formato A4 ----------
+\setstocksize{297mm}{210mm}
+\settrimmedsize{297mm}{210mm}{*}
+\setlrmarginsandblock{31mm}{31mm}{*}
+\setulmarginsandblock{30mm}{34mm}{*}
+\setheadfoot{17pt}{28pt}
+\setheaderspaces{*}{10mm}{*}
+\checkandfixthelayout
+
+% ---------- lingua e caratteri ----------
+\usepackage[provide=*,italian]{babel}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\directlua{luaotfload.add_fallback("riserva", {"DejaVu Serif:mode=node;", "DejaVu Sans:mode=node;"})}
+\setmainfont{EBGaramond}[
+  Path=fonts/, Extension=.ttf,
+  UprightFont=*-400-normal, ItalicFont=*-400-italic,
+  BoldFont=*-600-normal, BoldItalicFont=*-600-italic,
+  RawFeature={fallback=riserva}, Ligatures=TeX]
+\newfontfamily\semibold{EBGaramond}[Path=fonts/, Extension=.ttf, UprightFont=*-500-normal, ItalicFont=*-500-italic, RawFeature={fallback=riserva}]
+\setsansfont{Inter}[RawFeature={fallback=riserva}]
+\setmonofont{DejaVu Sans Mono}[Scale=0.82]
+\setmathfont{Latin Modern Math}
+\setmathfont{EBGaramond-400-normal.ttf}[Path=fonts/, range={up/{num,latin,Latin}}]
+\setmathfont{EBGaramond-400-italic.ttf}[Path=fonts/, range={it/{latin,Latin}}]
+\linespread{1.06}
+\usepackage[final]{microtype}
+
+% ---------- pacchetti ----------
+\usepackage{xcolor}
+\definecolor{inchiostro}{HTML}{1C1B19}
+\definecolor{grigio}{HTML}{6B6760}
+\definecolor{mare}{HTML}{2C5D80}
+\definecolor{sabbia}{HTML}{F3EEE5}
+\definecolor{sigillo}{HTML}{A8322A}
+\color{inchiostro}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{xltabular,booktabs}
+\definecolor{filetto}{HTML}{D9D3C8}
+\newcommand{\riga}{\arrayrulecolor{filetto}\specialrule{0.3pt}{1.6pt}{1.6pt}\arrayrulecolor{inchiostro}}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyvrb}
+\usepackage{needspace}
+\usepackage[hidelinks,unicode,pdfusetitle]{hyperref}
+\hypersetup{pdftitle={Il peso della pioggia},pdfauthor={Luca Zane}}
+
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt,leftmargin=1.4em}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{0pt}
+\raggedbottom
+
+% ---------- testatine e piede ----------
+\input{versione.tex}
+\makepagestyle{libro}
+\makeevenhead{libro}{\footnotesize\addfontfeatures{LetterSpace=8}\MakeUppercase{\leftmark}}{}{\small\thepage}
+\makeoddhead{libro}{\footnotesize\addfontfeatures{LetterSpace=8}\MakeUppercase{\leftmark}}{}{\small\thepage}
+\makeevenfoot{libro}{}{\notabozza}{}
+\makeoddfoot{libro}{}{\notabozza}{}
+\makepagestyle{apertura}
+\makeevenfoot{apertura}{}{\notabozza}{}
+\makeoddfoot{apertura}{}{\notabozza}{}
+\aliaspagestyle{chapter}{apertura}
+\pagestyle{libro}
+\nouppercaseheads
+
+% ---------- capitoli ----------
+\newcommand{\etichetta}{}
+\newcommand{\cintura}{}
+\makechapterstyle{dojo}{%
+  \renewcommand{\chapterheadstart}{\vspace*{24mm}}
+  \renewcommand{\printchaptername}{}
+  \renewcommand{\chapternamenum}{}
+  \renewcommand{\printchapternum}{}
+  \renewcommand{\afterchapternum}{}
+  \renewcommand{\printchaptertitle}[1]{%
+    \raggedright
+    \ifx\etichetta\empty\else{\sffamily\footnotesize\addfontfeatures{LetterSpace=14}\color{grigio}\MakeUppercase{\etichetta}\ifx\cintura\empty\else\ \ ·\ \ \MakeUppercase{\cintura}\fi}\par\vspace{5mm}\fi
+    {\fontsize{28}{33}\selectfont ##1\par}
+    \vspace{2mm}{\color{sigillo}\rule{14mm}{0.8pt}}}
+  \renewcommand{\afterchaptertitle}{\par\nobreak\vspace{12mm}}
+}
+\chapterstyle{dojo}
+\newcommand{\corto}{}
+\newcommand{\capitolo}[3]{%
+  \renewcommand{\etichetta}{#1}\renewcommand{\cintura}{#3}%
+  \ifx\etichetta\empty
+    \chapter[#2]{#2}\markboth{#2}{#2}%
+  \else
+    \chapter[#1 · #2]{#2}\markboth{#1 · \corto}{\corto}%
+  \fi}
+\newcommand{\capitolosenzanumero}[1]{%
+  \renewcommand{\etichetta}{}\renewcommand{\cintura}{}%
+  \chapter*{#1}\addcontentsline{toc}{chapter}{#1}\markboth{#1}{#1}}
+
+% sedute
+\setsecnumdepth{part}
+\setsecheadstyle{\centering}
+\setbeforesecskip{-8ex plus -1.5ex minus -.5ex}
+\setaftersecskip{3.2ex plus .3ex}
+\newcommand{\seduta}[2]{%
+  \needspace{12\baselineskip}%
+  \section[#1 · #2]{{\sffamily\footnotesize\addfontfeatures{LetterSpace=16}\color{sigillo}\MakeUppercase{#1}}\\[2mm]{\fontsize{19}{23}\selectfont #2}}%
+  \markright{#2}}
+\newcommand{\soluzioni}[1]{\needspace{5\baselineskip}\section*{\large #1}\markright{Soluzioni · #1}}
+
+% indice
+\settocdepth{section}
+\renewcommand{\cftchapterfont}{\normalfont}
+\renewcommand{\cftchapterpagefont}{\normalfont}
+\setlength{\cftbeforechapterskip}{1.2ex}
+\renewcommand{\cftsectionfont}{\small\color{grigio}}
+\renewcommand{\cftsectionpagefont}{\small\color{grigio}}
+\renewcommand{\contentsname}{Indice}
+\newcommand{\indice}{\clearpage\tableofcontents*\clearpage}
+
+% ---------- elementi del dialogo ----------
+\newcommand{\nome}[1]{\mbox{\semibold\small\addfontfeatures{LetterSpace=7}\MakeUppercase{#1}}}
+\newcommand{\parla}[1]{\par\vspace{2.5pt}\noindent\nome{#1}\enspace}
+\newcommand{\parlaitem}[1]{\nome{#1}\enspace}
+\newcommand{\scena}[1]{\par\noindent{\itshape #1}\par}
+\newcommand{\scenacont}[1]{\par{\itshape #1}\par}
+\newcommand{\runin}[1]{\par\medskip\noindent{\semibold #1.}\enspace}
+\newcommand{\mokuso}[1]{\par\vspace{2.2ex}\noindent\begin{minipage}{\linewidth}\centering
+  {\color{sigillo}\rule{8mm}{0.5pt}}\\[1.4ex]
+  {\sffamily\scriptsize\addfontfeatures{LetterSpace=18}\color{grigio}MOKUSŌ}\\[0.8ex]
+  \begin{minipage}{0.84\linewidth}\centering\itshape #1\end{minipage}\end{minipage}\par\vspace{2.2ex}}
+\newcommand{\mondo}[1]{\par\medskip\begin{tcolorbox}[enhanced,breakable,colback=white,colframe=white,borderline west={1.2pt}{0pt}{sigillo},left=4mm,right=0mm,top=0.5mm,bottom=0.5mm,boxsep=0mm,arc=0mm]
+  {\sffamily\scriptsize\addfontfeatures{LetterSpace=14}\color{grigio}LA LEZIONE PER IL MONDO}\par\smallskip #1\end{tcolorbox}}
+\newcommand{\conti}[1]{\par\bigskip\noindent\begin{minipage}{\linewidth}{\color{grigio}\rule{\linewidth}{0.4pt}}\\[1ex]
+  {\sffamily\scriptsize\addfontfeatures{LetterSpace=14}\color{grigio}PER CHI VUOLE I CONTI}\enspace{\small\itshape #1}\end{minipage}\par\medskip}
+\newcommand{\cronaca}[2]{\par\medskip\begin{tcolorbox}[enhanced,breakable,colback=sabbia,colframe=sabbia,arc=1mm,left=4mm,right=4mm,top=3mm,bottom=3mm]
+  {\sffamily\scriptsize\addfontfeatures{LetterSpace=14}\color{grigio}CRONACA DEL 2026}\par\smallskip
+  {\semibold #1}\par\smallskip{\small #2}\end{tcolorbox}\par\medskip}
+\newcommand{\registro}[2]{\par\medskip\begin{tcolorbox}[enhanced,colback=white,colframe=inchiostro,boxrule=0.5pt,arc=0mm,left=5mm,right=5mm,top=3mm,bottom=3mm]
+  {\sffamily\scriptsize\addfontfeatures{LetterSpace=14}\color{grigio}REGISTRO DEL DOJO}\par\smallskip
+  {\semibold #1}\par\smallskip #2\end{tcolorbox}\par\medskip}
+\newcommand{\epigrafe}[2]{\begin{flushright}\begin{minipage}{0.72\linewidth}\raggedleft\itshape #1\par\smallskip{\upshape\small\color{grigio}— #2}\end{minipage}\end{flushright}\vspace{6mm}}
+\newcommand{\code}[1]{{\ttfamily #1}}
+
+% formule: centrate, ridotte se più larghe della riga
+\newcommand{\aria}{\par\addvspace{2.4ex plus .6ex minus .3ex}}
+\newcommand{\formula}[1]{\aria\noindent\begin{adjustbox}{max width=\linewidth,center}$\displaystyle #1$\end{adjustbox}\aria}
+
+% codice
+\DefineVerbatimEnvironment{codice}{Verbatim}{fontsize=\small,frame=leftline,framerule=0.6pt,rulecolor=\color{grigio},xleftmargin=3mm,framesep=3mm}
+
+% figure: restano dove sono nel dialogo
+\newcommand{\figura}[2]{\par\addvspace{3.2ex plus .8ex minus .4ex}\noindent\begin{minipage}{\linewidth}\centering
+  \includegraphics[width=\linewidth]{figure/#1.pdf}\\[2.2mm]
+  {\sffamily\scriptsize\color{grigio}#2}\end{minipage}\par\addvspace{3.2ex plus .8ex minus .4ex}}
+
+% tabelle
+\setlength{\LTpre}{2.8ex plus .6ex}\setlength{\LTpost}{2.6ex plus .6ex}
+\newenvironment{tabella}[1]{\par\small\renewcommand{\arraystretch}{1.22}\setlength{\tabcolsep}{6pt}\xltabular{\linewidth}{#1}}{\endxltabular\par}
+\newenvironment{tabellanaturale}[1]{\par\small\renewcommand{\arraystretch}{1.22}\setlength{\tabcolsep}{9pt}\setlength{\LTleft}{\fill}\setlength{\LTright}{\fill}\longtable{#1}}{\endlongtable\par}
+\newenvironment{tabellaconti}[1]{\par\footnotesize\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{4pt}\xltabular{\linewidth}{#1}}{\endxltabular\par}
+% tabelle brevi: un blocco solo, non si spezzano tra due pagine
+\newcommand{\primatab}{\par\addvspace{2.8ex plus .6ex}\noindent}
+\newcommand{\dopotab}{\par\addvspace{2.6ex plus .6ex}}
+\newenvironment{tabellabreve}[1]{\primatab\minipage{\linewidth}\small\renewcommand{\arraystretch}{1.22}\setlength{\tabcolsep}{6pt}\tabularx{\linewidth}{#1}}{\endtabularx\endminipage\dopotab}
+\newenvironment{tabellapiccolabreve}[1]{\primatab\minipage{\linewidth}\footnotesize\renewcommand{\arraystretch}{1.08}\setlength{\tabcolsep}{6pt}\tabularx{\linewidth}{#1}}{\endtabularx\endminipage\dopotab}
+\newenvironment{tabellacontibreve}[1]{\primatab\minipage{\linewidth}\footnotesize\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{4pt}\tabularx{\linewidth}{#1}}{\endtabularx\endminipage\dopotab}
+\newenvironment{tabellanaturalebreve}[1]{\primatab\begin{minipage}{\linewidth}\centering\small\renewcommand{\arraystretch}{1.22}\setlength{\tabcolsep}{9pt}\begin{tabular}{#1}}{\end{tabular}\end{minipage}\dopotab}
+\newcommand{\thead}[1]{{\semibold #1}}
+
+% pagine iniziali
+\newenvironment{crediti}{\clearpage\thispagestyle{empty}\null\vfill\footnotesize\setlength{\parindent}{0pt}\setlength{\parskip}{1.1ex}\renewcommand{\scena}[1]{\par{\itshape ##1}\par}}{\par\clearpage}
+\newcommand{\epigrafelibro}[1]{\thispagestyle{empty}\null\vspace{60mm}\begin{flushright}\begin{minipage}{0.7\linewidth}\raggedleft\itshape\large #1\end{minipage}\end{flushright}\clearpage}
+\newcommand{\licenzabozza}{© 2026 Luca Zane. Tutti i diritti riservati.\par\textbf{Bozza 0.96 per i primi lettori: per favore non diffonderla.} Dalla versione 1.0 il libro sarà distribuito gratuitamente con licenza Creative Commons Attribuzione – Non commerciale – Non opere derivate 4.0 Internazionale (CC BY-NC-ND 4.0).}
+\newcommand{\colofone}{\clearpage\thispagestyle{empty}\null\vfill\begin{center}\begin{minipage}{0.8\linewidth}\centering\footnotesize\setlength{\parskip}{1ex}
+  {\sffamily\scriptsize\addfontfeatures{LetterSpace=14}\color{grigio}COLOFONE}\par\medskip}
+\newcommand{\finecolofone}{\end{minipage}\end{center}\vfill}
+
+\begin{document}
+\frontmatter
+\pagestyle{empty}
+% frontespizio
+\begin{titlingpage}
+  \centering\null\vspace{50mm}
+  {\sffamily\footnotesize\addfontfeatures{LetterSpace=20}\color{grigio}LUCA ZANE}\par\vspace{24mm}
+  {\fontsize{40}{46}\selectfont Il peso della pioggia\par}\vspace{6mm}
+  {\large L'intelligenza artificiale dal neurone\\ ai modelli che ragionano\par}\vspace{8mm}
+  {\color{sigillo}\rule{14mm}{0.8pt}}\par\vspace{8mm}
+  {\itshape un dialogo tra un allievo e il suo Maestro\par}
+  \vfill
+  {\sffamily\scriptsize\addfontfeatures{LetterSpace=14}\color{grigio}\BOZZA\par}
+\end{titlingpage}
+\pagestyle{libro}
+\input{body-front.tex}
+\mainmatter
+\input{body-main.tex}
+\finecolofone
+\end{document}

@@ -1,0 +1,12 @@
+{
+  "title": "Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "creators": [
+    {"name": "Zane, Luca"}
+  ],
+  "description": "<p>Un'introduzione all'intelligenza artificiale, dal singolo neurone ai modelli che ragionano, scritta come un dialogo tra un allievo e il suo Maestro, tra un dojo di karate e un piccolo porto. Per lettori con una base tecnica o scientifica.</p>",
+  "license": "cc-by-nc-nd-4.0",
+  "language": "ita",
+  "keywords": ["intelligenza artificiale", "reti neurali", "modelli linguistici", "apprendimento automatico", "divulgazione"]
+}
