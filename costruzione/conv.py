@@ -235,6 +235,8 @@ def blockquote(b, epigrafe):
 def figure(f):
     nid = f['data-embed'].split('/')[-1]
     cap = ''.join(inline(c) for c in f.find('figcaption').children) if f.find('figcaption') else ''
+    if nid == 'e2615d3a-c158':  # il disegno del Maestro, in fondo al foglio
+        return '\\disegnomaestro{%s}\n' % nid
     return '\\figura{%s}{%s}\n' % (nid, cap)
 
 def pre(p):

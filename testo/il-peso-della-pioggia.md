@@ -1,5 +1,7 @@
 # Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano
 
+Oct 16, 2026 · @Luca
+
 *Si può dare il meglio di sé proprio mentre si porta un peso che nessuno vede.*
 
 ## Crediti e licenza
@@ -101,9 +103,11 @@ Buon vento. Si comincia dalla cintura bianca.
 
 **Maestro:** Questo è il gesto più piccolo dell'arte. Un neurone artificiale riceve dei numeri, moltiplica ciascuno per un **peso**, somma tutto, aggiunge un **bias** e passa il risultato attraverso una funzione non lineare. Nient'altro. Tutta la conoscenza di una rete, anche della più grande, sta nei valori di quei pesi e di quei bias.
 
-[Figura: neurone artificiale · input pesati, somma, attivazione]
+&#91;embedded content: neurone artificiale · input pesati, somma, attivazione\]
 
-$$ y = f\left(\sum_{i=1}^{n} w_i x_i + b\right) = f(\mathbf{w}^\top \mathbf{x} + b) $$
+```latex
+y = f\left(\sum_{i=1}^{n} w_i x_i + b\right) = f(\mathbf{w}^\top \mathbf{x} + b)
+```
 
 **Maestro:** Guarda i tre ingredienti. Il peso dice quanto conta ogni input: grande e positivo amplifica, negativo inibisce, vicino a zero ignora. Il bias sposta la soglia: geometricamente, allontana dall'origine l'iperpiano che separa il sì dal no. E il prodotto scalare w·x misura quanto l'input somiglia al pattern scritto nei pesi. Ricordalo: lo ritroverai, con una sola scala in più, quando studieremo l'attention.
 
@@ -152,7 +156,9 @@ $$ y = f\left(\sum_{i=1}^{n} w_i x_i + b\right) = f(\mathbf{w}^\top \mathbf{x} +
 
 **Primo movimento: la somma pesata.** Moltiplica ogni input per il suo peso, somma, aggiungi il bias.
 
-$$ z = (2{,}0 \times 0{,}8) + (-1{,}5 \times 1) + (0{,}1 \times 1) + (-0{,}5) = 1{,}6 - 1{,}5 + 0{,}1 - 0{,}5 = -0{,}3 $$
+```latex
+z = (2{,}0 \times 0{,}8) + (-1{,}5 \times 1) + (0{,}1 \times 1) + (-0{,}5) = 1{,}6 - 1{,}5 + 0{,}1 - 0{,}5 = -0{,}3
+```
 
 **Secondo movimento: l'attivazione.** z da solo è un punteggio grezzo. La funzione f lo trasforma in una decisione:
 
@@ -166,7 +172,7 @@ $$ z = (2{,}0 \times 0{,}8) + (-1{,}5 \times 1) + (0{,}1 \times 1) + (-0{,}5) = 
 
 **Maestro:** Hai visto da dove viene la forza? Non dal braccio solo. Le gambe ne danno un po', le anche molto, la spalla un po' meno: ogni parte del corpo contribuisce con il suo peso. Quella somma è **z**: la somma pesata, l'intenzione. Ma una somma di forze non è ancora un colpo. Nel karate l'istante decisivo si chiama *kime*: la frazione di secondo in cui tutta la forza si concentra e il gesto prende la sua forma finale. Serve una regola che dica *come* la spinta diventa gesto. Quella regola è la **funzione di attivazione** f (*activation function*). Hai ragione: è il passaggio dalla teoria alla mossa.
 
-[Figura: tre funzioni di attivazione · gradino, sigmoide, ReLU]
+&#91;embedded content: tre funzioni di attivazione · gradino, sigmoide, ReLU\]
 
 **Maestro:** Tre karateka, tre modi di trasformare la stessa spinta in gesto.
 
@@ -234,7 +240,9 @@ La seconda la capirai bene alla lezione 3, ma te ne do il sapore adesso. Per cor
 
 **Maestro:** Ignora il compagno, che pesa poco, e guarda solo energia e pioggia. Il confine tra sì e no è dove z = 0:
 
-$$ 2{,}0\,x_1 - 1{,}5\,x_2 - 0{,}5 = 0 $$
+```latex
+2{,}0\,x_1 - 1{,}5\,x_2 - 0{,}5 = 0
+```
 
 Senza pioggia (x₂ = 0) ottieni x₁ = 0,25: ti basta un quarto di energia per andare. Con la pioggia (x₂ = 1) ottieni x₁ = 1: serve energia piena, e anche così sei appena sul confine. Quella retta nel piano (energia, pioggia) è l'"iperpiano" in due dimensioni. I pesi ne decidono l'inclinazione; il bias la sposta avanti e indietro.
 
@@ -244,7 +252,7 @@ Senza pioggia (x₂ = 0) ottieni x₁ = 0,25: ti basta un quarto di energia per 
 
 **Maestro:** Immagina che questa spiaggia sia una mappa delle serate. Più vai verso destra, più energia hai; più ti avvicini all'acqua, più piove forte. Ogni serata è un punto in cui posare i piedi. La linea divide la spiaggia in due zone: da una parte le serate in cui vai ad allenarti, dall'altra quelle in cui resti a casa. Quella linea è il confine del neurone. È tutto qui.
 
-[Figura: l'iperpiano · il confine tra sì e no del neurone della serata]
+&#91;embedded content: l'iperpiano · il confine tra sì e no del neurone della serata\]
 
 **Maestro:** Guarda dove l'ho tracciata. Tocca il bordo dell'asciutto a un quarto dell'energia: senza pioggia ti basta poco per andare. E arriva al bordo della pioggia forte solo a energia piena: sotto il diluvio ti serve tutta la forza che hai. Sono i due numeri di prima, 0,25 e 1.
 
@@ -286,7 +294,7 @@ Senza pioggia (x₂ = 0) ottieni x₁ = 0,25: ti basta un quarto di energia per 
 
 **Maestro:** Perché sia il profilo sia il candidato sono vettori, cioè frecce. Il profilo punta verso "veloce, abbastanza forte, paziente". Se la freccia del candidato punta dalla stessa parte, il prodotto è grande; se è di traverso, è circa zero; se punta dalla parte opposta, è negativo.
 
-[Figura: prodotto scalare · stessa direzione, perpendicolari, opposte]
+&#91;embedded content: prodotto scalare · stessa direzione, perpendicolari, opposte\]
 
 **Allievo:** Allora un candidato che ha tanto di tutto vince sempre?
 
@@ -400,7 +408,9 @@ Senza pioggia (x₂ = 0) ottieni x₁ = 0,25: ti basta un quarto di energia per 
 
 **Maestro:** Sì, e ha un nome preciso: **prodotto scalare** (dot product). Metti gli input in un vettore e i pesi in un altro, della stessa lunghezza. Moltiplichi gli elementi a coppie, nella stessa posizione, e sommi tutto. Entrano due vettori, esce un solo numero: per questo si chiama "scalare".
 
-$$ \mathbf{w} \cdot \mathbf{x} = \mathbf{w}^\top \mathbf{x} = (2{,}0)(0{,}8) + (-1{,}5)(1) + (0{,}1)(1) = 1{,}6 - 1{,}5 + 0{,}1 = 0{,}2 $$
+```latex
+\mathbf{w} \cdot \mathbf{x} = \mathbf{w}^\top \mathbf{x} = (2{,}0)(0{,}8) + (-1{,}5)(1) + (0{,}1)(1) = 1{,}6 - 1{,}5 + 0{,}1 = 0{,}2
+```
 
 **Maestro:** Poi aggiungi il bias: 0,2 − 0,5 = −0,3. È lo stesso z di prima, scritto in forma vettoriale. La notazione wᵀx dice: w come riga, x come colonna, riga per colonna.
 
@@ -426,11 +436,15 @@ $$ \mathbf{w} \cdot \mathbf{x} = \mathbf{w}^\top \mathbf{x} = (2{,}0)(0{,}8) + (
 
 **Maestro:** E l'errore? Se alla settimana 6 Kenta ne fa 25 invece di 22, l'errore è (22 − 25)² = 9. Se ti alleni 45 minuti invece di 32, è (32 − 45)² = 169. Il quadrato toglie il segno, perché sbagliare in più o in meno è lo stesso, e punisce molto di più gli errori grandi: sbagliare di 13 costa quasi venti volte più che sbagliare di 3. È l'**errore quadratico**.
 
-$$ \hat{y} = \mathbf{w}\cdot\mathbf{x} + b \qquad \text{errore} = (\hat{y} - y)^2 $$
+```latex
+\hat{y} = \mathbf{w}\cdot\mathbf{x} + b \qquad \text{errore} = (\hat{y} - y)^2
+```
 
 **Maestro:** Ora l'esame di cintura. Devo stimare se un allievo lo supererà, guardando le ore di allenamento. Con 10 ore la probabilità è quasi zero; con 200 è quasi certa; in mezzo sale in fretta. Una retta qui non va: con 400 ore direbbe più del 200% di probabilità, con poche ore scenderebbe sotto zero. Serve una curva a S, che parte piatta vicino a 0, sale, e si appiattisce vicino a 1. È la sigmoide, che in statistica si chiama **funzione logistica**: da qui il nome **regressione logistica**. Serve quando la risposta è un **sì o un no**: stessa somma pesata della regressione lineare, poi la sigmoide piega la retta perché resti tra 0 e 1. È esattamente il nostro neurone della serata. Si chiama "regressione" per ragioni storiche: stima un valore continuo, la probabilità, anche se poi la usi per decidere sì o no.
 
-$$ p = \sigma(\mathbf{w}\cdot\mathbf{x} + b) = \frac{1}{1 + e^{-(\mathbf{w}\cdot\mathbf{x} + b)}} $$
+```latex
+p = \sigma(\mathbf{w}\cdot\mathbf{x} + b) = \frac{1}{1 + e^{-(\mathbf{w}\cdot\mathbf{x} + b)}}
+```
 
 **Allievo:** E la cross-entropy?
 
@@ -446,7 +460,9 @@ $$ p = \sigma(\mathbf{w}\cdot\mathbf{x} + b) = \frac{1}{1 + e^{-(\mathbf{w}\cdot
 | p = 0,43 | −ln 0,43 ≈ **0,84**: incerto, penalità media | −ln 0,57 ≈ **0,56** |
 | p = 0,01 | −ln 0,01 ≈ **4,6**: sicurissimo e sbagliato, penalità enorme | −ln 0,99 ≈ **0,01** |
 
-$$ \text{errore} = -\big[\, y \ln p + (1 - y) \ln(1 - p) \,\big] $$
+```latex
+\text{errore} = -\big[\, y \ln p + (1 - y) \ln(1 - p) \,\big]
+```
 
 **Allievo:** Quindi punisce soprattutto chi sbaglia con sicurezza.
 
@@ -520,7 +536,14 @@ $$ \text{errore} = -\big[\, y \ln p + (1 - y) \ln(1 - p) \,\big] $$
 
 **Maestro:** Aggiungi un secondo neurone che risponde a un'altra domanda, "vado a correre al parco?", con pesi (1,0; −3,0; 0,5) e bias 0. Metti i due vettori di pesi uno sopra l'altro: ottieni una **matrice** W di 2 righe e 3 colonne. Moltiplicarla per x significa fare i due prodotti scalari in un colpo solo.
 
-$$ W\mathbf{x} + \mathbf{b} = \begin{pmatrix} 2{,}0 & -1{,}5 & 0{,}1 \\ 1{,}0 & -3{,}0 & 0{,}5 \end{pmatrix} \begin{pmatrix} 0{,}8 \\ 1 \\ 1 \end{pmatrix} + \begin{pmatrix} -0{,}5 \\ 0 \end{pmatrix} = \begin{pmatrix} 0{,}2 - 0{,}5 \\ -1{,}7 + 0 \end{pmatrix} = \begin{pmatrix} -0{,}3 \\ -1{,}7 \end{pmatrix} $$
+```latex
+W\mathbf{x} + \mathbf{b} =
+\begin{pmatrix} 2{,}0 & -1{,}5 & 0{,}1 \\ 1{,}0 & -3{,}0 & 0{,}5 \end{pmatrix}
+\begin{pmatrix} 0{,}8 \\ 1 \\ 1 \end{pmatrix}
++ \begin{pmatrix} -0{,}5 \\ 0 \end{pmatrix}
+= \begin{pmatrix} 0{,}2 - 0{,}5 \\ -1{,}7 + 0 \end{pmatrix}
+= \begin{pmatrix} -0{,}3 \\ -1{,}7 \end{pmatrix}
+```
 
 **Maestro:** Ogni riga della matrice è un neurone; ogni elemento del risultato è la sua risposta. La regola delle dimensioni: (2×3) per (3×1) dà (2×1). Le dimensioni interne, 3 e 3, devono coincidere: tanti pesi quanti input.
 
@@ -538,7 +561,7 @@ $$ W\mathbf{x} + \mathbf{b} = \begin{pmatrix} 2{,}0 & -1{,}5 & 0{,}1 \\ 1{,}0 & 
 
 **Maestro:** Facciamo di più: due neuroni che lavorano insieme, e un terzo che ascolta entrambi. Prima però guarda un limite del neurone solitario. Per lui la pioggia sottrae sempre la stessa quantità, 1,5, che tu sia pieno di energia o sfinito. Ma tu sai che non è così: quando sei in forma la pioggia quasi non ti tocca, quando sei stanco diventa la scusa perfetta. Un neurone solo non può esprimere questo "dipende". Due sì.
 
-[Figura: una piccola rete · 3 input, 2 neuroni nascosti, 1 uscita]
+&#91;embedded content: una piccola rete · 3 input, 2 neuroni nascosti, 1 uscita\]
 
 **Maestro:** Ogni neurone nascosto guarda la serata da un'angolatura diversa. Per farti vedere il movimento ho dato loro un nome; in una rete vera i neuroni nascosti non hanno nome, e scoprire cosa rilevano è un'indagine.
 
@@ -550,7 +573,14 @@ I due neuroni nascosti usano ReLU, max(0, z): se il punteggio è negativo il neu
 
 **Primo strato, in forma di matrice:**
 
-$$ \mathbf{h} = \text{ReLU}\!\left( \begin{pmatrix} 2{,}0 & 0 & 1{,}0 \\ -3{,}0 & 2{,}0 & 0 \end{pmatrix} \mathbf{x} + \begin{pmatrix} -1{,}0 \\ 0{,}5 \end{pmatrix}\right) \qquad y = \sigma\big(1{,}5\,h_1 - 2{,}0\,h_2 - 0{,}5\big) $$
+```latex
+\mathbf{h} = \text{ReLU}\!\left(
+\begin{pmatrix} 2{,}0 & 0 & 1{,}0 \\ -3{,}0 & 2{,}0 & 0 \end{pmatrix}
+\mathbf{x} +
+\begin{pmatrix} -1{,}0 \\ 0{,}5 \end{pmatrix}\right)
+\qquad
+y = \sigma\big(1{,}5\,h_1 - 2{,}0\,h_2 - 0{,}5\big)
+```
 
 **Maestro:** Ora quattro serate, e segui ogni numero.
 
@@ -734,7 +764,7 @@ $$ \mathbf{h} = \text{ReLU}\!\left( \begin{pmatrix} 2{,}0 & 0 & 1{,}0 \\ -3{,}0 
 
 *Il Maestro stende un foglio sul pavimento del dojo e disegna la serata di prima che attraversa la rete, filo dopo filo.*
 
-[Figura: passaggio in avanti · una serata attraverso 3 → 2 → 1]
+&#91;embedded content: passaggio in avanti · una serata attraverso 3 → 2 → 1\]
 
 **Maestro:** Leggilo da sinistra a destra, come un movimento in tre tempi.
 
@@ -765,7 +795,7 @@ $$ \mathbf{h} = \text{ReLU}\!\left( \begin{pmatrix} 2{,}0 & 0 & 1{,}0 \\ -3{,}0 
 
 **Maestro:** Prova a risolverlo con un solo neurone, una somma pesata e una soglia. Non ci riuscirai mai, e te lo dimostro in tre righe. Perché (0, 0) dia sì, il bias b dev'essere positivo. Perché (1, 0) dia no, serve w₁ + b ≤ 0, quindi w₁ ≤ −b. Perché (0, 1) dia no, allo stesso modo w₂ ≤ −b. Ma allora per (1, 1) la somma è w₁ + w₂ + b ≤ −b, che è negativo: no. E invece doveva essere sì. Contraddizione. Questo problema, nella sua versione rovesciata, ha un nome celebre, **XOR**, ed è quello che nel 1969 Minsky e Papert usarono per mostrare i limiti del percettrone. La ricerca sulle reti neurali rimase ferma per anni.
 
-[Figura: il problema delle coppie per il kumite · non separabile da una retta, separabile dopo la ReLU]
+&#91;embedded content: il problema delle coppie per il kumite · non separabile da una retta, separabile dopo la ReLU\]
 
 **Allievo:** E con due neuroni?
 
@@ -781,7 +811,9 @@ $$ \mathbf{h} = \text{ReLU}\!\left( \begin{pmatrix} 2{,}0 & 0 & 1{,}0 \\ -3{,}0 
 
 **Maestro:** Ecco il punto che dovevi sentire nelle mani. Senza ReLU, h₁ = A − B e h₂ = B − A. Sommali: (A − B) + (B − A) = **0**. Sempre zero, per qualsiasi coppia. I due neuroni si annullano a vicenda e la rete diventa cieca. Non è un caso sfortunato: è la regola. Due strati lineari uno dopo l'altro, W₂(W₁x), sono identici a un solo strato con matrice W₂W₁. Ne puoi impilare cento: senza attivazione resta una sola somma pesata travestita.
 
-$$ W_2(W_1\mathbf{x}) = (W_2 W_1)\,\mathbf{x} \quad\Rightarrow\quad \text{cento strati lineari} = \text{uno strato lineare} $$
+```latex
+W_2(W_1\mathbf{x}) = (W_2 W_1)\,\mathbf{x} \quad\Rightarrow\quad \text{cento strati lineari} = \text{uno strato lineare}
+```
 
 **Maestro:** La non linearità è ciò che permette a ogni strato di aggiungere qualcosa di nuovo invece di ripetere il precedente. È il tai sabaki dentro la rete: sotto una soglia taccio, sopra agisco. Con questo semplice interruttore, ripetuto milioni di volte, una rete può piegare lo spazio quante volte serve, fino a separare un gatto da un cane, o una frase giusta da una sbagliata.
 
@@ -793,7 +825,7 @@ $$ W_2(W_1\mathbf{x}) = (W_2 W_1)\,\mathbf{x} \quad\Rightarrow\quad \text{cento 
 
 **Maestro:** Oggi hai costruito la tua prima piccola rete: strati di neuroni, ognuno collegato a tutti quelli dello strato prima, il segnale sempre in avanti. Questa forma ha un nome: **Multi-Layer Perceptron** (percettrone multistrato), MLP, o rete feed-forward. È la più antica e la più semplice, ed è ancora viva dentro ogni Transformer, nel blocco che chiamano proprio feed-forward. Ci restano due domande prima di sera: perché conviene andare in **profondità**, cioè impilare molti strati, e che cosa significa davvero il numero che esce alla fine.
 
-[Figura: MLP · input, due strati nascosti, output]
+&#91;embedded content: MLP · input, due strati nascosti, output\]
 
 **Allievo:** Perché tanti strati? Cosa fa ognuno?
 
@@ -874,7 +906,9 @@ $$ W_2(W_1\mathbf{x}) = (W_2 W_1)\,\mathbf{x} \quad\Rightarrow\quad \text{cento 
 
 **Maestro:** Prendi un modello che stima se un pagamento è una frode. Un falso allarme costa una telefonata al cliente: diciamo 5 euro. Una frode non vista costa in media 2.000 euro. Conviene intervenire quando la perdita attesa se taci supera quella se dai l'allarme, cioè quando p × 2.000 è maggiore di (1 − p) × 5. Fai il conto: la soglia scende a circa lo 0,25%. Altro che 50%: allerti anche quando il modello è quasi sicuro che vada tutto bene.
 
-$$ p^{*} = \frac{C_{\text{falso allarme}}}{C_{\text{falso allarme}} + C_{\text{caso mancato}}} = \frac{5}{5 + 2000} \approx 0{,}25\% $$
+```latex
+p^{*} = \frac{C_{\text{falso allarme}}}{C_{\text{falso allarme}} + C_{\text{caso mancato}}} = \frac{5}{5 + 2000} \approx 0{,}25\%
+```
 
 **Allievo:** E il prezzo da pagare?
 
@@ -981,13 +1015,15 @@ $$ p^{*} = \frac{C_{\text{falso allarme}}}{C_{\text{falso allarme}} + C_{\text{c
 
 **Maestro:** Guarda cosa fai senza accorgertene. Guardi quanto la prua è lontana dal faro: è l'errore. Capisci se sei troppo a destra o troppo a sinistra: è la direzione in cui correggere. Muovi la barra di poco, e aspetti di vedere l'effetto. Poi ricominci. Se la muovi troppo, la barca sbanda da una parte all'altra e non arriva mai; se la muovi troppo poco, il vento ti porta via prima che tu abbia corretto. Ecco come impara una rete. Fa un tentativo, misura quanto ha sbagliato, capisce in che direzione correggere ogni peso, corregge di poco. Poi ricomincia. Milioni di volte. Il nome tecnico è discesa del gradiente; il nome vero è disciplina. E anche quanto muovi la barra ha un nome: tra poco lo chiamerai learning rate.
 
-[Figura: ciclo di addestramento · 4 passi ripetuti]
+&#91;embedded content: ciclo di addestramento · 4 passi ripetuti\]
 
 **Allievo:** Come fa la rete a sapere di aver sbagliato?
 
 **Maestro:** Glielo dici tu, con la **loss** (funzione di perdita): la definizione operativa di "fare bene". Per la regressione si usa spesso l'errore quadratico medio, la media di (ŷ − y)². Per la classificazione la **cross-entropy** (entropia incrociata): meno il logaritmo della probabilità assegnata alla risposta giusta. È il logaritmo naturale, che nella lezione 1 scrivevamo ln: nei paper e qui sotto lo trovi scritto log. Gli LLM si allenano esattamente così, e la risposta giusta è il token successivo del testo.
 
-$$ \mathcal{L}_{CE} = -\sum_{t} \log p_\theta(x_t \mid x_{<t}) $$
+```latex
+\mathcal{L}_{CE} = -\sum_{t} \log p_\theta(x_t \mid x_{<t})
+```
 
 **Allievo:** E poi come si corregge?
 
@@ -1007,7 +1043,7 @@ $$ \mathcal{L}_{CE} = -\sum_{t} \log p_\theta(x_t \mid x_{<t}) $$
 
 **Maestro:** Ecco il **learning rate**. È quanto lasci correre la barca prima della calata successiva. Se tieni la vela piena e la lasci correre troppo a lungo, attraversi tutta la conca e ti ritrovi sul versante opposto, magari in acqua più bassa di prima. Allo scandaglio successivo correggi all'indietro, ancora troppo, e la barca rimbalza da una sponda all'altra, sempre più lontano dal fondo. È la **divergenza**. Se invece lasci la vela quasi sventata, con pochissimo vento dentro, e avanzi di mezzo metro alla volta, non sbagli mai rotta, ma calerà la notte prima che tu arrivi. Il buon pescatore avanza deciso quando sente il fondo pendere molto e rallenta quando lo sente spianarsi: è quello che fanno, a modo loro, gli ottimizzatori che vedrai tra poco.
 
-[Figura: discesa del gradiente · tre learning rate sulla stessa baia]
+&#91;embedded content: discesa del gradiente · tre learning rate sulla stessa baia\]
 
 **Allievo:** E il mini-batch?
 
@@ -1037,7 +1073,9 @@ $$ \mathcal{L}_{CE} = -\sum_{t} \log p_\theta(x_t \mid x_{<t}) $$
 
 **Maestro:** Entra lo stesso, ed è qui che le due strade si incontrano. Il modello non può calcolare come il pescato cambierebbe spostando un peso, perché il mare non si lascia derivare. Ma può calcolare come spostare i pesi per rendere **più probabili** le scelte che ha appena fatto. Allora fa così: se la giornata è andata meglio del solito, rende più probabili tutte le scelte di quella giornata; se è andata peggio, le rende meno probabili. La correzione dei pesi usa la stessa backpropagation e lo stesso learning rate che hai visto oggi. Cambia solo da dove viene il segnale: non più lo scandaglio a ogni passo, ma il cesto a fine giornata. E cambia il verso: qui non cerchi la conca più profonda dell'errore, ma la cima più alta del pescato. Si chiama salita del gradiente, ed è la stessa discesa vista dall'altra parte: salire sul pescato equivale a scendere sul pescato cambiato di segno.
 
-$$ \text{correzione} \;\propto\; (\text{ricompensa} - \text{ricompensa abituale}) \times \nabla \log p(\text{scelta}) $$
+```latex
+\text{correzione} \;\propto\; (\text{ricompensa} - \text{ricompensa abituale}) \times \nabla \log p(\text{scelta})
+```
 
 **Maestro:** Leggi la formula così: quanto la giornata è andata meglio del solito, per la direzione che rende quella scelta più probabile. Come si calcola quella direzione per ogni filo della rete te lo mostro nella prossima seduta: è la backpropagation. Il "meglio del solito" conta: se ogni giornata porta un po' di pesce e le premiassi tutte, il pescatore rafforzerebbe anche le scelte mediocri: imparerebbe lo stesso, ma lentissimo, tra mille spinte nella direzione sbagliata. Il confronto con il solito toglie quel rumore: incoraggia ciò che è andato meglio e scoraggia ciò che è andato peggio.
 
@@ -1099,7 +1137,7 @@ $$ \text{correzione} \;\propto\; (\text{ricompensa} - \text{ricompensa abituale}
 
 **Maestro:** Supponi che quella sera, con energia 0,8, pioggia e compagno, **tu non sia andato**. La verità era 0; la rete ha detto 0,85. Ha sbagliato di molto. Segui l'errore che risale.
 
-[Figura: backpropagation · l'errore torna indietro lungo gli stessi fili]
+&#91;embedded content: backpropagation · l'errore torna indietro lungo gli stessi fili\]
 
 **Primo tempo: l'errore in uscita.** Con sigmoide e cross-entropy il segnale d'errore all'uscita è semplicissimo: risposta meno verità. 0,85 − 0 = **+0,85**. Positivo significa "hai detto troppo sì".
 
@@ -1178,7 +1216,9 @@ La ReLU lascia passare il segnale perché entrambi i neuroni erano accesi. Se un
 
 **Maestro:** Un modello grande, oggi, può avere 70 miliardi di parametri ed essere allenato su circa 15 mila miliardi di token. Ogni token, per ogni parametro, costa circa 6 operazioni tra andata e ritorno. Fai il conto:
 
-$$ 6 \times 7 \cdot 10^{10} \times 1{,}5 \cdot 10^{13} \approx 6 \cdot 10^{24} \text{ operazioni} $$
+```latex
+6 \times 7 \cdot 10^{10} \times 1{,}5 \cdot 10^{13} \approx 6 \cdot 10^{24} \text{ operazioni}
+```
 
 **Maestro:** Una GPU moderna, nella pratica, regge qualche centinaio di migliaia di miliardi di operazioni al secondo: diciamo 4 · 10¹⁴. Da sola, per finire, le servirebbero **circa cinquecento anni**. Con diecimila GPU che lavorano insieme, **meno di tre settimane**.
 
@@ -1425,7 +1465,9 @@ $$ 6 \times 7 \cdot 10^{10} \times 1{,}5 \cdot 10^{13} \approx 6 \cdot 10^{24} \
 2. **Normalizzazione**: BatchNorm (2015) normalizza sul gruppo di esempi, tipica delle CNN; LayerNorm e RMSNorm normalizzano sul singolo esempio, standard nei Transformer.
 3. **Connessioni residue** (ResNet, 2015): ogni blocco calcola x + F(x) invece di F(x). Il gradiente ha una strada diretta all'indietro attraverso la somma, e rischia molto meno di svanire.
 
-$$ \text{uscita} = x + F(x) \quad\Rightarrow\quad \frac{\partial\,\text{uscita}}{\partial x} = 1 + \frac{\partial F}{\partial x} $$
+```latex
+\text{uscita} = x + F(x) \quad\Rightarrow\quad \frac{\partial\,\text{uscita}}{\partial x} = 1 + \frac{\partial F}{\partial x}
+```
 
 **Maestro:** Guarda quell'1: è una seconda cima, tesa diritta dalla tua mano alla vela, senza passare per nessun bozzello. Qualunque cosa facciano i bozzelli di F, quella cima resta tesa: la forza ha sempre una strada diretta. È forse l'idea architetturale più importante dell'ultimo decennio: ogni Transformer la usa due volte per strato.
 
@@ -1585,7 +1627,7 @@ print(colpe(w, x, 0.0))           # non sono andato: circa [0.44 0.55 0.55]
 
 **Kata per casa.**
 
-1. Copia le righe PyTorch dell'attrezzeria e prova learning rate di 0,01, 0,1 e 1, partendo ogni volta dagli stessi pesi: fissa il seme, con torch.manual_seed(0), prima di creare la rete. Confronta quanto scende la probabilità dopo 100 passi.
+1. Copia le righe PyTorch dell'attrezzeria e prova learning rate di 0,01, 0,1 e 1, partendo ogni volta dagli stessi pesi: fissa il seme, con torch.manual\_seed(0), prima di creare la rete. Confronta quanto scende la probabilità dopo 100 passi.
 2. Nelle righe JAX, aggiungi il bias come quarto peso: metti −0,5 in fondo ai pesi e un 1 in fondo all'input. Calcola le colpe e verifica che quella del bias sia uguale al segnale d'errore, p − y.
 
 ## Lezione 5 · Le CNN, l'arte dello sguardo (verso la cintura arancione)
@@ -1622,7 +1664,7 @@ print(colpe(w, x, 0.0))           # non sono andato: circa [0.44 0.55 0.55]
 
 **Maestro:** Il filtro, passato su tutta l'immagine, produce una nuova immagine fatta dei suoi punteggi: la **mappa** del filtro (*feature map*). È come la tua carta con i punti a matita: chiara dove ha trovato il suo disegno, scura altrove. E come sempre i pesi del filtro nessuno li sceglie a mano: partono a caso e l'allenamento li corregge, finché il filtro non cerca un disegno utile.
 
-[Figura: pipeline di una CNN · da pixel a classe]
+&#91;embedded content: pipeline di una CNN · da pixel a classe\]
 
 **Allievo:** E con un'immagine a colori? E una lente sola basta?
 
@@ -1801,11 +1843,13 @@ print(colpe(w, x, 0.0))           # non sono andato: circa [0.44 0.55 0.55]
 
 **Maestro:** Hai appena lavorato come una **recurrent neural network** (rete ricorrente), una RNN. A ogni passo riceve due cose: l'elemento nuovo, la frase o la lettura del barometro, e il foglietto del passo prima. Ne fa una somma pesata, come sempre, e scrive un foglietto nuovo. Il foglietto si chiama **hidden state** (stato nascosto), h: è la memoria della rete, un vettore di numeri che riassume tutto il passato. "Ricorrente" vuol dire proprio questo: l'uscita di un passo rientra come ingresso del passo dopo. Fino al 2017 è stata la forma regina per il testo, la voce e le serie nel tempo.
 
-[Figura: RNN srotolata nel tempo · 4 passi]
+&#91;embedded content: RNN srotolata nel tempo · 4 passi\]
 
 **Maestro:** Leggi il disegno da sinistra a destra: è la stessa cella, con gli stessi pesi, ricopiata una volta per ogni passo. In formula:
 
-$$ h_t = \tanh(W_h\, h_{t-1} + W_x\, x_t + b) $$
+```latex
+h_t = \tanh(W_h\, h_{t-1} + W_x\, x_t + b)
+```
 
 **Maestro:** Non spaventarti. Leggila così: il foglietto di oggi, h con t, è una somma pesata del foglietto di ieri, h con t−1, e della novità di oggi, x con t, più il solito bias. Poi passa per tanh, una parente della sigmoide che hai visto nella tabella delle attivazioni: invece che tra 0 e 1, schiaccia tutto tra −1 e 1, così il foglietto non può riempirsi all'infinito.
 
@@ -1876,7 +1920,7 @@ $$ h_t = \tanh(W_h\, h_{t-1} + W_x\, x_t + b) $$
 
 **Kata per casa.**
 
-1. Srotola a mano una piccola RNN: h_t = tanh(0,5 · h_{t−1} + x_t), con h₀ = 0 e input (1; 0; 0). Che cosa succede al ricordo del primo input? (Ti servono tanh(1) ≈ 0,76 e, per x piccoli, tanh(x) ≈ x.)
+1. Srotola a mano una piccola RNN: h\_t = tanh(0,5 · h\_{t−1} + x\_t), con h₀ = 0 e input (1; 0; 0). Che cosa succede al ricordo del primo input? (Ti servono tanh(1) ≈ 0,76 e, per x piccoli, tanh(x) ≈ x.)
 2. Spiega con parole tue perché una RNN non può elaborare il terzo token prima di aver finito il secondo, e che cosa comporta per le GPU.
 
 **Allievo:** Il foglietto che si riempie e dimentica i primi nomi. Ora capisco perché tutti parlavano dell'attention come di una liberazione: era il foglietto a essere troppo piccolo, non l'allievo a essere distratto.
@@ -2047,7 +2091,7 @@ $$ h_t = \tanh(W_h\, h_{t-1} + W_x\, x_t + b) $$
 
 **Maestro:** Ora barca e nave stanno vicine, pesce è dalla stessa parte del mare ma tra i vivi, gatto è all'opposto. Questa coppia di numeri è un **embedding**: il posto di una parola in uno spazio dove la vicinanza vuol dire somiglianza. Nei modelli veri le direzioni non sono due ma centinaia o migliaia, e nessuno le ha scelte né battezzate, come nessuno aveva scelto le lenti della lezione 5 o le angolature dei neuroni nascosti. Si imparano.
 
-[Figura: spazio degli embedding · analogie come vettori]
+&#91;embedded content: spazio degli embedding · analogie come vettori\]
 
 **Allievo:** E chi assegna i posti, se nessuno sceglie le direzioni?
 
@@ -2093,7 +2137,9 @@ $$ h_t = \tanh(W_h\, h_{t-1} + W_x\, x_t + b) $$
 
 **Maestro:** Te l'avevo promesso alla prima lezione, con i candidati per la gara: il prodotto scalare misura la somiglianza, ma cresce anche con la lunghezza delle frecce. Per guardare solo la direzione si divide per le due lunghezze. Si chiama **similarità coseno**: vale 1 se le frecce puntano dalla stessa parte, 0 se sono perpendicolari, cioè se ciò che hanno in comune e ciò che le oppone si bilanciano, −1 se puntano in versi opposti.
 
-$$ \cos(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert\, \lVert \mathbf{b} \rVert} $$
+```latex
+\cos(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert\, \lVert \mathbf{b} \rVert}
+```
 
 **Maestro:** Sulla nostra piccola mappa, confrontando tutto con "barca": nave 0,99, quasi gemelle. Pesce 0: in comune il mare, opposti tra oggetto e vivo, e le due cose si annullano. Trattore −0,12: in comune l'essere un oggetto, opposti tra terra e mare. Gatto −1: opposto su tutto.
 
@@ -2258,7 +2304,7 @@ $$ \cos(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mat
 
 **Maestro:** Risolti tutti e due in un colpo. Il foglietto che dimenticava non c'è più: ogni parola guarda direttamente tutte le altre, sulla pagina aperta, per quanto lontane siano. E l'equipaggio con una sola cima non c'è più: guarda i miei allievi, si muovono tutti insieme. Ogni parola fa il suo lavoro nello stesso istante delle altre, e le schede grafiche, che amano fare migliaia di conti insieme, finalmente lavorano a pieno. È per questo che si sono potuti allenare modelli enormi su montagne di testo.
 
-[Figura: foglietto contro mercato · in fila o tutti insieme]
+&#91;embedded content: foglietto contro mercato · in fila o tutti insieme\]
 
 **Allievo:** Ma che cosa vuol dire, esattamente, che una parola "guarda" le altre? Alla lezione 7 mi aveva promesso di mostrarmi come la pesca scivola verso il mare o verso la frutta.
 
@@ -2286,15 +2332,17 @@ $$ \cos(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mat
 
 **Maestro:** Nella frase "Al banco della frutta, la pesca...", invece, il cartello di "frutta" direbbe frutta, (0; 2), e la sua merce sarebbe (0; 1). Stessa domanda, risposta opposta: la pesca scivola verso la frutta. È il passo che ti avevo promesso: gli embedding contestuali nascono così, banco dopo banco, strato dopo strato.
 
-[Figura: il giro al mercato · confrontare, dividere, raccogliere]
+&#91;embedded content: il giro al mercato · confrontare, dividere, raccogliere\]
 
 **Allievo:** E le liste, i cartelli e le merci chi li decide?
 
 **Maestro:** L'allenamento, come sempre. Ogni parola entra con il suo embedding, il suo posto sulla mappa. Tre matrici di pesi, una per ruolo, lo trasformano nella sua query, nella sua key e nel suo value: le tre facce della stessa parola. Quelle tre matrici partono a caso e la backpropagation le corregge, finché le parole imparano quali domande fare e quali cartelli esporre. In formula, l'intero mercato si scrive così:
 
-$$ \text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{Q K^\top}{\sqrt{d_k}}\right) V $$
+```latex
+\text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{Q K^\top}{\sqrt{d_k}}\right) V
+```
 
-**Maestro:** Leggila da sinistra a destra. Q Kᵀ sono tutti i prodotti scalari tra ogni lista e ogni cartello. La softmax li trasforma in gocce. Moltiplicare per V mescola le merci. Resta solo quel √d_k, la radice di quanti numeri ha ogni query. Con centinaia di numeri i prodotti scalari diventano grandi, e una softmax su punteggi enormi diventa un gradino: tutte le gocce su un banco solo, e le altre a zero. Ricordi la sigmoide che si appiattisce agli estremi e smette di imparare? Dividere per √d_k tiene i punteggi in una misura ragionevole. Nel nostro esempio, con due numeri, dividere per √2 avrebbe dato 80% e 20% invece di 88% e 12%.
+**Maestro:** Leggila da sinistra a destra. Q Kᵀ sono tutti i prodotti scalari tra ogni lista e ogni cartello. La softmax li trasforma in gocce. Moltiplicare per V mescola le merci. Resta solo quel √d\_k, la radice di quanti numeri ha ogni query. Con centinaia di numeri i prodotti scalari diventano grandi, e una softmax su punteggi enormi diventa un gradino: tutte le gocce su un banco solo, e le altre a zero. Ricordi la sigmoide che si appiattisce agli estremi e smette di imparare? Dividere per √d\_k tiene i punteggi in una misura ragionevole. Nel nostro esempio, con due numeri, dividere per √2 avrebbe dato 80% e 20% invece di 88% e 12%.
 
 **Allievo:** E il prezzo della pagina aperta, di cui mi parlava alla veglia?
 
@@ -2314,7 +2362,7 @@ $$ \text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{Q K^\top}{\sqrt{d_k}}
 
 **Maestro:** Per questo, quando scrive, il mercato ha una regola, la stessa delle file del dojo: chi sta dietro vede chi ha davanti, mai chi ha alle spalle. Ogni parola può visitare il proprio banco e quelli delle parole che vengono prima di lei, mai quelli delle parole future. Si chiama **causal mask** (maschera causale). E c'è un dono nascosto. In allenamento, una sola frase di cento parole diventa cento esercizi di "indovina la parola successiva", tutti risolti nello stesso passaggio: ogni parola si allena a prevedere la sua vicina, senza poterla sbirciare. Ricordi il testo che contiene già la propria risposta, alla lezione 3? Il Transformer ne fa cento in un colpo.
 
-[Figura: la tabella degli sguardi · chi guarda chi, e il triangolo spento]
+&#91;embedded content: la tabella degli sguardi · chi guarda chi, e il triangolo spento\]
 
 **Maestro:** E sappi che non tutti scrivono così, una parola dopo l'altra senza mai guardare avanti. C'è una scuola che parte da un'immagine fatta solo di rumore, o da una frase tutta coperta, e la rifinisce intera, a passate successive, come uno scultore che toglie marmo finché appare la statua. Sono i modelli a diffusione. Li vedrai alla lezione 13.
 
@@ -2326,7 +2374,7 @@ $$ \text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{Q K^\top}{\sqrt{d_k}}
 
 **Maestro:** E ora guarda l'edificio intero. Riconoscerai ogni pezzo. Le parole entrano come embedding, con la loro posizione. Poi c'è un blocco, sempre uguale, ripetuto decine di volte: è il kata del Transformer. La stessa sequenza di movimenti, eseguita ancora e ancora, e a ogni ripetizione ogni parola ne esce un po' più compresa. In ogni blocco, prima il mercato dell'attenzione, dove le parole si scambiano informazioni. Poi un piccolo MLP, la rete della lezione 2, che lavora su ogni parola da sola e la rielabora: si dice che è lì che il modello conserva molto di ciò che sa. E intorno a ciascuno dei due, il tuo motto: la forza tarata, ritesa a ogni passaggio dalla normalizzazione, e la via diretta della connessione residua. In cima, la testa che serve: per scrivere, la softmax su tutto il vocabolario. Come nel kata, la forma non cambia mai; cambia ciò che porta, passata dopo passata.
 
-[Figura: Transformer decoder-only · un blocco ripetuto N volte]
+&#91;embedded content: Transformer decoder-only · un blocco ripetuto N volte\]
 
 **Mokusō.** *Ogni testa guarda una cosa diversa, e nessuna vede tutto. Tra le persone che hai intorno, chi guarda che cosa? E che cosa non guarda nessuno?*
 
@@ -2344,7 +2392,7 @@ $$ \text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{Q K^\top}{\sqrt{d_k}}
 
 **Maestro:** Basta la seconda metà. Ogni parola guarda solo indietro, e scrive la successiva. È la scuola **decoder-only** (solo decoder): GPT, Llama e, a quanto se ne sa, Claude e Gemini. Guarda le tre insieme.
 
-[Figura: tre scuole · come guarda la parola evidenziata]
+&#91;embedded content: tre scuole · come guarda la parola evidenziata\]
 
 **Maestro:** Ora che le conosci, te le faccio combattere.
 
@@ -2393,7 +2441,7 @@ Finora abbiamo seguito una parola sola. Ma nel mercato fanno il giro tutte insie
 | pesca | (1; 1) | (1; 1) | (0,5; 0,5) |
 
 1. **Confrontare.** Ogni lista con ogni cartello, compreso il proprio: nove prodotti scalari, una tabella 3×3. La riga di «pesca» dà 0 con «ieri», 2 con «barca», 2 con se stessa.
-2. **Dividere.** Una softmax per ogni riga. «Pesca» divide le sue monete così: 6 a «ieri», 47 a «barca», 47 a se stessa. «Barca»: 9, 66 e 25. «Ieri», che non cerca niente, divide in parti uguali: 33 a testa. Per tenere i numeri semplici qui non ho diviso per √d_k, cioè per √2: con la divisione «pesca» darebbe 11, 45 e 45, la stessa scelta un po' più morbida.
+2. **Dividere.** Una softmax per ogni riga. «Pesca» divide le sue monete così: 6 a «ieri», 47 a «barca», 47 a se stessa. «Barca»: 9, 66 e 25. «Ieri», che non cerca niente, divide in parti uguali: 33 a testa. Per tenere i numeri semplici qui non ho diviso per √d\_k, cioè per √2: con la divisione «pesca» darebbe 11, 45 e 45, la stessa scelta un po' più morbida.
 3. **Raccogliere.** Ogni riga mescola le merci con le sue monete. Il cesto di «pesca» è 0,47 × (1; 0) + 0,47 × (0,5; 0,5), circa (0,70; 0,23): molto più mare che frutta.
 
 Hai appena fatto a mano ciò che la formula scrive in una riga. Le liste messe una sotto l'altra sono la matrice Q, i cartelli la matrice K, le merci la matrice V. Q per Kᵀ è la tabella dei nove punteggi; la softmax lavora riga per riga; il risultato moltiplicato per V sono i tre cesti. Ed ecco perché le schede grafiche amano il Transformer: dentro ci sono solo moltiplicazioni di matrici, le stesse della lezione 2.
@@ -2522,7 +2570,7 @@ Ma non tutte le teste sono così leggibili. Molte fanno cose miste, difficili da
 
 **Maestro:** Hai letto la curva meglio di molti giornali. Ogni volta che il calcolo cresce di cento volte, la parte di errore che si può ancora togliere si dimezza. E sotto c'è un fondo che nessuna scala toglie, perché certe parole successive sono davvero imprevedibili, come certe onde che nessuna carta prevede.
 
-[Figura: curve dello studio Chinchilla (Hoffmann et al., 2022) · modelli allenati con 20 token per parametro]
+&#91;embedded content: curve dello studio Chinchilla (Hoffmann et al., 2022) · modelli allenati con 20 token per parametro\]
 
 **Allievo:** Allora la strada è chiara. Per vincere, costruisco la nave più grande che posso.
 
@@ -2608,7 +2656,9 @@ Ma non tutte le teste sono così leggibili. Molte fanno cose miste, difficili da
 
 Uno studio del 2022 ha misurato centinaia di modelli e ha riassunto i risultati in una formula che lega la loss L al numero di parametri N e di token D:
 
-$$ L(N, D) = E + \frac{A}{N^{\alpha}} + \frac{B}{D^{\beta}} \qquad E = 1{,}69 \quad A = 406{,}4 \quad B = 410{,}7 \quad \alpha = 0{,}34 \quad \beta = 0{,}28 $$
+```latex
+L(N, D) = E + \frac{A}{N^{\alpha}} + \frac{B}{D^{\beta}} \qquad E = 1{,}69 \quad A = 406{,}4 \quad B = 410{,}7 \quad \alpha = 0{,}34 \quad \beta = 0{,}28
+```
 
 E è il fondo irriducibile; il secondo termine è ciò che perdi perché il modello è piccolo, il terzo perché ha letto poco. Il calcolo, come alla lezione 3, vale circa 6 · N · D operazioni. Ecco che cosa prevede la formula per modelli allenati con 20 token per parametro:
 
@@ -2731,7 +2781,7 @@ Prendi i numeri assoluti con le pinze: dipendono dai dati e dal tokenizer di que
 
 **Maestro:** In certi tornei di taekwondo i punti li assegna un sensore nel corpetto. Molti atleti hanno imparato colpi rapidi e leggeri, fatti più per la macchina che per il combattimento: punti alti, combattimento brutto. Con il codice è stato osservato lo stesso. Modelli recenti, premiati quando i test passavano, hanno a volte imparato a far passare i test, scrivendo un caso speciale proprio per loro o modificandoli, invece di correggere il programma. Anche un giudice automatico si aggira, se misura qualcosa di più facile della cosa che vuoi davvero. È la lezione per il mondo della lezione 3: un modello ottimizza esattamente ciò che gli dai, non ciò che avevi in mente.
 
-[Figura: ciclo di vita di un LLM · da modello base ad assistente]
+&#91;embedded content: ciclo di vita di un LLM · da modello base ad assistente\]
 
 Ecco il percorso intero, dall'archivio all'assistente. Il grosso del calcolo sta a sinistra; ma il carattere del modello, che cosa fa quando non sa, quanto ti dà ragione, quanto si dilunga, si decide a destra.
 
@@ -2777,13 +2827,17 @@ Ecco il percorso intero, dall'archivio all'assistente. Il grosso del calcolo sta
 
 Il giudice impara dalle coppie. Per ogni domanda x una persona ha preferito la risposta yᵥ, la vincente, alla yₚ, la perdente. Il reward model r dà un punteggio a ciascuna, e si allena perché sappia prevedere la scelta della persona:
 
-$$ P(y_v \succ y_p) = \sigma\big(r(x, y_v) - r(x, y_p)\big) $$
+```latex
+P(y_v \succ y_p) = \sigma\big(r(x, y_v) - r(x, y_p)\big)
+```
 
 È la sigmoide della lezione 1, applicata alla differenza tra due punteggi: conta solo di quanto una risposta batte l'altra. Se la vincente prende 2 e la perdente 0, il giudice prevede l'88% di probabilità che la persona scelga la prima: lo stesso 88% del mercato della lezione 8, perché una softmax tra due sole possibilità è proprio una sigmoide della loro differenza.
 
-Poi il modello, che chiamiamo π, impara a scrivere risposte con un punteggio alto, restando legato a com'era dopo gli esempi da copiare, π_ref:
+Poi il modello, che chiamiamo π, impara a scrivere risposte con un punteggio alto, restando legato a com'era dopo gli esempi da copiare, π\_ref:
 
-$$ \max_{\pi} \; \mathbb{E}_{x,\; y \sim \pi}\big[\, r(x, y) \,\big] \;-\; \beta \, \mathrm{KL}\big(\pi \,\|\, \pi_{\text{ref}}\big) $$
+```latex
+\max_{\pi} \; \mathbb{E}_{x,\; y \sim \pi}\big[\, r(x, y) \,\big] \;-\; \beta \, \mathrm{KL}\big(\pi \,\|\, \pi_{\text{ref}}\big)
+```
 
 Il primo termine è il giudice: più punti, meglio è. Il secondo è la cima. La **KL divergence** (divergenza di Kullback-Leibler) misura quanto le probabilità del nuovo modello si sono allontanate da quelle di prima, e β dice quanto è corta la cima. Cima troppo lunga, β piccolo: il modello si allontana pur di piacere al giudice, ed ecco il reward hacking. Cima troppo corta, β grande: resta com'era, e non impara niente. La DPO parte proprio da questa formula: con un passaggio di calcolo si scopre che la si può ottimizzare direttamente sulle coppie preferite, senza costruire il giudice.
 
@@ -2923,7 +2977,7 @@ Il primo termine è il giudice: più punti, meglio è. Il secondo è la cima. La
 
 **Maestro:** È la **KV cache** (la memoria di key e value), e ogni modello la usa. Ma guarda quanto pesa il quaderno. Per un modello da 70 miliardi come quelli aperti più usati, ogni token occupa circa un terzo di megabyte. Una conversazione di 128 mila token sono più di 40 GB: per un solo cliente, quasi un terzo dei pesi. E senza un accorgimento che hai già visto alla lezione 8, le teste che condividono gli stessi cartelli, sarebbero otto volte tanto, più di tutti i pesi. Alcuni modelli vanno oltre: invece di cartelli e merci per intero scrivono sul quaderno un loro riassunto compresso, e li ricostruiscono al momento di usarli. Si chiama MLA, da Multi-head Latent Attention, e alleggerisce il quaderno di parecchie volte ancora. Con dieci clienti a pagina lunga, il magazzino si riempie di quaderni prima che di tavole.
 
-[Figura: inferenza autoregressiva · prefill, KV cache, decode]
+&#91;embedded content: inferenza autoregressiva · prefill, KV cache, decode\]
 
 **Maestro:** E ricordi la tabella del mercato, che cresce con il quadrato della pagina? Te l'avevo promesso: per le pagine lunghissime la si calcola a pezzi, nella piccola memoria velocissima che sta accanto al banco, senza mai costruirla intera: il metodo più noto si chiama FlashAttention. Il risultato è identico, e il magazzino respira.
 
@@ -2975,7 +3029,7 @@ Il primo termine è il giudice: più punti, meglio è. Il secondo è la cima. La
 
 **Maestro:** È la contromossa che i modelli fanno a chi li comprime. In ogni rete ci sono pochi valori molto più grandi degli altri, tra i pesi e ancora di più tra i numeri che passano da uno strato all'altro, e sono loro a decidere la scala. Per questo le tecniche buone li trattano a parte, o usano una scala diversa per ogni piccolo gruppo di pesi, come una cima per la spiaggia e una per la fossa: così un gigante rovina solo il suo vicinato. Ed esistono formati a 4 bit pensati apposta per come sono fatti i pesi, che stanno quasi tutti vicino allo zero. Un modello da 70 miliardi a 4 bit pesa 35 GB invece di 140: un quarto dei viaggi del garzone, e fino a quattro volte più token al secondo a pagina corta; a pagina lunga molto meno, perché anche il quaderno viaggia.
 
-[Figura: quattro pesi scritti a 8 bit, a 4 bit e a 4 bit con un peso gigante · i conti del testo]
+&#91;embedded content: quattro pesi scritti a 8 bit, a 4 bit e a 4 bit con un peso gigante · i conti del testo\]
 
 A 8 bit le tacche sono così fitte che i pesi quasi non si muovono. A 4 bit si spostano un poco. Con il gigante nella stessa scala, le tacche si allargano tanto che tre pesi su quattro cadono sullo zero.
 
@@ -2987,7 +3041,7 @@ A 8 bit le tacche sono così fitte che i pesi quasi non si muovono. A 4 bit si s
 
 **Maestro:** Può essere l'uno o l'altro: dipende da che cosa gli dai da studiare. Scrivi «La barca rientra in…». Il testo dice una parola sola: «porto». Ma il grande, prima di sceglierla, aveva pesato tutto il dizionario: «porto» 90%, «darsena» 8%, «ritardo» 2%. Quell'8% insegna al piccolo che darsena e porto sono quasi la stessa cosa; quel 2%, che la frase poteva anche prendere un'altra strada. Se il piccolo impara da tutte le probabilità, e non solo dalla parola scelta, è il secondo ragazzo. Chi diede il nome a questa tecnica chiamò quelle esitazioni *sapere oscuro*: c'è, ma nella risposta non si vede. Molti dei modelli piccoli più bravi di oggi sono nati così.
 
-[Figura: «La barca rientra in…»: la parola scritta e le probabilità del maestro · numeri d'esempio]
+&#91;embedded content: «La barca rientra in…»: la parola scritta e le probabilità del maestro · numeri d'esempio\]
 
 In alto, ciò che vede chi impara dal testo scritto; in basso, ciò che vede chi impara dalle probabilità del maestro. La parola giusta è la stessa: cambia tutto il resto.
 
@@ -3017,7 +3071,7 @@ In alto, ciò che vede chi impara dal testo scritto; in basso, ciò che vede chi
 
 **Maestro:** Al banco, quasi. Ma guarda il cantiere qui sotto. D'inverno ci lavorano sessanta artigiani: velai, motoristi, elettricisti, carpentieri, uno che sa tutto dei verricelli. A ogni barca che entra, il capocantiere dà un'occhiata e chiama due persone, non sessanta. Il lavoro esce in fretta, perché ogni barca occupa due paia di mani. Ma a fine mese paghi sessanta stipendi, e nel capannone servono sessanta posti. Per il modello ogni token è una barca: gli esperti che a questo token non servono serviranno al prossimo, o al prossimo cliente, e devono stare tutti in memoria, tutti i 671 miliardi. Il Mixture of Experts fa risparmiare calcolo, non memoria: ed è la cosa che si sente raccontare più spesso al contrario.
 
-[Figura: un blocco giocattolo: 16 esperti, 2 per token, la stessa frase con due smistatori · esempio]
+&#91;embedded content: un blocco giocattolo: 16 esperti, 2 per token, la stessa frase con due smistatori · esempio\]
 
 Ogni riga è un token, ogni colonna un esperto dello stesso blocco. In alto lo smistatore spartisce il lavoro: nessuno è sommerso, e alla frase dopo toccherà ad altri. In basso chiama sempre gli stessi due.
 
@@ -3188,7 +3242,7 @@ Il quaderno si conta così: byte per token = 2 × strati × teste KV × dimensio
 
 **Maestro:** Ecco la contromossa. Il voto non aggiusta: amplifica. Quando le risposte possibili sono due, porta più in alto chi è già sopra la metà, e più in basso chi è sotto.
 
-[Figura: Il voto delle cinque rotte · calcolato con la formula in fondo alla lezione]
+&#91;embedded content: Il voto delle cinque rotte · calcolato con la formula in fondo alla lezione\]
 
 **Maestro:** Con cinque voti, chi ha ragione sei volte su dieci sale al sessantotto per cento. Chi ne ha quattro scende al trentadue. E c'è di peggio. Il conto vale se gli errori sono indipendenti, come quelli di cinque skipper che non si parlano. Ma cinque risposte dello stesso modello sono cinque skipper cresciuti nella stessa scuola: anche senza parlarsi, se la scuola ha insegnato male i dodicesimi, l'errore più probabile è lo stesso per tutti, e il voto, invece di correggerlo, lo rafforza. L'indipendenza dei giudizi va costruita, non presunta.
 
@@ -3317,7 +3371,7 @@ Il pensiero si conta come qualsiasi altro testo scritto. A venti token al second
 
 **Maestro:** Devi chiederti: con quale pagina? Nel magazzino non stanno solo le tavole. Stanno anche i quaderni, e i quaderni crescono con la pagina. Il conto onesto ha tre voci: le tavole, il quaderno della pagina più lunga che userai davvero, e un po' di spazio per gli attrezzi del banco. E attento a una trappola. Molti programmi, quando avvii un modello, prenotano subito il magazzino per tutta la pagina che hai impostato, anche se poi scrivi due righe. Se imposti la pagina più lunga possibile "per sicurezza", quello spazio sparisce prima di cominciare.
 
-[Figura: un modello tipo da 27 miliardi a 4 bit, quattro lunghezze di pagina · i conti in fondo all'intermezzo]
+&#91;embedded content: un modello tipo da 27 miliardi a 4 bit, quattro lunghezze di pagina · i conti in fondo all'intermezzo\]
 
 Lo stesso modello, quattro pagine diverse. Le tavole restano ferme; il quaderno cresce con la pagina, fino a pesare più delle tavole. E siccome il garzone porta al banco tavole e quaderno a ogni token, la scrittura rallenta: a pagina piena va a meno della metà.
 
@@ -3448,7 +3502,7 @@ Due avvertenze. Molti modelli recenti guardano l'intera pagina solo in pochi str
 
 **Maestro:** *Si ferma sulla soglia.* È la scuola della **diffusione**, quella che dal 2020 dipinge molte delle immagini che vedi. In allenamento si sporca l'immagine con una quantità di rumore scelta a caso, e la rete impara a stimare il rumore aggiunto. Per creare, si parte dal rumore puro e lo si toglie in venti, cinquanta passate. Ricordi quando ti dissi che non tutti scrivono una parola dopo l'altra, e che c'è una scuola che rifinisce l'opera intera, come uno scultore che toglie marmo? Eccola.
 
-[Figura: diffusion · rumore aggiunto e rimosso]
+&#91;embedded content: diffusion · rumore aggiunto e rimosso\]
 
 **Maestro:** Ma la restauratrice pulisce un quadro che c'è già. Tu parti dal rumore puro. Che nave esce?
 
@@ -3466,7 +3520,7 @@ Due avvertenze. Molti modelli recenti guardano l'intera pagina solo in pochi str
 
 **Maestro:** Ci stanno provando, e cambia proprio il modo di produrre i token. Il modello che conosci ne scrive uno per passaggio: legge tutta la pagina, sceglie un token, lo aggiunge, ricomincia. Il modello a diffusione parte invece da un blocco di posizioni coperte. *Traccia sulla sabbia otto caselle vuote.* Guarda. Alla prima passata prova a indovinarle tutte, ma scopre solo quelle di cui è sicuro: «La», «in», «al», il punto. Le parole piccole, che stanno bene quasi in ogni frase. Alla seconda, con quelle intorno a cui appoggiarsi, si fida di «goletta» e di «porto». Alla terza scopre il resto. La frase è comparsa come la nave sotto la patina: a strati.
 
-[Figura: La frase scoperta a passate · esempio costruito per la lezione]
+&#91;embedded content: La frase scoperta a passate · esempio costruito per la lezione\]
 
 **Allievo:** *Ci pensa.* Allora è il carrello della lezione 11. Chi scrive in fila fa un viaggio di carrello per ogni token: tutti i pesi dal magazzino al banco, per una parola sola. Qui con un viaggio si scoprono molte caselle. Il banco lavora di più, il carrello viaggia meno.
 
@@ -3496,7 +3550,7 @@ Due avvertenze. Molti modelli recenti guardano l'intera pagina solo in pochi str
 
 **Maestro:** È la strada di molti modelli recenti: gli **ibridi**. Pochi strati di attenzione con il quaderno completo, molti strati a stato, o ad attenzione «lineare», che è un altro modo di tenere un foglietto. Se il quaderno c'è in uno strato su quattro, il magazzino dei quaderni pesa un quarto.
 
-[Figura: Il quaderno e il foglietto · calcolato con i conti in fondo alla lezione]
+&#91;embedded content: Il quaderno e il foglietto · calcolato con i conti in fondo alla lezione\]
 
 **Mokusō.** *Il foglietto ricorda il vento, il quaderno il numero di telefono. Nella tua giornata, che cosa tieni sul foglietto, e che cosa ti servirebbe trascritto parola per parola?*
 
@@ -3510,7 +3564,7 @@ Due avvertenze. Molti modelli recenti guardano l'intera pagina solo in pochi str
 
 **Maestro:** Allora guardala adesso. Guarda come fa il capitano: si fa delle domande, una dopo l'altra. Prendi la «Stella», uscita stamattina: nove metri e mezzo, motore nuovo, e fuori il vento soffia a venticinque nodi. Prima domanda: vento sopra i venti nodi? Sì. Seconda: barca sotto i nove metri? No. Terza: motore con più di quindici anni? No. Fine delle domande. Il registro dice che, tra le barche arrivate fin lì per la stessa strada, una su cinque è rientrata in ritardo. Ogni risposta apre un'altra domanda, finché si arriva a una foglia con la previsione: è l'**albero di decisione** della lezione 2, visto da vicino.
 
-[Figura: L'albero del capitano · esempio costruito per la lezione]
+&#91;embedded content: L'albero del capitano · esempio costruito per la lezione\]
 
 **Allievo:** E le domande chi le sceglie? Il capitano?
 
@@ -3581,7 +3635,7 @@ Il quaderno e il foglietto si contano così. Il modello da 70 miliardi della lez
 4. **Gli agenti:** il modello che sceglie da solo la sequenza degli strumenti. È l'ultimo gradino: ci torniamo in mare aperto.
 5. **Le vele nuove:** il fine-tuning della lezione 10, quando serve un comportamento molto preciso o un modello piccolo per un compito solo.
 
-[Figura: architettura tipica di un'applicazione LLM]
+&#91;embedded content: architettura tipica di un'applicazione LLM\]
 
 *Mollano gli ormeggi. Mentre escono dal porto, dalla radio di bordo arriva il bollettino: vento, mare, e la marea prevista per la sera.*
 
@@ -3622,7 +3676,7 @@ Il quaderno e il foglietto si contano così. Il modello da 70 miliardi della lez
 
 **Maestro:** Se basta un errore a far fallire tutto, il servizio intero riesce poco più di una volta su tre.
 
-[Figura: I passi dell'agente · calcolato con la formula in fondo alla lezione]
+&#91;embedded content: I passi dell'agente · calcolato con la formula in fondo alla lezione\]
 
 **Maestro:** In un agente gli errori non si sommano: si moltiplicano le probabilità di passare indenni, come in una fila di secche. Per questo gli agenti che funzionano hanno pochi passi, strumenti semplici e qualcuno che controlla a metà strada. E quando più agenti lavorano insieme, ricorda la sera della veglia: ognuno legge ciò che l'altro ha scritto, e la catena è forte quanto la pagina che si passano.
 
@@ -3669,7 +3723,7 @@ Il quaderno e il foglietto si contano così. Il modello da 70 miliardi della lez
 5. **Il nostromo.** Un'altra sentinella controlla il carico in uscita, la risposta, prima che scenda a terra.
 6. **Il giornale di bordo.** Dopo, qualcuno rilegge i registri di molte traversate, e cerca gli schemi che nessuna nave da sola mostra.
 
-[Figura: i sei guardiani di un modello e il formaggio svizzero · disegno]
+&#91;embedded content: i sei guardiani di un modello e il formaggio svizzero · disegno\]
 
 Ogni guardiano ha i suoi buchi, in posti diversi. Una richiesta qualunque ne incontra presto uno che la ferma. Il guaio passa solo quando, per caso o per astuzia, i buchi si allineano tutti.
 
@@ -4196,7 +4250,7 @@ Poi controlla che la citazione esista davvero nel contratto.
 **Esercizio 1.**
 
 1. Punteggi query · key: q · k₁ = 1 × 1 + 0 × 0 = 1; q · k₂ = 1 × 0 + 0 × 1 = 0.
-2. Divisione per √d_k = √2 ≈ 1,414: i punteggi diventano 0,707 e 0.
+2. Divisione per √d\_k = √2 ≈ 1,414: i punteggi diventano 0,707 e 0.
 3. Softmax: e⁰·⁷⁰⁷ ≈ 2,028 ed e⁰ = 1; somma 3,028. Pesi: 2,028 / 3,028 ≈ **0,67** e 1 / 3,028 ≈ **0,33**.
 4. Combinazione dei value: 0,67 × 10 + 0,33 × 20 ≈ 6,70 + 6,60 = **13,3**.
 
@@ -4270,7 +4324,9 @@ A questi va aggiunta la memoria della KV cache, che cresce con la lunghezza del 
 
 ### Lezione 14 · Dal dojo al mare
 
-*Qui il Maestro non ha scritto soluzioni. In fondo al foglio c'è un piccolo disegno a matita, una barca che esce dal porto, e sotto una riga sola: «Queste le scrivi tu. Quando le avrai, vieni a raccontarmele: il tè sarà caldo.»*
+*Qui il Maestro non ha scritto soluzioni. In fondo al foglio c'è un piccolo disegno a china, una barca che esce dal porto, e sotto una riga sola: «Queste le scrivi tu. Quando le avrai, vieni a raccontarmele: il tè sarà caldo.»*
+
+&#91;embedded content\]
 
 ## Colofone
 
