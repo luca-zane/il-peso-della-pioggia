@@ -3,7 +3,7 @@
 import subprocess, sys, os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 bozza = '--bozza' in sys.argv
-subprocess.run(['python3', 'conv.py', '../testo/il-peso-della-pioggia.html', 'body.tex'] + (['--bozza'] if bozza else []), check=True)
+subprocess.run(['python3', 'conv.py', '../libro.html', 'body.tex'] + (['--bozza'] if bozza else []), check=True)
 body = open('body.tex').read()
 # righe di scena consecutive: dalla seconda in poi rientrano come un paragrafo normale
 _out=[]; _prev=False
@@ -25,7 +25,7 @@ with open('versione.tex', 'w') as f:
         f.write('\\newcommand{\\BOZZA}{BOZZA 0.99 PER I PRIMI LETTORI · NON DIFFONDERE}\n')
     else:
         f.write('\\newcommand{\\notabozza}{}\n\\newcommand{\\BOZZA}{}\n')
-for _ in range(2):
+for _ in range(3):
     r = subprocess.run(['lualatex', '-interaction=nonstopmode', '-halt-on-error', 'libro.tex'], capture_output=True, text=True)
     if r.returncode:
         print(r.stdout[-4000:]); sys.exit(1)

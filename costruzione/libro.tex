@@ -48,6 +48,7 @@
 \usepackage[most]{tcolorbox}
 \usepackage{fancyvrb}
 \usepackage{needspace}
+\directlua{dofile('spazi.lua')}
 \usepackage[hidelinks,unicode,pdfusetitle]{hyperref}
 \hypersetup{pdftitle={Il peso della pioggia},pdfauthor={Luca Zane}}
 
@@ -81,7 +82,7 @@
   \renewcommand{\afterchapternum}{}
   \renewcommand{\printchaptertitle}[1]{%
     \raggedright
-    \ifx\etichetta\empty\else{\sffamily\footnotesize\addfontfeatures{LetterSpace=14}\color{grigio}\MakeUppercase{\etichetta}\ifx\cintura\empty\else\ \ ·\ \ \MakeUppercase{\cintura}\fi}\par\vspace{5mm}\fi
+    \ifx\etichetta\empty\else{\sffamily\footnotesize\addfontfeatures{LetterSpace=14}\color{grigio}\MakeUppercase{\etichetta}\if\relax\detokenize\expandafter{\cintura}\relax\else\ \ ·\ \ \MakeUppercase{\cintura}\fi}\par\vspace{5mm}\fi
     {\fontsize{28}{33}\selectfont ##1\par}
     \vspace{2mm}{\color{sigillo}\rule{14mm}{0.8pt}}}
   \renewcommand{\afterchaptertitle}{\par\nobreak\vspace{12mm}}
@@ -105,7 +106,7 @@
 \setbeforesecskip{-8ex plus -1.5ex minus -.5ex}
 \setaftersecskip{3.2ex plus .3ex}
 \newcommand{\seduta}[2]{%
-  \needspace{12\baselineskip}%
+  \needspace{9\baselineskip}%
   \section[#1 · #2]{{\sffamily\footnotesize\addfontfeatures{LetterSpace=16}\color{sigillo}\MakeUppercase{#1}}\\[2mm]{\fontsize{19}{23}\selectfont #2}}%
   \markright{#2}}
 \newcommand{\soluzioni}[1]{\needspace{5\baselineskip}\section*{\large #1}\markright{Soluzioni · #1}}
@@ -152,12 +153,39 @@
 \DefineVerbatimEnvironment{codice}{Verbatim}{fontsize=\small,frame=leftline,framerule=0.6pt,rulecolor=\color{grigio},xleftmargin=3mm,framesep=3mm}
 
 % figure: restano dove sono nel dialogo
-\newcommand{\figura}[2]{\par\addvspace{3.2ex plus .8ex minus .4ex}\noindent\begin{minipage}{\linewidth}\centering
-  \includegraphics[width=\linewidth]{figure/#1.pdf}\\[2.2mm]
-  {\sffamily\scriptsize\color{grigio}#2}\end{minipage}\par\addvspace{3.2ex plus .8ex minus .4ex}}
+% needspace senza il premio -100 al punto di rottura (con \raggedbottom faceva spezzare la pagina anche quando c'era posto)
+\makeatletter
+\renewcommand{\needspace}[1]{\par\begingroup\setlength{\dimen@}{#1}\dimen@ii\pagegoal\advance\dimen@ii-\pagetotal
+  \ifdim\pagegoal<\maxdimen\ifdim\dimen@>\dimen@ii\ifdim\dimen@ii>\z@\vfil\fi\penalty-\@M\fi\fi\endgroup}
+\makeatother
+\newcommand{\nsfig}[1]{\needspace{#1}}
+% un disegno non si separa dalla sua didascalia; se manca poco spazio si stringe un po' (fino al 72%), altrimenti va alla pagina dopo
+\newlength\figH\newlength\figR\newlength\figW\newlength\figC
+\newcommand{\figura}[2]{\par\addvspace{3.2ex plus .8ex minus .4ex}%
+  \sbox0{\includegraphics[width=\linewidth]{figure/#1.pdf}}%
+  \setlength\figH{\ht0}\addtolength\figH{\dp0}%
+  \if\relax\detokenize{#2}\relax\setlength\figC{0pt}\else\setlength\figC{9mm}\fi
+  \setlength\figW{\linewidth}%
+  \ifdim\pagegoal<\maxdimen
+    \setlength\figR{\pagegoal}\addtolength\figR{-\pagetotal}\addtolength\figR{-\figC}\addtolength\figR{-3mm}%
+    \ifdim\figR<\figH
+      \ifdim\figR>0.72\figH \setlength\figW{\dimexpr\linewidth*\figR/\figH\relax}\else\newpage\fi
+    \fi
+  \fi
+  \noindent\begin{minipage}{\linewidth}\centering
+  \includegraphics[width=\figW]{figure/#1.pdf}\if\relax\detokenize{#2}\relax\else\\[2.2mm]
+  {\sffamily\scriptsize\color{grigio}#2}\fi\end{minipage}\par\addvspace{3.2ex plus .8ex minus .4ex}}
+\newcommand{\voce}[1]{\par\addvspace{2.2ex plus .5ex}\needspace{5\baselineskip}\noindent{\semibold #1}\par\nopagebreak[4]}
+\newcommand{\kata}[1]{\par\bigskip\needspace{8\baselineskip}\noindent\begin{minipage}{\linewidth}{\color{grigio}\rule{\linewidth}{0.4pt}}\\[1ex]
+  {\sffamily\scriptsize\addfontfeatures{LetterSpace=14}\color{grigio}\MakeUppercase{#1}}\end{minipage}\par\medskip}
+\newcommand{\chiusa}[1]{\par\vspace{8mm}\begin{center}{\fontsize{17}{22}\selectfont\itshape #1}\end{center}}
+\newcommand{\titolostoria}{\par\addvspace{2.6ex plus .6ex}\needspace{5\baselineskip}\noindent}
+\newcommand{\rifsez}[1]{\needspace{6\baselineskip}\section*{\large #1}\markright{Riferimenti · #1}}
+\newenvironment{riferimenti}{\begin{list}{}{\setlength{\leftmargin}{1.6em}\setlength{\itemindent}{-1.6em}\setlength{\itemsep}{2.5pt}\setlength{\topsep}{2pt}\setlength{\parsep}{0pt}}\small\raggedright\emergencystretch=3em}{\end{list}}
 
-\newcommand{\disegnomaestro}[1]{\par\addvspace{4ex plus 1ex}\noindent\begin{minipage}{\linewidth}\centering
-  \includegraphics[width=.62\linewidth]{figure/#1.pdf}\end{minipage}\par\addvspace{3ex plus 1ex}}
+\newcommand{\disegnomaestro}[2]{\par\addvspace{4ex plus 1ex}\noindent\begin{minipage}{\linewidth}\centering
+  \includegraphics[width=.62\linewidth]{figure/#1.pdf}\if\relax\detokenize{#2}\relax\else\\[2.2mm]
+  {\sffamily\scriptsize\color{grigio}#2}\fi\end{minipage}\par\addvspace{3ex plus 1ex}}
 
 % tabelle
 \setlength{\LTpre}{2.8ex plus .6ex}\setlength{\LTpost}{2.6ex plus .6ex}

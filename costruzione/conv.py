@@ -6,6 +6,9 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 
 SRC, OUT = sys.argv[1], sys.argv[2]
 BOZZA = '--bozza' in sys.argv
+import json, os
+# didascalie dei disegni che nel documento sono immagini (le immagini non hanno un campo didascalia)
+DIDASCALIE = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'didascalie.json')))
 
 SUB = dict(zip('₀₁₂₃₄₅₆₇₈₉ₐₑₒₓₕₖₗₘₙₚₛₜᵢⱼᵣᵤᵥ', '0123456789aeoxhklmnpstijruv'))
 SUP = dict(zip('⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻ⁿⁱᵀˣᶻʲˡᵒᵍᵗᵃᵇᶜᵈᵉᶠʰᵏᵐᵖʳˢᵘᵛʷʸ', '0123456789+−niTxzjlogtabcdefhkmprsuvwy'))
@@ -58,6 +61,13 @@ LEAD = [
 def para(p, ctx):
     kids = [k for k in p.children if not (isinstance(k, NavigableString) and not k.strip())]
     first = kids[0] if kids else None
+    if len(kids) == 1 and isinstance(first, Tag) and first.name == 'img':
+        fid = first['src'].split('/')[-1]
+        return '\\figura{%s}{%s}\n' % (fid, esc(DIDASCALIE.get(fid, '')))
+    if len(kids) == 1 and isinstance(first, Tag) and first.name == 'strong':
+        return '\\voce{%s}\n' % ''.join(inline(c) for c in first.children).strip()
+    if p.get_text().strip() == 'Si comincia la navigazione. Buon vento!':
+        return '\\chiusa{%s}\n' % esc(p.get_text().strip())
     lead = first.get_text().strip() if isinstance(first, Tag) and first.name == 'strong' else None
     if lead:
         for key, kind in LEAD:
@@ -177,7 +187,7 @@ def table(t):
         cs = [cell(r[i] if i < len(r) else None, i, hdr) for i in range(n)]
         return ' & '.join(cs) + ' \\\\'
     env_forzato = None
-    intera = len(body) <= 22  # una tabella breve non si spezza tra due pagine
+    intera = len(body) <= 28  # una tabella breve non si spezza tra due pagine
     if head and head[0] and head[0][0] is not None and text_of(head[0][0]).strip() == 'Scuola':
         env_forzato = 'tabellapiccolabreve'  # la mappa delle scuole apre la lezione 13: piu' fitta, per stare sotto il titolo
     env = 'tabellanaturale' if natural else ('tabellaconti' if compatto else 'tabella')
@@ -236,7 +246,7 @@ def figure(f):
     nid = f['data-embed'].split('/')[-1]
     cap = ''.join(inline(c) for c in f.find('figcaption').children) if f.find('figcaption') else ''
     if nid == 'e2615d3a-c158':  # il disegno del Maestro, in fondo al foglio
-        return '\\disegnomaestro{%s}\n' % nid
+        return '\\disegnomaestro{%s}{%s}\n' % (nid, esc(DIDASCALIE.get(nid, '')))
     return '\\figura{%s}{%s}\n' % (nid, cap)
 
 def pre(p):
@@ -258,12 +268,14 @@ def chapter(h2):
     return '', t, ''
 
 soup = BeautifulSoup(open(SRC).read(), 'html.parser')
+in_storie = False
 out = []
 nodes = [n for n in soup.children if isinstance(n, Tag)]
 i = 0
 mode = 'front'
 just_chapter = False
 in_appendix = False
+riferimenti = False
 credits = []
 while i < len(nodes):
     n = nodes[i]
@@ -288,10 +300,12 @@ while i < len(nodes):
         elif t == 'Colofone':
             out.append('\\colofone\n'); mode = 'colofone'
         elif t == 'Le storie del rotolo':
-            out.append('\\capitolosenzanumero{Le storie del rotolo}\n'); just_chapter = True
+            out.append('\\capitolosenzanumero{Le storie del rotolo}\n'); just_chapter = True; in_storie = True
         else:
+            in_storie = False
             lab, tit, belt = chapter(n)
             in_appendix = lab == 'Appendice'
+            riferimenti = in_appendix and 'riferimenti' in tit
             corto = re.split(r'[:,]', tit)[0].strip(); out.append('\\renewcommand{\\corto}{%s}\\capitolo{%s}{%s}{%s}\n' % (esc(corto), esc(lab), esc(tit), esc(belt))); just_chapter = True
         i += 1; continue
     if mode == 'credits':
@@ -304,7 +318,13 @@ while i < len(nodes):
         i += 1; continue
     if n.name == 'h3':
         t = n.get_text().strip()
-        if in_appendix:
+        if t == 'Per chi vuole i conti':
+            out.append('\\conti{}\n')
+        elif t in ('Kata per casa', "L'ultimo kata per casa"):
+            out.append('\\kata{%s}\n' % esc(t))
+        elif in_appendix and riferimenti:
+            out.append('\\rifsez{%s}\n' % esc(t))
+        elif in_appendix:
             out.append('\\soluzioni{%s}\n' % esc(t))
         else:
             m = re.match(r'^(\w+ seduta) · (.+)$', t)
@@ -314,7 +334,10 @@ while i < len(nodes):
     if n.name == 'blockquote':
         out.append(blockquote(n, just_chapter)); just_chapter = False; i += 1; continue
     just_chapter = False
+    if n.name == 'p' and in_storie and n.find('strong') and n.get_text().count(' · ') == 1 and len(n.get_text()) < 80:
+        out.append('\\titolostoria ' + para(n, None)); i += 1; continue
     if n.name == 'p': out.append(para(n, None))
+    elif n.name == 'ul' and riferimenti: out.append(lst(n).replace('\\begin{itemize}', '\\begin{riferimenti}').replace('\\end{itemize}', '\\end{riferimenti}'))
     elif n.name in ('ol', 'ul'): out.append(lst(n))
     elif n.name == 'table': out.append(table(n))
     elif n.name == 'figure': out.append(figure(n))
@@ -331,6 +354,27 @@ def virgolette(t):
             return '“' if k[0]%2 else '”'
         out.append(re.sub(r'"', rep, line))
     return '\n'.join(out)
+import subprocess
+def alt_fig(fid):
+    try:
+        r = subprocess.run(['pdfinfo', 'figure/%s.pdf' % fid], capture_output=True, text=True).stdout
+        w, h = map(float, re.search(r'Page size:\s+([\d.]+) x ([\d.]+)', r).groups())
+        return 148 * h / w
+    except Exception:
+        return 70
+# un disegno resta sulla stessa pagina delle righe che lo introducono
+for k in range(len(out)):
+    m = re.match(r'\\figura\{([^}]*)\}', out[k])
+    if not m: continue
+    j = k - 1
+    while j >= 0 and not out[j].strip(): j -= 1
+    if j < 0 or out[j].startswith(('\\figura', '\\seduta', '\\begin', '\\conti', '\\voce', '\\capitolo', '\\renewcommand')): continue
+    righe = min(6, max(2, len(re.sub(r'\\[a-z]+\{|[{}]', '', out[j])) // 85 + 1))
+    jj = j - 1
+    while jj >= 0 and not out[jj].strip(): jj -= 1
+    if jj >= 0 and out[jj].startswith(('\\seduta', '\\voce', '\\conti', '\\kata')):
+        j = jj; righe += 7
+    out[j] = '\\nsfig{\\dimexpr %.0fmm + %d\\baselineskip\\relax}\n' % (alt_fig(m.group(1)) * 0.72 + 9, righe) + out[j]
 body = virgolette('\n'.join(out))
 open(OUT, 'w').write(body)
 print('scritto', OUT, len(body))
