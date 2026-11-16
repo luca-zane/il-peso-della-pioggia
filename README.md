@@ -50,7 +50,7 @@ In dialogo, come il libro: le domande, i dubbi, la rotta e le scelte sono dell'a
 - Intermezzo · La prima guardia (cintura blu)
 - Lezione 11 · L'economia del gesto: inferenza e ottimizzazioni (verso la cintura marrone)
 - Lezione 12 · Pensare prima di colpire: ragionamento e test-time compute (cintura marrone)
-- Intermezzo · Il cantiere di casa (cintura marrone)
+- Intermezzo · Piccolo cabotaggio (cintura marrone)
 - Lezione 13 · Le altre scuole (verso la cintura nera)
 - Lezione 14 · Dal dojo al mare: costruire per chi naviga (cintura nera)
 - Epilogo · Il rotolo del dojo
