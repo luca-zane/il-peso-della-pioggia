@@ -3,7 +3,7 @@
 import subprocess, sys, os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 bozza = '--bozza' in sys.argv
-subprocess.run(['python3', 'conv.py', '../libro.html', 'body.tex'] + (['--bozza'] if bozza else []), check=True)
+subprocess.run(['python3', 'conv.py', '../testo/il-peso-della-pioggia.html', 'body.tex'] + (['--bozza'] if bozza else []), check=True)
 body = open('body.tex').read()
 # righe di scena consecutive: dalla seconda in poi rientrano come un paragrafo normale
 _out=[]; _prev=False
