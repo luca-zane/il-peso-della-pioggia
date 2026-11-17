@@ -9,7 +9,7 @@ di Luca Zane · versione 2.0 · 17 novembre 2026 · gratuito · 316 pagine A4
 
 **[Scarica il libro in PDF](https://github.com/luca-zane/il-peso-della-pioggia/releases/latest/download/il-peso-della-pioggia.pdf)**
 
-Pagina del libro: [pioggia.lucazane.com](https://pioggia.lucazane.com) · Tutte le versioni: [Releases](../../releases) · DOI: [10.5281/zenodo.23697734](https://doi.org/10.5281/zenodo.23697734)
+Pagina del libro: [pioggia.lucazane.com](https://pioggia.lucazane.com) · Tutte le versioni: [Releases](../../releases) · DOI: [10.5281/zenodo.23697734](https://doi.org/10.5281/zenodo.23697734) · ORCID: [0009-0005-0960-9220](https://orcid.org/0009-0005-0960-9220)
 
 <br clear="right">
 
