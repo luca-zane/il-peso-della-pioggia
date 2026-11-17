@@ -1,7 +1,5 @@
 # Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano
 
-Oct 16, 2026 · @Luca
-
 *Si può dare il meglio di sé proprio mentre si porta un peso che nessuno vede.*
 
 ## Crediti e licenza
