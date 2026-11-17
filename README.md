@@ -80,6 +80,8 @@ Errori e segnalazioni sono benvenuti. Se trovi un errore di fatto, un conto che 
 
 Luca Zane, *Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano*, versione 2.0, 2026. DOI: [10.5281/zenodo.23697734](https://doi.org/10.5281/zenodo.23697734).
 
+ORCID dell'autore: [0009-0005-0960-9220](https://orcid.org/0009-0005-0960-9220).
+
 Vedi anche [`CITATION.cff`](CITATION.cff).
 
 © 2026 Luca Zane

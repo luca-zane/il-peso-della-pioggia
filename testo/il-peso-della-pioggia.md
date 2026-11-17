@@ -18,7 +18,7 @@ di Luca Zane · versione 2.0 · 17 novembre 2026
 
 © 2026 Luca Zane. Quest'opera è distribuita con licenza Creative Commons Attribuzione – Non commerciale – Non opere derivate 4.0 Internazionale (CC BY-NC-ND 4.0), il cui testo è consultabile all'indirizzo https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it. Puoi copiarla e diffonderla gratuitamente, con qualsiasi mezzo e in qualsiasi formato, citando l'autore. Non puoi venderla, né usarla a fini commerciali, né distribuirne versioni modificate. Traduzioni, adattamenti e altri usi sono possibili solo con il permesso scritto dell'autore. Il codice degli esercizi, pubblicato insieme al libro, è distribuito con licenza MIT.
 
-Ultima versione ed errata: pioggia.lucazane.com. Codice degli esercizi: github.com/luca-zane/il-peso-della-pioggia. DOI: 10.5281/zenodo.23697734.
+Ultima versione ed errata: pioggia.lucazane.com. Codice degli esercizi: github.com/luca-zane/il-peso-della-pioggia. DOI: 10.5281/zenodo.23697734. ORCID dell'autore: 0009-0005-0960-9220.
 
 I nomi di aziende, prodotti e modelli appartengono ai rispettivi titolari e sono usati solo per descrivere; le persone sono nominate per rendere omaggio al loro lavoro, e le citazioni in apertura delle lezioni appartengono ai loro autori. Il libro ha scopo divulgativo e didattico e non sostituisce una consulenza professionale. Fatti e numeri sono stati verificati alla data di questa versione: le Cronache del 2026 raccontano l'anno così come lo si conosceva allora. Copertina, disegni e grafici sono originali, realizzati per questo libro. Errori e segnalazioni sono benvenuti.
 
@@ -6892,7 +6892,7 @@ A questi va aggiunta la busta, cioè la memoria della KV cache, che cresce con l
 *Il peso della pioggia*\
 *L'intelligenza artificiale dal neurone ai modelli che ragionano*\
 Versione 2.0, 17 novembre 2026\
-Di Luca Zane
+Di Luca Zane · ORCID 0009-0005-0960-9220
 
 Testo: licenza CC BY-NC-ND 4.0. Codice degli esercizi: licenza MIT.
 

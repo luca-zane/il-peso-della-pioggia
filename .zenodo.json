@@ -4,7 +4,8 @@
   "publication_type": "book",
   "creators": [
     {
-      "name": "Zane, Luca"
+      "name": "Zane, Luca",
+      "orcid": "0009-0005-0960-9220"
     }
   ],
   "description": "<p>L'intelligenza artificiale dal neurone ai modelli che ragionano. Un dialogo tra un allievo e il suo Maestro.</p><p>«Il libro è un dialogo tra un allievo e un Maestro, in un dojo di karate affacciato sul mare. […] Soprattutto teorie consolidate: il neurone, l'allenamento, le reti che guardano e che leggono, gli embedding, i Transformer, i modelli di linguaggio e il modo in cui vengono educati e serviti.» (dalla Prefazione)</p>",

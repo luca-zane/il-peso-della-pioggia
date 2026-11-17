@@ -4,6 +4,7 @@ title: "Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli
 authors:
   - family-names: Zane
     given-names: Luca
+    orcid: "https://orcid.org/0009-0005-0960-9220"
 version: "2.0"
 date-released: 2026-11-17
 doi: 10.5281/zenodo.23697734
@@ -20,8 +21,9 @@ preferred-citation:
   authors:
     - family-names: Zane
       given-names: Luca
+      orcid: "https://orcid.org/0009-0005-0960-9220"
   year: 2026
-  edition: "1.0"
+  edition: "2.0"
   doi: 10.5281/zenodo.23697734
   languages:
     - it
