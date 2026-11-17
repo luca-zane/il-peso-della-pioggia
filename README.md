@@ -43,25 +43,6 @@ Si va per cinture, due lezioni ciascuna, dalla bianca alla nera. Dopo alcune cin
 | ◌ | *Intermezzo* | *piccolo cabotaggio: un modello sul proprio computer* |
 | ⚫ | Nera · lezioni 13–14 | le altre famiglie di modelli e la costruzione di prodotti |
 
-In fondo al libro: l'epilogo con il rotolo del dojo e i glossari, le storie del rotolo, le soluzioni dei kata per casa e i riferimenti, lezione per lezione.
-
-## Com'è fatta una lezione
-
-- **Le sedute**: il racconto, in pezzi brevi. Ognuna si chiude con un *mokusō*: una sola domanda, senza risposta, su cui fermarsi.
-- **Il kata di oggi**: cinque punti da ripetere prima di andare.
-- **Le dicerie di banchina**: tre cose che si sentono dire in giro, e come stanno davvero.
-- **La lezione per il mondo**: una frase da portare con sé fuori dal dojo.
-- **Per chi vuole i conti**: le formule e i numeri, legati al punto del racconto che traducono. Sono il ponte verso i paper e il codice; chi non li ama li salta senza perdere il filo.
-- **Il kata per casa**: uno o due esercizi, risolti in fondo al libro.
-
-## Quanto tempo serve
-
-Non è un libro da leggere in fretta: le lezioni sembrano brevi, ma sono dense. Meglio leggere una seduta alla volta, lasciarla decantare e solo dopo andare avanti. Il racconto da solo si legge in una decina di ore. Con i conti, i kata e i notebook diventa un lavoro di qualche mese: il ritmo giusto potrebbe essere una lezione alla settimana, quattordici settimane, più o meno un semestre. E non serve capire tutto: il racconto si regge da sé.
-
-## Come è nato
-
-> «Con l'intelligenza artificiale un libro così si scrive in un minuto.» In un minuto si ottiene un testo ordinato, scorrevole, e uguale a mille altri. Questo è nato in un altro modo: da un lungo dialogo tra l'autore e Claude, un modello di intelligenza artificiale di Anthropic. […] La rotta, le scelte e la revisione finale sono dell'autore; la stesura è cresciuta in due, una pagina alla volta. Come in una regata in doppio: il timone lo tiene uno alla volta, ma la barca la portano in due.
-
 ## Che cosa c'è qui
 
 | Cartella | Contenuto |
