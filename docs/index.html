@@ -4,30 +4,168 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Il peso della pioggia</title>
-<meta name="description" content="L'intelligenza artificiale dal neurone ai modelli che ragionano. Un dialogo tra un allievo e il suo Maestro.">
+<meta name="description" content="L'intelligenza artificiale dal neurone ai modelli che ragionano. Un dialogo tra un allievo e il suo Maestro, in un dojo affacciato sul mare. Libro gratuito in PDF, di Luca Zane.">
+<meta property="og:title" content="Il peso della pioggia">
+<meta property="og:description" content="L'intelligenza artificiale dal neurone ai modelli che ragionano. Un dialogo tra un allievo e il suo Maestro. Libro gratuito in PDF.">
+<meta property="og:image" content="https://pioggia.lucazane.com/copertina.jpg">
+<meta property="og:type" content="book">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root { --carta:#f6f2ea; --inchiostro:#1f2a33; --tenue:#5d6770; --mare:#24506b; }
-@media (prefers-color-scheme: dark) { :root { --carta:#141a1f; --inchiostro:#e8e3d9; --tenue:#a7adb3; --mare:#8cb8d4; } }
-* { box-sizing:border-box; }
-body { margin:0; background:var(--carta); color:var(--inchiostro); font-family:"EB Garamond", Georgia, "Times New Roman", serif; font-size:1.2rem; line-height:1.6; }
-main { max-width:38rem; margin:0 auto; padding:4rem 1rem 3rem; }
-h1 { font-weight:400; font-size:2.6rem; line-height:1.15; margin:0 0 .4rem; }
-.sotto { font-style:italic; color:var(--tenue); margin:0 0 2.5rem; }
-a { color:var(--mare); }
-.scarica { display:inline-block; margin:1.5rem 0; padding:.7rem 1.4rem; border:1px solid var(--mare); border-radius:4px; text-decoration:none; font-family:system-ui, sans-serif; font-size:1rem; }
-blockquote { margin:0; padding-left:1.2rem; border-left:2px solid var(--mare); }
-.fonte { color:var(--tenue); font-size:1rem; }
-footer { margin-top:3rem; font-size:.95rem; color:var(--tenue); }
+:root {
+  --carta: #f3efe6; --foglio: #faf8f3; --inchiostro: #1d1d1b; --tenue: #5f5d57; --filo: #d9d3c5;
+  --sigillo: #a8322a; --mare: #2b5470;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --carta: #161513; --foglio: #1e1d1a; --inchiostro: #ebe6db; --tenue: #a9a59b; --filo: #3a3833; --sigillo: #d4675d; --mare: #8fb6d1; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--carta); color: var(--inchiostro); font-family: "EB Garamond", Georgia, serif; font-size: 1.22rem; line-height: 1.6; }
+.sans { font-family: Inter, system-ui, sans-serif; }
+a { color: var(--mare); text-underline-offset: .15em; }
+main { max-width: 44rem; margin: 0 auto; padding: 0 16px 4rem; }
+
+/* apertura */
+.apertura { display: grid; grid-template-columns: 15rem 1fr; gap: 2.5rem; align-items: center; padding: 4rem 0 3rem; }
+.apertura img { width: 100%; height: auto; display: block; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.10); }
+.autore { font-family: Inter, system-ui, sans-serif; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: var(--tenue); margin: 0 0 .6rem; }
+h1 { font-weight: 400; font-size: 2.7rem; line-height: 1.1; margin: 0 0 .6rem; }
+.sotto { font-style: italic; color: var(--tenue); margin: 0 0 1.6rem; line-height: 1.4; }
+.azioni { display: flex; flex-wrap: wrap; gap: .7rem; margin-bottom: .9rem; }
+.bottone { display: inline-block; padding: .72rem 1.25rem; border-radius: 3px; text-decoration: none; font-family: Inter, system-ui, sans-serif; font-size: .95rem; font-weight: 500; }
+.bottone.pieno { background: var(--sigillo); color: #fff; }
+.bottone.pieno:hover { filter: brightness(1.08); }
+.bottone.vuoto { border: 1px solid var(--filo); color: var(--inchiostro); }
+.bottone.vuoto:hover { border-color: var(--tenue); }
+.dati { font-family: Inter, system-ui, sans-serif; font-size: .8rem; color: var(--tenue); margin: 0; }
+
+/* sezioni */
+section { border-top: 1px solid var(--filo); padding: 2.4rem 0 .6rem; }
+h2 { font-family: Inter, system-ui, sans-serif; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 500; color: var(--sigillo); margin: 0 0 1rem; }
+p { margin: 0 0 1rem; }
+.massima { font-style: italic; font-size: 1.4rem; line-height: 1.45; margin: 0 0 1.2rem; }
+
+/* cinture */
+.cinture { list-style: none; padding: 0; margin: 0 0 1rem; }
+.cinture li { display: grid; grid-template-columns: 1.4rem 7.5rem 1fr; gap: .6rem; align-items: baseline; padding: .45rem 0; border-bottom: 1px dotted var(--filo); }
+.cinture li:last-child { border-bottom: 0; }
+.nodo { width: .8rem; height: .8rem; border-radius: 50%; display: inline-block; border: 1px solid rgba(0,0,0,.35); transform: translateY(.05rem); }
+.cinture .nome { font-family: Inter, system-ui, sans-serif; font-size: .82rem; color: var(--tenue); }
+.cinture .inter { color: var(--tenue); font-style: italic; }
+.cinture .inter .nodo { border: 1px dashed var(--tenue); background: transparent; }
+
+/* lezione */
+.forma { margin: 0 0 1rem; padding: 0; list-style: none; }
+.forma li { padding: .35rem 0 .35rem 1.1rem; position: relative; }
+.forma li::before { content: ""; position: absolute; left: 0; top: .95rem; width: .4rem; height: .4rem; border-radius: 50%; background: var(--sigillo); }
+.forma b { font-weight: 600; }
+
+.nota { background: var(--foglio); border-left: 2px solid var(--sigillo); padding: 1rem 1.2rem; margin: 0 0 1rem; }
+.nota p:last-child { margin-bottom: 0; }
+
+footer { border-top: 1px solid var(--filo); margin-top: 2rem; padding-top: 1.4rem; font-family: Inter, system-ui, sans-serif; font-size: .8rem; color: var(--tenue); line-height: 1.6; }
+footer p { margin: 0 0 .5rem; }
+
+@media (max-width: 640px) {
+  body { font-size: 1.12rem; }
+  .apertura { grid-template-columns: 1fr; gap: 1.8rem; padding: 2.4rem 0 2rem; text-align: center; }
+  .apertura img { width: 62%; margin: 0 auto; }
+  .azioni { justify-content: center; }
+  h1 { font-size: 2.2rem; }
+  .cinture li { grid-template-columns: 1.2rem 1fr; }
+  .cinture .nome { grid-column: 2; }
+  .cinture .cosa { grid-column: 2; }
+}
 </style>
 </head>
 <body>
 <main>
-<h1>Il peso della pioggia</h1>
-<p class="sotto">L'intelligenza artificiale dal neurone ai modelli che ragionano<br>Un dialogo tra un allievo e il suo Maestro</p>
-<blockquote><p>Il libro è un dialogo tra un allievo e un Maestro, in un dojo di karate affacciato sul mare. […] Soprattutto teorie consolidate: il neurone, l'allenamento, le reti che guardano e che leggono, gli embedding, i Transformer, i modelli di linguaggio e il modo in cui vengono educati e serviti. Sono le idee che non cambiano ogni sei mesi, e sono quelle che servono per capire le nuove.</p><p>Il dojo è aperto a tutti: etichette e titoli di studio restano fuori, come le scarpe sulla soglia.</p><p class="fonte">— dalla <em>Prefazione</em></p></blockquote>
-<a class="scarica" href="https://github.com/luca-zane/il-peso-della-pioggia/releases/latest/download/il-peso-della-pioggia.pdf">Scarica il libro in PDF</a>
-<p>Ultima versione, errata e codice degli esercizi: nel <a href="https://github.com/luca-zane/il-peso-della-pioggia">repository del libro</a>.</p>
-<footer>© 2026 Luca Zane · Testo distribuito con licenza <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it">CC BY-NC-ND 4.0</a> · DOI <a href="https://doi.org/10.5281/zenodo.23697734">10.5281/zenodo.23697734</a></footer>
+
+<header class="apertura">
+  <img src="copertina.jpg" width="900" height="1270" alt="Copertina: un cerchio tracciato a pennello, con tre linee che entrano e una che esce, come un neurone; sotto il titolo e un sigillo rosso.">
+  <div>
+    <p class="autore">Luca Zane</p>
+    <h1>Il peso della pioggia</h1>
+    <p class="sotto">L'intelligenza artificiale dal neurone ai modelli che ragionano.<br>Un dialogo tra un allievo e il suo Maestro.</p>
+    <div class="azioni">
+      <a class="bottone pieno" href="https://github.com/luca-zane/il-peso-della-pioggia/releases/latest/download/il-peso-della-pioggia.pdf">Scarica il PDF</a>
+      <a class="bottone vuoto" href="https://github.com/luca-zane/il-peso-della-pioggia">Esercizi e codice</a>
+    </div>
+    <p class="dati">Versione 2.0 · 17 novembre 2026 · gratuito · 316 pagine A4</p>
+  </div>
+</header>
+
+<section>
+  <h2>Il libro</h2>
+  <p>Il libro è un dialogo tra un allievo e un Maestro, in un dojo di karate affacciato sul mare. Nel dojo si impara ripetendo, sbagliando e correggendo, un gesto alla volta: è così che impara una rete. In mare si naviga con strumenti precisi dentro un mondo che non lo è: il vento si legge ma non si comanda, il tempo si prevede solo per qualche giorno, e non ci si fida mai di un solo strumento: è così che si usa un modello.</p>
+  <p>Soprattutto teorie consolidate: il neurone, l'allenamento, le reti che guardano e che leggono, gli embedding, i Transformer, i modelli di linguaggio e il modo in cui vengono educati e serviti. Sono le idee che non cambiano ogni sei mesi, e sono quelle che servono per capire le nuove. La promessa è questa: alla fine saprete prendere qualsiasi annuncio e chiedervi in quale lezione cade, quale problema risolve, a quale prezzo, e se è sostanza o rumore.</p>
+</section>
+
+<section>
+  <h2>A chi è rivolto</h2>
+  <p class="massima">Il dojo è aperto a tutti: etichette e titoli di studio restano fuori, come le scarpe sulla soglia.</p>
+  <p>Penso che servirà soprattutto a chi usa l'intelligenza artificiale ogni giorno, per lavoro o per curiosità, sente di averne in testa solo slogan confusi e non vuole fermarsi alla superficie: sviluppatori, ingegneri, analisti, chi guida progetti tecnici, studenti, curiosi con il gusto della logica. Con un po' di pazienza si capiscono tante cose anche da principianti.</p>
+</section>
+
+<section>
+  <h2>Il percorso</h2>
+  <p>Si va per cinture, due lezioni ciascuna, dalla bianca alla nera. Dopo alcune cinture c'è un intermezzo: un'uscita dal dojo per mettere alla prova ciò che si sa.</p>
+  <ul class="cinture">
+    <li><span class="nodo" style="background:#ffffff"></span><span class="nome">Bianca · 1–2</span><span class="cosa">il neurone, i pesi, le reti a strati</span></li>
+    <li><span class="nodo" style="background:#e9c63b"></span><span class="nome">Gialla · 3–4</span><span class="cosa">come una rete impara e come generalizza</span></li>
+    <li class="inter"><span class="nodo"></span><span class="nome">Intermezzo</span><span class="cosa">l'attrezzeria: PyTorch, JAX, TensorFlow</span></li>
+    <li><span class="nodo" style="background:#e08a2c"></span><span class="nome">Arancione · 5–6</span><span class="cosa">le architetture storiche: CNN e RNN</span></li>
+    <li class="inter"><span class="nodo"></span><span class="nome">Intermezzo</span><span class="cosa">la veglia in porto: contesto, allucinazioni, consiglio di modelli</span></li>
+    <li><span class="nodo" style="background:#4f8a4b"></span><span class="nome">Verde · 7–8</span><span class="cosa">embedding, attention e Transformer</span></li>
+    <li><span class="nodo" style="background:#2f5f9a"></span><span class="nome">Blu · 9–10</span><span class="cosa">gli LLM: pretraining e post-training</span></li>
+    <li class="inter"><span class="nodo"></span><span class="nome">Intermezzo</span><span class="cosa">la prima guardia: scrivere la pagina, provarla, risparmiare dove conta</span></li>
+    <li><span class="nodo" style="background:#7a4e2d"></span><span class="nome">Marrone · 11–12</span><span class="cosa">inferenza efficiente e ragionamento</span></li>
+    <li class="inter"><span class="nodo"></span><span class="nome">Intermezzo</span><span class="cosa">piccolo cabotaggio: un modello sul proprio computer</span></li>
+    <li><span class="nodo" style="background:#1d1d1b"></span><span class="nome">Nera · 13–14</span><span class="cosa">le altre famiglie di modelli e la costruzione di prodotti</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Com'è fatta una lezione</h2>
+  <ul class="forma">
+    <li><b>Le sedute</b>: il racconto, in pezzi brevi. Ognuna si chiude con un <i>mokusō</i>: una sola domanda, senza risposta, su cui fermarsi.</li>
+    <li><b>Il kata di oggi</b>: cinque punti da ripetere prima di andare.</li>
+    <li><b>Le dicerie di banchina</b>: tre cose che si sentono dire in giro, e come stanno davvero.</li>
+    <li><b>La lezione per il mondo</b>: una frase da portare con sé fuori dal dojo.</li>
+    <li><b>Per chi vuole i conti</b>: le formule e i numeri, legati al punto del racconto che traducono. Sono il ponte verso i paper e il codice; chi non li ama li salta senza perdere il filo.</li>
+    <li><b>Il kata per casa</b>: uno o due esercizi, risolti in fondo al libro.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Quanto tempo serve</h2>
+  <p>Non è un libro da leggere in fretta: le lezioni sembrano brevi, ma sono dense. Meglio leggere una seduta alla volta, lasciarla decantare e solo dopo andare avanti. Il racconto da solo si legge in una decina di ore. Con i conti, i kata e i notebook diventa un lavoro di qualche mese: il ritmo giusto potrebbe essere una lezione alla settimana, quattordici settimane, più o meno un semestre. E non serve capire tutto: il racconto si regge da sé.</p>
+</section>
+
+<section>
+  <h2>Gli esercizi</h2>
+  <p>I conti e gli esercizi si possono rifare al computer. Nel <a href="https://github.com/luca-zane/il-peso-della-pioggia">repository del libro</a> c'è un notebook per ogni lezione, che ripete i calcoli del libro e li confronta con quelli stampati. Il codice è distribuito con licenza MIT.</p>
+</section>
+
+<section>
+  <h2>Come è nato</h2>
+  <div class="nota">
+    <p>«Con l'intelligenza artificiale un libro così si scrive in un minuto.» In un minuto si ottiene un testo ordinato, scorrevole, e uguale a mille altri. Questo è nato in un altro modo: da un lungo dialogo tra l'autore e Claude, un modello di intelligenza artificiale di Anthropic. […] La rotta, le scelte e la revisione finale sono dell'autore; la stesura è cresciuta in due, una pagina alla volta. Come in una regata in doppio: il timone lo tiene uno alla volta, ma la barca la portano in due.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Errata e segnalazioni</h2>
+  <p>Errori e segnalazioni sono benvenuti. Le correzioni trovate dopo la pubblicazione sono raccolte nell'<a href="https://github.com/luca-zane/il-peso-della-pioggia/blob/main/ERRATA.md">errata</a>; per segnalarne una nuova si può aprire una <a href="https://github.com/luca-zane/il-peso-della-pioggia/issues">segnalazione sul repository</a>.</p>
+</section>
+
+<footer>
+  <p>© 2026 Luca Zane · Testo distribuito con licenza <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it">CC BY-NC-ND 4.0</a>: si può copiare e diffondere gratuitamente, citando l'autore. Codice degli esercizi con licenza MIT.</p>
+  <p>Per citare il libro: Luca Zane, <i>Il peso della pioggia. L'intelligenza artificiale dal neurone ai modelli che ragionano</i>, versione 2.0, 2026. DOI <a href="https://doi.org/10.5281/zenodo.23697734">10.5281/zenodo.23697734</a>.</p>
+</footer>
+
 </main>
 </body>
 </html>
