@@ -13,11 +13,13 @@ Pagina del libro: [pioggia.lucazane.com](https://pioggia.lucazane.com) · Tutte 
 
 <br clear="right">
 
-## Il libro
+> ***Quanto pesa la pioggia?***
 
-Il libro è un dialogo tra un allievo e un Maestro, in un dojo di karate affacciato sul mare. Nel dojo si impara ripetendo, sbagliando e correggendo, un gesto alla volta: è così che impara una rete. In mare si naviga con strumenti precisi dentro un mondo che non lo è: il vento si legge ma non si comanda, il tempo si prevede solo per qualche giorno, e non ci si fida mai di un solo strumento: è così che si usa un modello.
+Dipende. Per chi è in forma, quasi niente: esce e si allena. Per chi è stanco, abbastanza da restare a casa. Lo stesso fatto pesa in modo diverso a seconda di tutto il resto. È da qui che comincia l'intelligenza artificiale: un neurone che dà un peso a ogni cosa e impara a correggerlo sbagliando.
 
-Soprattutto teorie consolidate: il neurone, l'allenamento, le reti che guardano e che leggono, gli embedding, i Transformer, i modelli di linguaggio e il modo in cui vengono educati e serviti. Sono le idee che non cambiano ogni sei mesi, e sono quelle che servono per capire le nuove. La promessa è questa: alla fine saprete prendere qualsiasi annuncio e chiedervi in quale lezione cade, quale problema risolve, a quale prezzo, e se è sostanza o rumore.
+Un uomo si ferma sulla soglia di un dojo affacciato sul mare. Intorno a lui tutti parlano di intelligenza artificiale e hanno già un'opinione; lui prima vuole capire. Il Maestro lo accompagna una cintura alla volta, dal neurone più semplice ai modelli che ragionano, tra il dojo, la spiaggia e la barca.
+
+Alla fine saprete prendere qualsiasi annuncio e chiedervi in quale lezione cade, quale problema risolve, a quale prezzo, e se è sostanza o rumore. E forse vi accorgerete che, strada facendo, il libro parlava anche di voi: di come prendete le decisioni, di quanto vi fidate di ciò che vedete, di quanto sapete tornare sui vostri passi, del peso che date alle cose che vi accadono.
 
 ## A chi è rivolto
 
