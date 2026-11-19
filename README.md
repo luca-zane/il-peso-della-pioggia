@@ -45,6 +45,32 @@ Si va per cinture, due lezioni ciascuna, dalla bianca alla nera. Dopo alcune cin
 | ◌ | *Intermezzo* | *piccolo cabotaggio: un modello sul proprio computer* |
 | ⚫ | Nera · lezioni 13–14 | le altre famiglie di modelli e la costruzione di prodotti |
 
+## Domande frequenti
+
+**È davvero gratuito?**  
+Sì, e lo resterà. Il PDF si scarica senza registrazione e si può leggere, stampare e condividere liberamente, citando l'autore. Non si può vendere.
+
+**C'è qualcosa da vendere dietro?**  
+No. Dietro non c'è una società, né corsi, consulenze o altro da vendere. È nato come un quaderno personale, per una curiosità che non mi lascia stare e perché questa materia, prima di parlarne, va capita. Se può servire anche ad altri, tanto meglio.
+
+**Serve saper programmare o essere bravi in matematica?**  
+No. Il racconto si legge senza formule e senza codice. Per chi li vuole, ogni lezione ha una parte «Per chi vuole i conti» e un notebook Python che rifà i calcoli: si possono saltare senza perdere il filo.
+
+**Quanto tempo ci vuole?**  
+Dipende da come lo si legge. Solo il racconto: una decina di ore. Con i conti, i kata per casa e i notebook diventa un lavoro più impegnativo, da distribuire nel tempo: il ritmo giusto potrebbe essere una lezione alla settimana, quattordici settimane, più o meno un semestre.
+
+**Posso usarlo in classe o in un corso?**  
+Sì. La licenza (CC BY-NC-ND 4.0) permette di distribuirlo agli studenti e di usarlo come lettura, purché gratuitamente, citando l'autore e senza modificarlo. Per traduzioni o adattamenti serve il permesso dell'autore.
+
+**Posso stamparlo?**  
+Sì: è impaginato in A4 proprio per questo. Stampato fronte-retro si legge come un libro, e lascia spazio per gli appunti a margine.
+
+**Ho trovato un errore: come lo segnalo?**  
+Aprendo una [segnalazione nel repository su GitHub](../../issues), con la lezione, la seduta e una breve citazione del passaggio. Le correzioni finiscono nell'[errata](ERRATA.md) e nella versione successiva.
+
+**Ci saranno altre versioni?**  
+Probabilmente sì: dipende anche da quanto il libro servirà a chi lo legge. Se ti è stato utile, una stellina al [repository su GitHub](https://github.com/luca-zane/il-peso-della-pioggia) o una segnalazione aiutano a capirlo. Il pulsante «Scarica il PDF» porta sempre all'ultima versione, e il DOI che raccoglie tutte le versioni, [10.5281/zenodo.23697733](https://doi.org/10.5281/zenodo.23697733), punta sempre alla più recente.
+
 ## Che cosa c'è qui
 
 | Cartella | Contenuto |

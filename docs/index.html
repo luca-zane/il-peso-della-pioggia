@@ -64,6 +64,8 @@ p { margin: 0 0 1rem; }
 .forma li::before { content: ""; position: absolute; left: 0; top: .95rem; width: .4rem; height: .4rem; border-radius: 50%; background: var(--sigillo); }
 .forma b { font-weight: 600; }
 
+.faq h3 { font-family: "EB Garamond", Georgia, serif; font-size: 1.22rem; font-weight: 600; margin: 1.4rem 0 .3rem; }
+.faq h3:first-of-type { margin-top: 0; }
 .nota { background: var(--foglio); border-left: 2px solid var(--sigillo); padding: 1rem 1.2rem; margin: 0 0 1rem; }
 .nota p:last-child { margin-bottom: 0; }
 
@@ -81,6 +83,78 @@ footer p { margin: 0 0 .5rem; }
   .cinture .cosa { grid-column: 2; }
 }
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "È davvero gratuito?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sì, e lo resterà. Il PDF si scarica senza registrazione e si può leggere, stampare e condividere liberamente, citando l'autore. Non si può vendere."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "C'è qualcosa da vendere dietro?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Dietro non c'è una società, né corsi, consulenze o altro da vendere. È nato come un quaderno personale, per una curiosità che non mi lascia stare e perché questa materia, prima di parlarne, va capita. Se può servire anche ad altri, tanto meglio."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Serve saper programmare o essere bravi in matematica?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Il racconto si legge senza formule e senza codice. Per chi li vuole, ogni lezione ha una parte «Per chi vuole i conti» e un notebook Python che rifà i calcoli: si possono saltare senza perdere il filo."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quanto tempo ci vuole?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Dipende da come lo si legge. Solo il racconto: una decina di ore. Con i conti, i kata per casa e i notebook diventa un lavoro più impegnativo, da distribuire nel tempo: il ritmo giusto potrebbe essere una lezione alla settimana, quattordici settimane, più o meno un semestre."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Posso usarlo in classe o in un corso?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sì. La licenza (CC BY-NC-ND 4.0) permette di distribuirlo agli studenti e di usarlo come lettura, purché gratuitamente, citando l'autore e senza modificarlo. Per traduzioni o adattamenti serve il permesso dell'autore."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Posso stamparlo?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sì: è impaginato in A4 proprio per questo. Stampato fronte-retro si legge come un libro, e lascia spazio per gli appunti a margine."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Ho trovato un errore: come lo segnalo?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Aprendo una segnalazione nel repository su GitHub, con la lezione, la seduta e una breve citazione del passaggio. Le correzioni finiscono nell'errata e nella versione successiva."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Ci saranno altre versioni?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Probabilmente sì: dipende anche da quanto il libro servirà a chi lo legge. Se ti è stato utile, una stellina al repository su GitHub o una segnalazione aiutano a capirlo. Il pulsante «Scarica il PDF» porta sempre all'ultima versione, e il DOI che raccoglie tutte le versioni, 10.5281/zenodo.23697733, punta sempre alla più recente."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <main>
@@ -128,6 +202,26 @@ footer p { margin: 0 0 .5rem; }
     <li class="inter"><span class="nodo"></span><span class="nome">Intermezzo</span><span class="cosa">piccolo cabotaggio: un modello sul proprio computer</span></li>
     <li><span class="nodo" style="background:#1d1d1b"></span><span class="nome">Nera · 13–14</span><span class="cosa">le altre famiglie di modelli e la costruzione di prodotti</span></li>
   </ul>
+</section>
+
+<section class="faq">
+  <h2>Domande frequenti</h2>
+  <h3>È davvero gratuito?</h3>
+  <p>Sì, e lo resterà. Il PDF si scarica senza registrazione e si può leggere, stampare e condividere liberamente, citando l'autore. Non si può vendere.</p>
+  <h3>C'è qualcosa da vendere dietro?</h3>
+  <p>No. Dietro non c'è una società, né corsi, consulenze o altro da vendere. È nato come un quaderno personale, per una curiosità che non mi lascia stare e perché questa materia, prima di parlarne, va capita. Se può servire anche ad altri, tanto meglio.</p>
+  <h3>Serve saper programmare o essere bravi in matematica?</h3>
+  <p>No. Il racconto si legge senza formule e senza codice. Per chi li vuole, ogni lezione ha una parte «Per chi vuole i conti» e un notebook Python che rifà i calcoli: si possono saltare senza perdere il filo.</p>
+  <h3>Quanto tempo ci vuole?</h3>
+  <p>Dipende da come lo si legge. Solo il racconto: una decina di ore. Con i conti, i kata per casa e i notebook diventa un lavoro più impegnativo, da distribuire nel tempo: il ritmo giusto potrebbe essere una lezione alla settimana, quattordici settimane, più o meno un semestre.</p>
+  <h3>Posso usarlo in classe o in un corso?</h3>
+  <p>Sì. La licenza (CC BY-NC-ND 4.0) permette di distribuirlo agli studenti e di usarlo come lettura, purché gratuitamente, citando l'autore e senza modificarlo. Per traduzioni o adattamenti serve il permesso dell'autore.</p>
+  <h3>Posso stamparlo?</h3>
+  <p>Sì: è impaginato in A4 proprio per questo. Stampato fronte-retro si legge come un libro, e lascia spazio per gli appunti a margine.</p>
+  <h3>Ho trovato un errore: come lo segnalo?</h3>
+  <p>Aprendo una <a href="https://github.com/luca-zane/il-peso-della-pioggia/issues">segnalazione nel repository su GitHub</a>, con la lezione, la seduta e una breve citazione del passaggio. Le correzioni finiscono nell'<a href="https://github.com/luca-zane/il-peso-della-pioggia/blob/main/ERRATA.md">errata</a> e nella versione successiva.</p>
+  <h3>Ci saranno altre versioni?</h3>
+  <p>Probabilmente sì: dipende anche da quanto il libro servirà a chi lo legge. Se ti è stato utile, una stellina al <a href="https://github.com/luca-zane/il-peso-della-pioggia">repository su GitHub</a> o una segnalazione aiutano a capirlo. Il pulsante «Scarica il PDF» porta sempre all'ultima versione, e il DOI che raccoglie tutte le versioni, <a href="https://doi.org/10.5281/zenodo.23697733">10.5281/zenodo.23697733</a>, punta sempre alla più recente.</p>
 </section>
 
 <footer>
